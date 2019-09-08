@@ -1,0 +1,44 @@
+(*
+    until => executa o estado em que está e transiciona para outro estado
+    unless => transiciona para outro estado e executa o novo estado
+*)
+
+node oven(finish,start,c,cold,temp_ok: bool) returns (estate,power: int)
+let
+    automaton
+     state Off do
+        estate = 0;
+        power = 0; 
+     unless  start & not c then Standby
+        | start & c then Heat
+     state Standby do
+        estate = 1;
+        power = 0;
+     unless c then Heat
+     state Heat do
+        estate = 2;
+        power = 1500;
+     unless finish then Off
+     	| temp_ok then Maintain
+
+     state Maintain do
+        estate = 3;
+        power = 300;
+     unless cold & c then Reheat
+     	| finish then Off
+     state Reheat do
+        estate = 4;
+        power = 1000;
+     unless finish then Off
+     	| temp_ok then Maintain
+    end 
+tel
+
+node twovens(finish1,start1,cold1,temp_ok1: bool) returns (estate1,power1: int)
+    (*contract
+     enforce not ((estate1 + estate2)=2)
+     with (c2, c1:bool)*)
+let
+	estate1, power1 = inlined oven(finish1,start1,c1,cold1,temp_ok1);
+    (*estate2, power2 = inlined oven(finish2,start2,c2,cold2,temp_ok2)*)
+tel
