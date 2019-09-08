@@ -3,20 +3,20 @@
     unless => transiciona para outro estado e executa o novo estado
 *)
 
-node oven(finish,start,c,cold,temp_ok: bool) returns (estate,power: int)
+node oven(finish,start,c,cold,temp_ok: bool) returns (estate: bool; power: int)
 let
     automaton
      state Off do
-        estate = 0;
-        power = 0; 
+        estate = 1;
+        power = 0;
      unless  start & not c then Standby
         | start & c then Heat
      state Standby do
-        estate = 1;
+        estate = 2;
         power = 0;
      unless c then Heat
      state Heat do
-        estate = 2;
+        estate = 5;
         power = 1500;
      unless finish then Off
      	| temp_ok then Maintain
@@ -34,11 +34,11 @@ let
     end 
 tel
 
-node twovens(finish1,start1,cold1,temp_ok1: bool) returns (estate1,power1: int)
-    (*contract
-     enforce not ((estate1 + estate2)=2)
-     with (c2, c1:bool)*)
+node twovens(finish1,start1,cold1,temp_ok1,finish2,start2,cold2,temp_ok2: bool) returns (estate1, estate2: bool; power1,power2: int)
+    contract
+     enforce estate1 + estate2 != 10
+     with (c1, c2:bool)
 let
-	estate1, power1 = inlined oven(finish1,start1,c1,cold1,temp_ok1);
-    (*estate2, power2 = inlined oven(finish2,start2,c2,cold2,temp_ok2)*)
+	estate1,power1 = inlined oven(finish1,start1,c1,cold1,temp_ok1);
+    estate2,power2 = inlined oven(finish2,start2,c2,cold2,temp_ok2);
 tel
