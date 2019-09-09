@@ -3,7 +3,7 @@
     unless => transiciona para outro estado e executa o novo estado
 *)
 
-node oven(finish,start,c,cold,temp_ok: bool) returns (estate: bool; power: int)
+node oven(finish,start,c,cold,temp_ok: bool) returns (estate, power: int)
 let
     automaton
      state Off do
@@ -34,11 +34,10 @@ let
     end 
 tel
 
-node twovens(finish1,start1,cold1,temp_ok1,finish2,start2,cold2,temp_ok2: bool) returns (estate1, estate2: bool; power1,power2: int)
-    contract
-     enforce estate1 + estate2 != 10
-     with (c1, c2:bool)
+node twovens(finish,start,c,cold,temp_ok: bool) returns (estate, power: int)
+    
+     
 let
-	estate1,power1 = inlined oven(finish1,start1,c1,cold1,temp_ok1);
-    estate2,power2 = inlined oven(finish2,start2,c2,cold2,temp_ok2);
+	(estate,power) = inlined oven(finish,start,c,cold,temp_ok);
+    
 tel
