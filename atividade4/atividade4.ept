@@ -1,0 +1,154 @@
+(*
+    until => executa o estado em que está e transiciona para outro estado
+    unless => transiciona para outro estado e executa o novo estado
+*)
+
+type modes = MINIMAL | ECO | COMFORT
+
+node managementPolicy(eco_input, comfort_input: bool) returns (mode: modes)
+let
+    automaton
+     state Minimal_safety do
+     mode = MINIMAL;
+        (*eco = false;
+        comfort = false;
+        pl = 3000;*)
+     unless  eco_input then Eco
+        | comfort_input then Comfort
+
+     state Eco do
+     	mode = ECO;
+        (*eco = true;
+        comfort = false;
+        pl = 5000;*)
+     unless comfort_input then Comfort
+        | not eco_input then Minimal_safety
+
+     state Comfort do
+     	mode = COMFORT;
+        (*eco = false;
+        comfort = true;
+        pl = 7000;*)
+     unless eco_input then Eco
+        | not comfort_input then Minimal_safety
+    end 
+tel
+
+node oven(finish,start,ct1,ct12,cold,temp_ok: bool) returns (estate, power: int)
+let
+    automaton
+     state Off do
+        estate = 1;
+        power = 0;
+     unless  start & not ct1 then Standby
+        | start & ct1 then Heat
+     
+     state Standby do
+        estate = 2;
+        power = 0;
+     unless ct1 then Heat
+     
+     state Heat do
+        estate = 5;
+        power = 1500;
+     unless finish then Off
+     	| temp_ok or ct12 then Maintain
+
+     state Maintain do
+        estate = 3;
+        power = 300;
+     unless cold & ct1 then Reheat
+     	| finish then Off
+     
+     state Reheat do
+        estate = 4;
+        power = 1000;
+     unless finish then Off
+     	| temp_ok or not ct12 then Maintain
+    end 
+tel
+
+node radiator(u1, d1, u2, d2, c1, c2, c3: bool) returns (estateRad,powerRad:int)
+let
+    automaton
+        state OFF do
+            estateRad = 0; powerRad = 0;
+            unless u1 & not c1 then FROST
+        
+        state FROST do
+            estateRad = 1; powerRad = 300;
+            unless u1 & c1 then ECO
+                    | d1 or not c3 then OFF 
+                    | u2 & c2 then HIGH
+        
+        state ECO do
+            estateRad = 2; powerRad = 1500;
+            unless u2 & c2 then HIGH 
+                    | d1 or not c1 then FROST
+                    
+        
+        state HIGH do
+            estateRad = 3; powerRad = 2000;
+            unless d2 or not c2 then FROST 
+                    | d1 or not c1 then ECO
+    end 
+tel
+
+
+node washing_machine(e, s, ct4, ct5: bool) returns (s1,p1:int)
+let
+    automaton
+     state OFF do
+        s1 = 0; p1 = 0;
+     unless s then WATER_FILL
+
+     state WATER_FILL do
+        s1 = 1; p1 = 15;
+     unless e & not ct4 then STANDBY 
+     | e & ct4 then WASHING
+
+     state STANDBY do
+        s1 = 2; p1 = 0;
+     unless ct4 then WASHING
+
+     state WASHING do
+        s1 = 3; p1 = 250;
+     unless e & ct5 then RINSE
+
+     state RINSE do
+        s1 = 4; p1 = 200;
+     unless e & not ct5 then SPIN
+
+     state SPIN do
+        s1 = 5; p1 = 800;
+     unless e or ct5 then OFF
+    end 
+tel
+
+
+node instanciador(eco_input, comfort_input,finish,start,cold,temp_ok,u1, d1, u2, d2, e, s: bool) returns ( estate, power, estateRad, powerRad, s1, p1: int; policy: modes)
+
+	contract
+		var
+			regra5: bool; energiaTotal: int;
+		let 
+			energiaTotal = powerRad + power + p1;
+			switch policy 
+							| MINIMAL do regra5 = energiaTotal <= 3000; 
+							| ECO do regra5 = energiaTotal <= 5000;
+							| COMFORT do regra5 = energiaTotal <= 7000;
+			end
+		tel
+	    
+
+	     enforce (regra5) (*(powerRad + power + p1) < pl;*)
+	     with (ct1, ct12, c1,c2,c3, ct4, ct5:bool) 
+	    
+	     
+		let
+			(estate, power) = inlined oven(finish,start,ct1,ct12,cold,temp_ok);
+			(estateRad, powerRad) = inlined radiator(u1, d1, u2, d2, c1, c2, c3);
+			(s1, p1) = inlined washing_machine(e, s, ct4, ct5);
+            policy = inlined managementPolicy(eco_input, comfort_input);
+		    
+		tel
