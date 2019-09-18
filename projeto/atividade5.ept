@@ -1,0 +1,350 @@
+(*
+    MODELO DO PROJETO DA DISCIPLINA DE TÓPICOS EM MODELAGEM COMPUTACIONAL
+    Autor: Jhonata Fernandes
+*)
+
+type modes = SEXTA | EBD | DOMINGO | DOMINGOL | NEUTRO | SEGURANCA
+
+node managementPolicy(sexta_input, ebd_input, domingo_input, domingol_input, neutro_input, seguranca_input: bool) returns (mode: modes)
+let
+    automaton
+     state Sexta_feira do
+     mode = SEXTA;
+        
+     unless  ebd_input then Ebd
+        | domingo_input then Comfort
+
+     state Ebd do
+     	mode = EBD;
+    
+     unless domingo_input then Domingo
+        | not eco_input then Minimal_safety
+
+     state Domingo do
+     	mode = DOMINGO;
+       
+     unless eco_input then Eco
+        | not comfort_input then Minimal_safety
+    end 
+tel
+
+
+
+node lamp1(c1_lamp, l1 :bool) returns(estateLamp1:bool)
+let
+    automaton
+
+        state Off do
+            estateLamp1  = false
+        
+        unless  c1_lamp or l1 then On
+
+        state On do
+            estateLamp1 = true
+
+        unless not c1_lamp or not l1 then Off
+    end
+tel
+
+node lamp2(c2_lamp, l2 :bool) returns(estateLamp2:bool)
+let
+    automaton
+
+        state Off do
+            estateLamp2  = false
+        
+        unless  c2_lamp or l2 then On
+
+        state On do
+            estateLamp2 = true
+
+        unless not c2_lamp or not l2 then Off
+    end
+tel
+
+
+node lamp3(c3_lamp, l3 :bool) returns(estateLamp3:bool)
+let
+    automaton
+
+        state Off do
+            estateLamp3  = false
+        
+        unless  c3_lamp or l3 then On
+
+        state On do
+            estateLamp3 = true
+
+        unless not c3_lamp or not l3 then Off
+    end
+tel
+
+
+node lamp4(c4_lamp, l4 :bool) returns(estateLamp4:bool)
+let
+    automaton
+
+        state Off do
+            estateLamp4  = false
+        
+        unless  c4_lamp or l4 then On
+
+        state On do
+            estateLamp4 = true
+
+        unless not c4_lamp or not l4 then Off
+    end
+tel
+
+
+node lampExt(c_lampExt, lx :bool) returns(estateLampExt:bool)
+let
+    automaton
+
+        state Off do
+            estateLampExt  = false
+        
+        unless  c_lampExt or lx then On
+
+        state On do
+            estateLampExt = true
+
+        unless not c_lampExt or not lx then Off
+    end
+tel
+
+
+
+
+
+
+
+
+node instanciador(l1,l2,l3,l4,lx: bool ) returns(estateLamp1, estateLamp2, estateLamp3, estateLamp4, estateLampExt: bool)
+    contract
+            var
+                regra1: bool;
+            let 
+                regra1 = not(estateLamp1 or estateLamp2 or estateLamp4) & (estateLamp3 & estateLampExt);
+        
+
+            tel
+            
+
+             enforce (regra1)
+             with (c1_lamp, c2_lamp, c3_lamp, c4_lamp, c_lampExt:bool) 
+            
+             
+            let
+                estateLamp1 = inlined lamp1(c1_lamp, l1);
+                estateLamp2 = inlined lamp2(c2_lamp, l2);
+                estateLamp3 = inlined lamp3(c3_lamp, l3);
+                estateLamp4 = inlined lamp4(c4_lamp, l4);
+                estateLampExt = inlined lampExt(c_lampExt, lx);
+
+                               
+                
+            tel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+(*
+
+node oven(finish,start,ct1,cold,temp_ok: bool) returns (estate, power: int)
+let
+    automaton
+     state Off do
+        estate = 1;
+        power = 0;
+     unless  start & not ct1 then Standby
+        | start & ct1 then Heat
+     
+     state Standby do
+        estate = 2;
+        power = 0;
+     unless ct1 then Heat
+     
+     state Heat do
+        estate = 5;
+        power = 1500;
+     unless finish then Off
+     	| temp_ok then Maintain
+
+     state Maintain do
+        estate = 3;
+        power = 300;
+     unless cold & ct1 then Reheat
+     	| finish then Off
+     
+     state Reheat do
+        estate = 4;
+        power = 1000;
+     unless finish then Off
+     	| temp_ok then Maintain
+    end 
+tel
+
+node radiator(u1, d1, u2, d2, c1, c2: bool) returns (estateRad,powerRad:int)
+let
+    automaton
+        state OFF do
+            estateRad = 0; powerRad = 0;
+            unless u1 & not c1 then FROST
+        
+        state FROST do
+            estateRad = 1; powerRad = 300;
+            unless u1 & c1 then ECO
+                    | d1 or not c1 then OFF 
+                    | u2 & c2 then HIGH
+        
+        state ECO do
+            estateRad = 2; powerRad = 1500;
+            unless u2 & c2 then HIGH 
+                    | d1 or not c1 then FROST
+                    
+        
+        state HIGH do
+            estateRad = 3; powerRad = 2000;
+            unless d2 or not c2 then FROST 
+                    | d1 or not c1 then ECO
+    end 
+tel
+
+
+node washing_machine(e, s, ct4: bool) returns (s1,p1:int)
+let
+    automaton
+     state OFF do
+        s1 = 0; p1 = 0;
+     unless s then WATER_FILL
+
+     state WATER_FILL do
+        s1 = 1; p1 = 15;
+     unless e & not ct4 then STANDBY 
+     | e & ct4 then WASHING
+
+     state STANDBY do
+        s1 = 2; p1 = 0;
+     unless ct4 then WASHING
+
+     state WASHING do
+        s1 = 3; p1 = 250;
+     unless e then RINSE
+
+     state RINSE do
+        s1 = 4; p1 = 200;
+     unless e then SPIN
+
+     state SPIN do
+        s1 = 5; p1 = 800;
+     unless e then OFF
+    end 
+tel
+
+node room(presence:bool) returns(room_oc:bool)
+let
+    automaton
+
+        state Empty do
+            room_oc=false;
+        unless presence then Ocupied
+
+        state Ocupied do
+            room_oc=true;
+        unless  not presence then Empty
+
+
+    end
+tel
+
+node lamp(c_lamp:bool) returns(estateLamp:bool)
+let
+    automaton
+
+        state Off do
+            estateLamp  = false
+        
+        unless  c_lamp then On
+
+        state On do
+            estateLamp = true
+
+        unless not c_lamp then Off
+    end
+tel
+
+node door(pushDoor, c_door: bool) returns (door_open:bool)
+let
+    automaton
+        state Closed do
+            door_open = false;
+        unless pushDoor & c_door then Open
+        
+        state Open do
+            door_open = true;
+        unless pushDoor or not c_door then Closed
+    end 
+tel
+
+
+node window(pushWindow, c_window: bool) returns (window_open:bool)
+let
+    automaton
+        state Closed do
+            window_open = false;
+        unless pushWindow & c_window then Open
+        
+        state Open do
+            window_open = true;
+        unless pushWindow or not c_window then Closed
+    end 
+tel
+
+node instanciador(eco_input, comfort_input,finish,start,cold,temp_ok,u1, d1, u2, d2, e, s, presence, pushDoor, pushWindow: bool) returns ( estate, power, estateRad, powerRad, s1, p1: int; policy: modes; room_oc, estateLamp, door_open, window_open: bool)
+
+	contract
+		var
+			regra1, regra2, regra3, regra4, regra5: bool; energiaTotal: int;
+		let 
+            regra1 = not room_oc or estateLamp;
+            regra2 = room_oc or not(door_open or window_open);
+            regra3 = not (window_open or door_open) or (estateRad <= 1);
+            regra4 = room_oc or (not estateLamp & (estateRad <= 1));
+
+			energiaTotal = powerRad + power + p1;
+			switch policy 
+							| MINIMAL do regra5 = energiaTotal <= 3000; 
+							| ECO do regra5 = energiaTotal <= 5000;
+							| COMFORT do regra5 = energiaTotal <= 7000;
+			end
+		tel
+	    
+
+	     enforce (regra1 & regra2 & regra3 & regra4 & regra5)
+	     with (ct1, c1,c2, ct4, c_lamp, c_door, c_window:bool) 
+	    
+	     
+		let
+            policy = inlined managementPolicy(eco_input, comfort_input);
+			(estate, power) = inlined oven(finish,start,ct1,cold,temp_ok);
+			(estateRad, powerRad) = inlined radiator(u1, d1, u2, d2, c1, c2);
+			(s1, p1) = inlined washing_machine(e, s, ct4);
+            room_oc = inlined room(presence);
+            estateLamp = inlined lamp(c_lamp);
+            door_open = inlined door(pushDoor, c_door);
+            window_open = inlined window(pushWindow, c_window);
+            
+		    
+		tel*)
