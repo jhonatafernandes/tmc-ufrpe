@@ -8,108 +8,166 @@ type modes = SEXTA | EBD | DOMINGO | DOMINGOL | NEUTRO | SEGURANCA
 node managementPolicy(sexta_input, ebd_input, domingo_input, domingol_input, neutro_input, seguranca_input: bool) returns (mode: modes)
 let
     automaton
-     state Sexta_feira do
-     mode = SEXTA;
+         state Sexta_feira do
+             mode = SEXTA;
+                
+             unless  ebd_input then Ebd
+                | domingo_input then Domingo
+                | domingol_input then DomingoL
+                | neutro_input then Neutro
+                | seguranca_input then Seguranca
+
+
+
+         state Ebd do
+            mode = EBD;
         
-     unless  ebd_input then Ebd
-        | domingo_input then Comfort
+         unless  sexta_input then Sexta_feira
+            | domingo_input then Domingo
+            | domingol_input then DomingoL
+            | neutro_input then Neutro
+            | seguranca_input then Seguranca
 
-     state Ebd do
-     	mode = EBD;
-    
-     unless domingo_input then Domingo
-        | not eco_input then Minimal_safety
+         state Domingo do
+         	mode = DOMINGO;
+           
+         unless  ebd_input then Ebd
+            | sexta_input then Sexta_feira
+            | domingol_input then DomingoL
+            | neutro_input then Neutro
+            | seguranca_input then Seguranca
 
-     state Domingo do
-     	mode = DOMINGO;
-       
-     unless eco_input then Eco
-        | not comfort_input then Minimal_safety
+        state DomingoL do
+            mode = DOMINGOL;
+           
+         unless  ebd_input then Ebd
+            | sexta_input then Sexta_feira
+            | domingo_input then Domingo
+            | neutro_input then Neutro
+            | seguranca_input then Seguranca
+
+        state Neutro do
+            mode = NEUTRO;
+           
+         unless  ebd_input then Ebd
+            | sexta_input then Sexta_feira
+            | domingol_input then DomingoL
+            | domingo_input then Domingo
+            | seguranca_input then Seguranca
+
+        state Seguranca do
+            mode = SEGURANCA;
+           
+         unless  ebd_input then Ebd
+            | sexta_input then Sexta_feira
+            | domingol_input then DomingoL
+            | neutro_input then Neutro
+            | domingo_input then Domingo 
+
+
+
     end 
 tel
 
 
 
-node lamp1(c1_lamp, l1 :bool) returns(estateLamp1:bool)
+node lamp1(c1_lamp, c1, l1 :bool) returns(estateLamp1:bool)
 let
     automaton
 
         state Off do
             estateLamp1  = false
         
-        unless  c1_lamp or l1 then On
+        unless  (c1_lamp or l1) & c1  then On
 
         state On do
             estateLamp1 = true
 
-        unless not c1_lamp or not l1 then Off
+        unless (not c1_lamp or not l1) & not c1 then Off
     end
 tel
 
-node lamp2(c2_lamp, l2 :bool) returns(estateLamp2:bool)
+
+node lamp2(c2_lamp, c2, l2 :bool) returns(estateLamp2:bool)
 let
     automaton
 
         state Off do
             estateLamp2  = false
         
-        unless  c2_lamp or l2 then On
+        unless  (c2_lamp or l2) & c2 then On
 
         state On do
             estateLamp2 = true
 
-        unless not c2_lamp or not l2 then Off
+        unless (not c2_lamp or not l2) & not c2 then Off
     end
 tel
 
 
-node lamp3(c3_lamp, l3 :bool) returns(estateLamp3:bool)
+node lamp3(c3_lamp, c3, l3 :bool) returns(estateLamp3:bool)
 let
     automaton
 
         state Off do
             estateLamp3  = false
         
-        unless  c3_lamp or l3 then On
+        unless  (c3_lamp or l3) & c3 then On
 
         state On do
             estateLamp3 = true
 
-        unless not c3_lamp or not l3 then Off
+        unless (not c3_lamp or not l3) & not c3 then Off
     end
 tel
 
 
-node lamp4(c4_lamp, l4 :bool) returns(estateLamp4:bool)
+node lamp4(c4_lamp, c4, l4 :bool) returns(estateLamp4:bool)
 let
     automaton
 
         state Off do
             estateLamp4  = false
         
-        unless  c4_lamp or l4 then On
+        unless  (c4_lamp or l4) & c4 then On
 
         state On do
             estateLamp4 = true
 
-        unless not c4_lamp or not l4 then Off
+        unless (not c4_lamp or not l4) & not c4 then Off
     end
 tel
 
 
-node lampExt(c_lampExt, lx :bool) returns(estateLampExt:bool)
+node lampExt(c_lampExt, cx, lx :bool) returns(estateLampExt:bool)
 let
     automaton
 
         state Off do
             estateLampExt  = false
         
-        unless  c_lampExt or lx then On
+        unless  (c_lampExt or lx) & cx then On
 
         state On do
             estateLampExt = true
 
-        unless not c_lampExt or not lx then Off
+        unless (not c_lampExt or not lx) & not cx then Off
+    end
+tel
+
+node ventiladores(c_vent, cv, lv :bool) returns(estateVent:bool)
+let
+    automaton
+
+        state Off do
+            estateVent  = false
+        
+        unless  (c_vent or lv) & cv then On
+
+        state On do
+            estateVent = true
+
+        unless (not c_vent or not lv) & not cv then Off
     end
 tel
 
@@ -119,34 +177,51 @@ tel
 
 
 
-
-node instanciador(l1,l2,l3,l4,lx: bool ) returns(estateLamp1, estateLamp2, estateLamp3, estateLamp4, estateLampExt: bool)
+node instanciador( sexta_input, ebd_input, domingo_input, domingol_input, neutro_input, seguranca_input,l1,l2,l3,l4,lx,lv: bool ) returns(policy: modes; estateLamp1, estateLamp2, estateLamp3, estateLamp4, estateLampExt, estateVent: bool;)
     contract
             var
-                regra1: bool;
-            let 
-                regra1 = not(estateLamp1 or estateLamp2 or estateLamp4) & (estateLamp3 & estateLampExt);
-        
+                regra, regra1, regra2: bool;
 
+
+            let 
+
+
+                regra1 = estateLamp1 & estateLamp2 & estateLamp3 & estateLamp4 & estateLampExt & estateVent;
+                (*not(estateLamp1 or estateLamp2 or estateLamp4) & (estateLamp3 & estateLampExt);*)
+                regra2 = not(estateLampExt or estateLamp4) & (estateLamp1 & estateLamp2 & estateLamp3 & estateVent);
+                
+
+
+                switch policy 
+
+                            | SEXTA do regra = regra1;
+
+                            | EBD do  regra = regra2;
+                            | DOMINGO do  regra = regra2;
+                            | DOMINGOL do  regra = regra2;
+                            | NEUTRO do  regra = regra2;
+                            | SEGURANCA do  regra = regra2;
+                end
+    
             tel
             
-
-             enforce (regra1)
-             with (c1_lamp, c2_lamp, c3_lamp, c4_lamp, c_lampExt:bool) 
+             enforce (regra)
+             with (c1_lamp, c2_lamp, c3_lamp, c4_lamp, c_lampExt, c1, c2, c3, c4, cx, cv, c_vent:bool) 
             
              
             let
-                estateLamp1 = inlined lamp1(c1_lamp, l1);
-                estateLamp2 = inlined lamp2(c2_lamp, l2);
-                estateLamp3 = inlined lamp3(c3_lamp, l3);
-                estateLamp4 = inlined lamp4(c4_lamp, l4);
-                estateLampExt = inlined lampExt(c_lampExt, lx);
+                policy = inlined managementPolicy(sexta_input, ebd_input, domingo_input, domingol_input, neutro_input, seguranca_input);
+                estateLamp1 = inlined lamp1(c1_lamp, c1, l1);
+                estateLamp2 = inlined lamp2(c2_lamp, c2, l2);
+                estateLamp3 = inlined lamp3(c3_lamp, c3, l3);
+                estateLamp4 = inlined lamp4(c4_lamp, c4, l4);
+                estateLampExt = inlined lampExt(c_lampExt, cx, lx);
+                estateVent = inlined ventiladores(c_vent, cv, lv);
+                
 
                                
                 
             tel
-
-
 
 
 

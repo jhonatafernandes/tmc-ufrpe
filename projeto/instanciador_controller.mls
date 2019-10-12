@@ -1,0 +1,2188 @@
+node instanciador_controller_instanciador_c_vent(instanciador_sexta_input : bool;
+                                                  instanciador_ebd_input : bool;
+                                                  instanciador_domingo_input : bool;
+                                                  instanciador_domingol_input : bool;
+                                                  instanciador_neutro_input : bool;
+                                                  instanciador_seguranca_input : bool;
+                                                  instanciador_l1 : bool;
+                                                  instanciador_l2 : bool;
+                                                  instanciador_l3 : bool;
+                                                  instanciador_l4 : bool;
+                                                  instanciador_lx : bool;
+                                                  instanciador_lv : bool;
+                                                  instanciador_v_301 : bool;
+                                                  instanciador_v_300 : bool;
+                                                  instanciador_v_299 : bool;
+                                                  instanciador_pnr_6 : bool;
+                                                  instanciador_ck_10_1 : bool;
+                                                  instanciador_pnr_5 : bool;
+                                                  instanciador_ck_12_1 : bool;
+                                                  instanciador_pnr_4 : bool;
+                                                  instanciador_ck_14_1 : bool;
+                                                  instanciador_pnr_3 : bool;
+                                                  instanciador_ck_16_1 : bool;
+                                                  instanciador_pnr_2 : bool;
+                                                  instanciador_ck_18_1 : bool;
+                                                  instanciador_pnr_1 : bool;
+                                                  instanciador_ck_20_1 : bool;
+                                                  instanciador_pnr : bool;
+                                                  p_instanciador_c_vent : bool;
+                                                  p_instanciador_cv : bool;
+                                                  p_instanciador_cx : bool;
+                                                  p_instanciador_c4 : bool;
+                                                  p_instanciador_c3 : bool;
+                                                  p_instanciador_c2 : bool;
+                                                  p_instanciador_c1 : bool;
+                                                  p_instanciador_c_lampExt : bool;
+                                                  p_instanciador_c4_lamp : bool;
+                                                  p_instanciador_c3_lamp : bool;
+                                                  p_instanciador_c2_lamp : bool;
+                                                  p_instanciador_c1_lamp : bool;
+                                                  instanciador_cv : bool;
+                                                  instanciador_cx : bool;
+                                                  instanciador_c4 : bool;
+                                                  instanciador_c3 : bool;
+                                                  instanciador_c2 : bool;
+                                                  instanciador_c1 : bool;
+                                                  instanciador_c_lampExt : bool;
+                                                  instanciador_c4_lamp : bool;
+                                                  instanciador_c3_lamp : bool;
+                                                  instanciador_c2_lamp : bool;
+                                                  instanciador_c1_lamp : bool)
+returns (instanciador_c_vent : bool)
+var v_96 : bool; v_95 : bool; v_94 : bool; v_93 : bool; v_92 : bool;
+    v_91 : bool; v_90 : bool; v_89 : bool; v_88 : bool; v_87 : bool;
+    v_86 : bool; v_85 : bool; v_84 : bool; v_83 : bool; v_82 : bool;
+    v_81 : bool; v_80 : bool; v_79 : bool; v_78 : bool; v_77 : bool;
+    v_76 : bool; v_75 : bool; v_74 : bool; v_73 : bool; v_72 : bool;
+    v_71 : bool; v_70 : bool; v_69 : bool; v_68 : bool; v_67 : bool;
+    v_66 : bool; v_65 : bool; v_64 : bool; v_63 : bool; v_62 : bool;
+    v_61 : bool; v_60 : bool; v_59 : bool; v_58 : bool; v_57 : bool;
+    v_56 : bool; v_55 : bool; v_54 : bool; v_53 : bool; v_52 : bool;
+    v_51 : bool; v_50 : bool; v_49 : bool; v_48 : bool; v_47 : bool;
+    v_46 : bool; v_45 : bool; v_44 : bool; v_43 : bool; v_42 : bool;
+    v_41 : bool; v_40 : bool; v_39 : bool; v_38 : bool; v_37 : bool;
+    v_36 : bool; v_35 : bool; v_34 : bool; v_33 : bool; v_32 : bool;
+    v_31 : bool; v_30 : bool; v_29 : bool; v_28 : bool; v_27 : bool;
+    v_26 : bool; v_25 : bool; v_24 : bool; v_23 : bool; v_22 : bool;
+    v_21 : bool; v_20 : bool; v_19 : bool; v_18 : bool; v_17 : bool;
+    v_16 : bool; v_15 : bool; v_14 : bool; v_13 : bool; v_12 : bool;
+    v_11 : bool; v_10 : bool; v_9 : bool; v_8 : bool; v_7 : bool; v_6 : bool;
+    v_5 : bool; v_4 : bool; v_3 : bool; v_2 : bool; v_1 : bool; v : bool;
+    sub_0 : bool; sub_1 : bool; sub_2 : bool; sub_3 : bool; sub_4 : bool;
+    sub_5 : bool; sub_6 : bool; sub_7 : bool; sub_8 : bool; sub_9 : bool;
+    sub_10 : bool; sub_11 : bool; sub_12 : bool; sub_13 : bool;
+    sub_14 : bool; sub_15 : bool; sub_16 : bool; sub_17 : bool;
+    sub_18 : bool; sub_19 : bool; sub_20 : bool; sub_21 : bool;
+    sub_22 : bool; sub_23 : bool; sub_24 : bool; sub_25 : bool;
+    sub_26 : bool; sub_27 : bool; sub_28 : bool; sub_29 : bool;
+    sub_30 : bool; sub_31 : bool; sub_32 : bool; sub_33 : bool;
+    sub_34 : bool; sub_35 : bool; sub_36 : bool; sub_37 : bool;
+    sub_38 : bool; sub_39 : bool; sub_40 : bool; sub_41 : bool;
+    sub_42 : bool; sub_43 : bool; sub_44 : bool; sub_45 : bool;
+    sub_46 : bool; sub_47 : bool; sub_48 : bool; sub_49 : bool;
+    sub_50 : bool; sub_51 : bool; sub_52 : bool; sub_53 : bool;
+    sub_54 : bool; sub_55 : bool; sub_56 : bool; sub_57 : bool;
+    sub_58 : bool; sub_59 : bool; sub_60 : bool; sub_61 : bool;
+    sub_62 : bool; sub_63 : bool; sub_64 : bool; sub_65 : bool;
+    sub_66 : bool; sub_67 : bool; sub_68 : bool; sub_69 : bool;
+    sub_70 : bool; sub_71 : bool; sub_72 : bool; sub_73 : bool;
+    sub_74 : bool; sub_75 : bool; sub_76 : bool; sub_77 : bool;
+    sub_78 : bool; sub_79 : bool;
+let
+  instanciador_c_vent = sub_0;
+  sub_79 = sub_67;
+  sub_78 = sub_79;
+  sub_77 = sub_78;
+  sub_76 = if instanciador_sexta_input then sub_77 else sub_53;
+  sub_75 = if instanciador_ck_10_1 then false else sub_68;
+  sub_74 = if instanciador_ck_12_1 then false else sub_69;
+  sub_73 = if instanciador_ck_14_1 then false else sub_70;
+  sub_72 = if instanciador_ck_16_1 then false else sub_71;
+  sub_71 = if instanciador_cv then sub_37 else sub_39;
+  v = if instanciador_c4_lamp then sub_71 else sub_72;
+  v_1 = if instanciador_l4 then sub_71 else v;
+  v_2 = if instanciador_c4_lamp then sub_72 else false;
+  v_3 = if instanciador_l4 then v_2 else false;
+  sub_70 = if instanciador_c4 then v_1 else v_3;
+  v_4 = if instanciador_c3_lamp then sub_70 else sub_73;
+  v_5 = if instanciador_l3 then sub_70 else v_4;
+  v_6 = if instanciador_c3_lamp then sub_73 else false;
+  v_7 = if instanciador_l3 then v_6 else false;
+  sub_69 = if instanciador_c3 then v_5 else v_7;
+  v_8 = if instanciador_c2_lamp then sub_69 else sub_74;
+  v_9 = if instanciador_l2 then sub_69 else v_8;
+  v_10 = if instanciador_c2_lamp then sub_74 else false;
+  v_11 = if instanciador_l2 then v_10 else false;
+  sub_68 = if instanciador_c2 then v_9 else v_11;
+  v_12 = if instanciador_c1_lamp then sub_68 else sub_75;
+  v_13 = if instanciador_l1 then sub_68 else v_12;
+  v_14 = if instanciador_c1_lamp then sub_75 else false;
+  v_15 = if instanciador_l1 then v_14 else false;
+  sub_67 = if instanciador_c1 then v_13 else v_15;
+  v_16 = if instanciador_domingo_input then sub_57 else sub_67;
+  v_17 = if instanciador_seguranca_input then sub_56 else v_16;
+  v_18 = if instanciador_neutro_input then sub_55 else v_17;
+  sub_66 = if instanciador_domingol_input then sub_54 else v_18;
+  sub_65 = if instanciador_ck_10_1 then false else sub_58;
+  sub_64 = if instanciador_ck_12_1 then false else sub_59;
+  sub_63 = if instanciador_ck_14_1 then false else sub_60;
+  sub_62 = if instanciador_cv then sub_20 else sub_23;
+  sub_61 = if instanciador_ck_16_1 then sub_62 else false;
+  v_19 = if instanciador_c4_lamp then false else sub_61;
+  v_20 = if instanciador_l4 then false else v_19;
+  v_21 = if instanciador_c4_lamp then sub_61 else sub_62;
+  v_22 = if instanciador_l4 then v_21 else sub_62;
+  sub_60 = if instanciador_c4 then v_20 else v_22;
+  v_23 = if instanciador_c3_lamp then sub_60 else sub_63;
+  v_24 = if instanciador_l3 then sub_60 else v_23;
+  v_25 = if instanciador_c3_lamp then sub_63 else false;
+  v_26 = if instanciador_l3 then v_25 else false;
+  sub_59 = if instanciador_c3 then v_24 else v_26;
+  v_27 = if instanciador_c2_lamp then sub_59 else sub_64;
+  v_28 = if instanciador_l2 then sub_59 else v_27;
+  v_29 = if instanciador_c2_lamp then sub_64 else false;
+  v_30 = if instanciador_l2 then v_29 else false;
+  sub_58 = if instanciador_c2 then v_28 else v_30;
+  v_31 = if instanciador_c1_lamp then sub_58 else sub_65;
+  v_32 = if instanciador_l1 then sub_58 else v_31;
+  v_33 = if instanciador_c1_lamp then sub_65 else false;
+  v_34 = if instanciador_l1 then v_33 else false;
+  sub_57 = if instanciador_c1 then v_32 else v_34;
+  sub_56 = sub_57;
+  sub_55 = sub_56;
+  sub_54 = sub_55;
+  sub_53 = sub_54;
+  sub_52 = sub_53;
+  sub_51 = if instanciador_ebd_input then sub_52 else sub_66;
+  sub_50 = if instanciador_v_299 then sub_76 else sub_51;
+  sub_49 = if instanciador_v_301 then sub_52 else sub_50;
+  sub_48 = sub_29;
+  sub_47 = sub_48;
+  sub_46 = sub_47;
+  sub_45 = if instanciador_sexta_input then sub_46 else sub_6;
+  sub_44 = if instanciador_ck_10_1 then false else sub_30;
+  sub_43 = if instanciador_ck_12_1 then false else sub_31;
+  sub_42 = if instanciador_ck_14_1 then false else sub_32;
+  sub_41 = if instanciador_ck_16_1 then false else sub_33;
+  sub_40 = if instanciador_lv then sub_37 else false;
+  sub_39 = if instanciador_ck_20_1 then false else sub_40;
+  v_35 = not(instanciador_ck_18_1);
+  sub_38 = (v_35 or false);
+  v_36 = (instanciador_lx or sub_38);
+  v_37 = if instanciador_c_lampExt then sub_22 else v_36;
+  v_38 = if instanciador_lx then sub_38 else false;
+  v_39 = if instanciador_c_lampExt then v_38 else false;
+  sub_37 = if instanciador_cx then v_37 else v_39;
+  sub_36 = (instanciador_ck_18_1 & false);
+  v_40 = not(instanciador_lx);
+  v_41 = (v_40 & sub_36);
+  v_42 = if instanciador_c_lampExt then sub_19 else v_41;
+  v_43 = if instanciador_lx then sub_36 else false;
+  v_44 = if instanciador_c_lampExt then v_43 else false;
+  sub_35 = if instanciador_cx then v_42 else v_44;
+  sub_34 = sub_35;
+  v_45 = if instanciador_lv then sub_35 else sub_37;
+  v_46 = if instanciador_ck_20_1 then v_45 else sub_34;
+  sub_33 = if instanciador_cv then v_46 else sub_39;
+  v_47 = if instanciador_c4_lamp then sub_33 else sub_41;
+  v_48 = if instanciador_l4 then sub_33 else v_47;
+  v_49 = if instanciador_c4_lamp then sub_41 else false;
+  v_50 = if instanciador_l4 then v_49 else false;
+  sub_32 = if instanciador_c4 then v_48 else v_50;
+  v_51 = if instanciador_c3_lamp then sub_32 else sub_42;
+  v_52 = if instanciador_l3 then sub_32 else v_51;
+  v_53 = if instanciador_c3_lamp then sub_42 else false;
+  v_54 = if instanciador_l3 then v_53 else false;
+  sub_31 = if instanciador_c3 then v_52 else v_54;
+  v_55 = if instanciador_c2_lamp then sub_31 else sub_43;
+  v_56 = if instanciador_l2 then sub_31 else v_55;
+  v_57 = if instanciador_c2_lamp then sub_43 else false;
+  v_58 = if instanciador_l2 then v_57 else false;
+  sub_30 = if instanciador_c2 then v_56 else v_58;
+  v_59 = if instanciador_c1_lamp then sub_30 else sub_44;
+  v_60 = if instanciador_l1 then sub_30 else v_59;
+  v_61 = if instanciador_c1_lamp then sub_44 else false;
+  v_62 = if instanciador_l1 then v_61 else false;
+  sub_29 = if instanciador_c1 then v_60 else v_62;
+  v_63 = if instanciador_domingo_input then sub_10 else sub_29;
+  v_64 = if instanciador_seguranca_input then sub_9 else v_63;
+  v_65 = if instanciador_neutro_input then sub_8 else v_64;
+  sub_28 = if instanciador_domingol_input then sub_7 else v_65;
+  sub_27 = if instanciador_ck_10_1 then false else sub_11;
+  sub_26 = if instanciador_ck_12_1 then false else sub_12;
+  sub_25 = if instanciador_ck_14_1 then false else sub_13;
+  sub_24 = if instanciador_lv then sub_20 else false;
+  sub_23 = if instanciador_ck_20_1 then false else sub_24;
+  sub_22 = true;
+  sub_21 = (instanciador_ck_18_1 or false);
+  v_66 = if instanciador_lx then false else sub_21;
+  v_67 = if instanciador_c_lampExt then false else v_66;
+  v_68 = not(instanciador_lx);
+  v_69 = (v_68 or sub_21);
+  v_70 = if instanciador_c_lampExt then v_69 else sub_22;
+  sub_20 = if instanciador_cx then v_67 else v_70;
+  sub_19 = false;
+  v_71 = not(instanciador_ck_18_1);
+  sub_18 = (v_71 & false);
+  v_72 = if instanciador_lx then false else sub_18;
+  v_73 = if instanciador_c_lampExt then false else v_72;
+  v_74 = (instanciador_lx & sub_18);
+  v_75 = if instanciador_c_lampExt then v_74 else sub_19;
+  sub_17 = if instanciador_cx then v_73 else v_75;
+  sub_16 = sub_17;
+  v_76 = if instanciador_lv then sub_17 else sub_20;
+  v_77 = if instanciador_ck_20_1 then v_76 else sub_16;
+  sub_15 = if instanciador_cv then v_77 else sub_23;
+  sub_14 = if instanciador_ck_16_1 then sub_15 else false;
+  v_78 = if instanciador_c4_lamp then false else sub_14;
+  v_79 = if instanciador_l4 then false else v_78;
+  v_80 = if instanciador_c4_lamp then sub_14 else sub_15;
+  v_81 = if instanciador_l4 then v_80 else sub_15;
+  sub_13 = if instanciador_c4 then v_79 else v_81;
+  v_82 = if instanciador_c3_lamp then sub_13 else sub_25;
+  v_83 = if instanciador_l3 then sub_13 else v_82;
+  v_84 = if instanciador_c3_lamp then sub_25 else false;
+  v_85 = if instanciador_l3 then v_84 else false;
+  sub_12 = if instanciador_c3 then v_83 else v_85;
+  v_86 = if instanciador_c2_lamp then sub_12 else sub_26;
+  v_87 = if instanciador_l2 then sub_12 else v_86;
+  v_88 = if instanciador_c2_lamp then sub_26 else false;
+  v_89 = if instanciador_l2 then v_88 else false;
+  sub_11 = if instanciador_c2 then v_87 else v_89;
+  v_90 = if instanciador_c1_lamp then sub_11 else sub_27;
+  v_91 = if instanciador_l1 then sub_11 else v_90;
+  v_92 = if instanciador_c1_lamp then sub_27 else false;
+  v_93 = if instanciador_l1 then v_92 else false;
+  sub_10 = if instanciador_c1 then v_91 else v_93;
+  sub_9 = sub_10;
+  sub_8 = sub_9;
+  sub_7 = sub_8;
+  sub_6 = sub_7;
+  sub_5 = sub_6;
+  sub_4 = if instanciador_ebd_input then sub_5 else sub_28;
+  sub_3 = if instanciador_v_299 then sub_45 else sub_4;
+  sub_2 = if instanciador_v_301 then sub_5 else sub_3;
+  v_94 = if instanciador_ebd_input then sub_5 else sub_45;
+  sub_1 = if instanciador_v_300 then v_94 else sub_2;
+  v_95 = if instanciador_ebd_input then sub_52 else sub_76;
+  v_96 = if instanciador_v_300 then v_95 else sub_49;
+  sub_0 = if p_instanciador_c_vent then v_96 else sub_1
+tel
+
+node instanciador_controller_instanciador_cv(instanciador_sexta_input : bool;
+                                              instanciador_ebd_input : bool;
+                                              instanciador_domingo_input : bool;
+                                              instanciador_domingol_input : bool;
+                                              instanciador_neutro_input : bool;
+                                              instanciador_seguranca_input : bool;
+                                              instanciador_l1 : bool;
+                                              instanciador_l2 : bool;
+                                              instanciador_l3 : bool;
+                                              instanciador_l4 : bool;
+                                              instanciador_lx : bool;
+                                              instanciador_lv : bool;
+                                              instanciador_v_301 : bool;
+                                              instanciador_v_300 : bool;
+                                              instanciador_v_299 : bool;
+                                              instanciador_pnr_6 : bool;
+                                              instanciador_ck_10_1 : bool;
+                                              instanciador_pnr_5 : bool;
+                                              instanciador_ck_12_1 : bool;
+                                              instanciador_pnr_4 : bool;
+                                              instanciador_ck_14_1 : bool;
+                                              instanciador_pnr_3 : bool;
+                                              instanciador_ck_16_1 : bool;
+                                              instanciador_pnr_2 : bool;
+                                              instanciador_ck_18_1 : bool;
+                                              instanciador_pnr_1 : bool;
+                                              instanciador_ck_20_1 : bool;
+                                              instanciador_pnr : bool;
+                                              p_instanciador_c_vent : bool;
+                                              p_instanciador_cv : bool;
+                                              p_instanciador_cx : bool;
+                                              p_instanciador_c4 : bool;
+                                              p_instanciador_c3 : bool;
+                                              p_instanciador_c2 : bool;
+                                              p_instanciador_c1 : bool;
+                                              p_instanciador_c_lampExt : bool;
+                                              p_instanciador_c4_lamp : bool;
+                                              p_instanciador_c3_lamp : bool;
+                                              p_instanciador_c2_lamp : bool;
+                                              p_instanciador_c1_lamp : bool;
+                                              instanciador_cx : bool;
+                                              instanciador_c4 : bool;
+                                              instanciador_c3 : bool;
+                                              instanciador_c2 : bool;
+                                              instanciador_c1 : bool;
+                                              instanciador_c_lampExt : bool;
+                                              instanciador_c4_lamp : bool;
+                                              instanciador_c3_lamp : bool;
+                                              instanciador_c2_lamp : bool;
+                                              instanciador_c1_lamp : bool)
+returns (instanciador_cv : bool)
+var v_190 : bool; v_189 : bool; v_188 : bool; v_187 : bool; v_186 : bool;
+    v_185 : bool; v_184 : bool; v_183 : bool; v_182 : bool; v_181 : bool;
+    v_180 : bool; v_179 : bool; v_178 : bool; v_177 : bool; v_176 : bool;
+    v_175 : bool; v_174 : bool; v_173 : bool; v_172 : bool; v_171 : bool;
+    v_170 : bool; v_169 : bool; v_168 : bool; v_167 : bool; v_166 : bool;
+    v_165 : bool; v_164 : bool; v_163 : bool; v_162 : bool; v_161 : bool;
+    v_160 : bool; v_159 : bool; v_158 : bool; v_157 : bool; v_156 : bool;
+    v_155 : bool; v_154 : bool; v_153 : bool; v_152 : bool; v_151 : bool;
+    v_150 : bool; v_149 : bool; v_148 : bool; v_147 : bool; v_146 : bool;
+    v_145 : bool; v_144 : bool; v_143 : bool; v_142 : bool; v_141 : bool;
+    v_140 : bool; v_139 : bool; v_138 : bool; v_137 : bool; v_136 : bool;
+    v_135 : bool; v_134 : bool; v_133 : bool; v_132 : bool; v_131 : bool;
+    v_130 : bool; v_129 : bool; v_128 : bool; v_127 : bool; v_126 : bool;
+    v_125 : bool; v_124 : bool; v_123 : bool; v_122 : bool; v_121 : bool;
+    v_120 : bool; v_119 : bool; v_118 : bool; v_117 : bool; v_116 : bool;
+    v_115 : bool; v_114 : bool; v_113 : bool; v_112 : bool; v_111 : bool;
+    v_110 : bool; v_109 : bool; v_108 : bool; v_107 : bool; v_106 : bool;
+    v_105 : bool; v_104 : bool; v_103 : bool; v_102 : bool; v_101 : bool;
+    v_100 : bool; v_99 : bool; v_98 : bool; v_97 : bool; v : bool;
+    sub_0 : bool; sub_1 : bool; sub_2 : bool; sub_3 : bool; sub_4 : bool;
+    sub_5 : bool; sub_6 : bool; sub_7 : bool; sub_8 : bool; sub_9 : bool;
+    sub_10 : bool; sub_11 : bool; sub_12 : bool; sub_13 : bool;
+    sub_14 : bool; sub_15 : bool; sub_16 : bool; sub_17 : bool;
+    sub_18 : bool; sub_19 : bool; sub_20 : bool; sub_21 : bool;
+    sub_22 : bool; sub_23 : bool; sub_24 : bool; sub_25 : bool;
+    sub_26 : bool; sub_27 : bool; sub_28 : bool; sub_29 : bool;
+    sub_30 : bool; sub_31 : bool; sub_32 : bool; sub_33 : bool;
+    sub_34 : bool; sub_35 : bool; sub_36 : bool; sub_37 : bool;
+    sub_38 : bool; sub_39 : bool; sub_40 : bool; sub_41 : bool;
+    sub_42 : bool; sub_43 : bool; sub_44 : bool; sub_45 : bool;
+    sub_46 : bool; sub_47 : bool; sub_48 : bool; sub_49 : bool;
+    sub_50 : bool; sub_51 : bool; sub_52 : bool; sub_53 : bool;
+    sub_54 : bool; sub_55 : bool; sub_56 : bool; sub_57 : bool;
+    sub_58 : bool; sub_59 : bool; sub_60 : bool; sub_61 : bool;
+    sub_62 : bool; sub_63 : bool; sub_64 : bool; sub_65 : bool;
+    sub_66 : bool; sub_67 : bool; sub_68 : bool; sub_69 : bool;
+    sub_70 : bool; sub_71 : bool; sub_72 : bool; sub_73 : bool;
+let
+  instanciador_cv = sub_0;
+  sub_73 = sub_62;
+  sub_72 = sub_73;
+  sub_71 = sub_72;
+  sub_70 = if instanciador_sexta_input then sub_71 else sub_49;
+  sub_69 = if instanciador_ck_10_1 then false else sub_63;
+  sub_68 = if instanciador_ck_12_1 then false else sub_64;
+  sub_67 = if instanciador_ck_14_1 then false else sub_65;
+  sub_66 = if instanciador_ck_16_1 then false else sub_36;
+  v = if instanciador_c4_lamp then sub_36 else sub_66;
+  v_97 = if instanciador_l4 then sub_36 else v;
+  v_98 = if instanciador_c4_lamp then sub_66 else false;
+  v_99 = if instanciador_l4 then v_98 else false;
+  sub_65 = if instanciador_c4 then v_97 else v_99;
+  v_100 = if instanciador_c3_lamp then sub_65 else sub_67;
+  v_101 = if instanciador_l3 then sub_65 else v_100;
+  v_102 = if instanciador_c3_lamp then sub_67 else false;
+  v_103 = if instanciador_l3 then v_102 else false;
+  sub_64 = if instanciador_c3 then v_101 else v_103;
+  v_104 = if instanciador_c2_lamp then sub_64 else sub_68;
+  v_105 = if instanciador_l2 then sub_64 else v_104;
+  v_106 = if instanciador_c2_lamp then sub_68 else false;
+  v_107 = if instanciador_l2 then v_106 else false;
+  sub_63 = if instanciador_c2 then v_105 else v_107;
+  v_108 = if instanciador_c1_lamp then sub_63 else sub_69;
+  v_109 = if instanciador_l1 then sub_63 else v_108;
+  v_110 = if instanciador_c1_lamp then sub_69 else false;
+  v_111 = if instanciador_l1 then v_110 else false;
+  sub_62 = if instanciador_c1 then v_109 else v_111;
+  v_112 = if instanciador_domingo_input then sub_53 else sub_62;
+  v_113 = if instanciador_seguranca_input then sub_52 else v_112;
+  v_114 = if instanciador_neutro_input then sub_51 else v_113;
+  sub_61 = if instanciador_domingol_input then sub_50 else v_114;
+  sub_60 = if instanciador_ck_10_1 then false else sub_54;
+  sub_59 = if instanciador_ck_12_1 then false else sub_55;
+  sub_58 = if instanciador_ck_14_1 then false else sub_56;
+  sub_57 = if instanciador_ck_16_1 then sub_22 else false;
+  v_115 = if instanciador_c4_lamp then false else sub_57;
+  v_116 = if instanciador_l4 then false else v_115;
+  v_117 = if instanciador_c4_lamp then sub_57 else sub_22;
+  v_118 = if instanciador_l4 then v_117 else sub_22;
+  sub_56 = if instanciador_c4 then v_116 else v_118;
+  v_119 = if instanciador_c3_lamp then sub_56 else sub_58;
+  v_120 = if instanciador_l3 then sub_56 else v_119;
+  v_121 = if instanciador_c3_lamp then sub_58 else false;
+  v_122 = if instanciador_l3 then v_121 else false;
+  sub_55 = if instanciador_c3 then v_120 else v_122;
+  v_123 = if instanciador_c2_lamp then sub_55 else sub_59;
+  v_124 = if instanciador_l2 then sub_55 else v_123;
+  v_125 = if instanciador_c2_lamp then sub_59 else false;
+  v_126 = if instanciador_l2 then v_125 else false;
+  sub_54 = if instanciador_c2 then v_124 else v_126;
+  v_127 = if instanciador_c1_lamp then sub_54 else sub_60;
+  v_128 = if instanciador_l1 then sub_54 else v_127;
+  v_129 = if instanciador_c1_lamp then sub_60 else false;
+  v_130 = if instanciador_l1 then v_129 else false;
+  sub_53 = if instanciador_c1 then v_128 else v_130;
+  sub_52 = sub_53;
+  sub_51 = sub_52;
+  sub_50 = sub_51;
+  sub_49 = sub_50;
+  sub_48 = sub_49;
+  sub_47 = if instanciador_ebd_input then sub_48 else sub_61;
+  sub_46 = if instanciador_v_299 then sub_70 else sub_47;
+  sub_45 = if instanciador_v_301 then sub_48 else sub_46;
+  sub_44 = sub_27;
+  sub_43 = sub_44;
+  sub_42 = sub_43;
+  sub_41 = if instanciador_sexta_input then sub_42 else sub_6;
+  sub_40 = if instanciador_ck_10_1 then false else sub_28;
+  sub_39 = if instanciador_ck_12_1 then false else sub_29;
+  sub_38 = if instanciador_ck_14_1 then false else sub_30;
+  sub_37 = if instanciador_ck_16_1 then false else sub_31;
+  sub_36 = sub_34;
+  v_131 = not(instanciador_ck_18_1);
+  sub_35 = (v_131 or false);
+  v_132 = (instanciador_lx or sub_35);
+  v_133 = if instanciador_c_lampExt then sub_21 else v_132;
+  v_134 = if instanciador_lx then sub_35 else false;
+  v_135 = if instanciador_c_lampExt then v_134 else false;
+  sub_34 = if instanciador_cx then v_133 else v_135;
+  sub_33 = (instanciador_ck_18_1 & false);
+  v_136 = not(instanciador_lx);
+  v_137 = (v_136 & sub_33);
+  v_138 = if instanciador_c_lampExt then sub_18 else v_137;
+  v_139 = if instanciador_lx then sub_33 else false;
+  v_140 = if instanciador_c_lampExt then v_139 else false;
+  v_141 = if instanciador_cx then v_138 else v_140;
+  sub_32 = if instanciador_lv then v_141 else sub_34;
+  sub_31 = if instanciador_ck_20_1 then sub_36 else sub_32;
+  v_142 = if instanciador_c4_lamp then sub_31 else sub_37;
+  v_143 = if instanciador_l4 then sub_31 else v_142;
+  v_144 = if instanciador_c4_lamp then sub_37 else false;
+  v_145 = if instanciador_l4 then v_144 else false;
+  sub_30 = if instanciador_c4 then v_143 else v_145;
+  v_146 = if instanciador_c3_lamp then sub_30 else sub_38;
+  v_147 = if instanciador_l3 then sub_30 else v_146;
+  v_148 = if instanciador_c3_lamp then sub_38 else false;
+  v_149 = if instanciador_l3 then v_148 else false;
+  sub_29 = if instanciador_c3 then v_147 else v_149;
+  v_150 = if instanciador_c2_lamp then sub_29 else sub_39;
+  v_151 = if instanciador_l2 then sub_29 else v_150;
+  v_152 = if instanciador_c2_lamp then sub_39 else false;
+  v_153 = if instanciador_l2 then v_152 else false;
+  sub_28 = if instanciador_c2 then v_151 else v_153;
+  v_154 = if instanciador_c1_lamp then sub_28 else sub_40;
+  v_155 = if instanciador_l1 then sub_28 else v_154;
+  v_156 = if instanciador_c1_lamp then sub_40 else false;
+  v_157 = if instanciador_l1 then v_156 else false;
+  sub_27 = if instanciador_c1 then v_155 else v_157;
+  v_158 = if instanciador_domingo_input then sub_10 else sub_27;
+  v_159 = if instanciador_seguranca_input then sub_9 else v_158;
+  v_160 = if instanciador_neutro_input then sub_8 else v_159;
+  sub_26 = if instanciador_domingol_input then sub_7 else v_160;
+  sub_25 = if instanciador_ck_10_1 then false else sub_11;
+  sub_24 = if instanciador_ck_12_1 then false else sub_12;
+  sub_23 = if instanciador_ck_14_1 then false else sub_13;
+  sub_22 = sub_19;
+  sub_21 = true;
+  sub_20 = (instanciador_ck_18_1 or false);
+  v_161 = if instanciador_lx then false else sub_20;
+  v_162 = if instanciador_c_lampExt then false else v_161;
+  v_163 = not(instanciador_lx);
+  v_164 = (v_163 or sub_20);
+  v_165 = if instanciador_c_lampExt then v_164 else sub_21;
+  sub_19 = if instanciador_cx then v_162 else v_165;
+  sub_18 = false;
+  v_166 = not(instanciador_ck_18_1);
+  sub_17 = (v_166 & false);
+  v_167 = if instanciador_lx then false else sub_17;
+  v_168 = if instanciador_c_lampExt then false else v_167;
+  v_169 = (instanciador_lx & sub_17);
+  v_170 = if instanciador_c_lampExt then v_169 else sub_18;
+  v_171 = if instanciador_cx then v_168 else v_170;
+  sub_16 = if instanciador_lv then v_171 else sub_19;
+  sub_15 = if instanciador_ck_20_1 then sub_22 else sub_16;
+  sub_14 = if instanciador_ck_16_1 then sub_15 else false;
+  v_172 = if instanciador_c4_lamp then false else sub_14;
+  v_173 = if instanciador_l4 then false else v_172;
+  v_174 = if instanciador_c4_lamp then sub_14 else sub_15;
+  v_175 = if instanciador_l4 then v_174 else sub_15;
+  sub_13 = if instanciador_c4 then v_173 else v_175;
+  v_176 = if instanciador_c3_lamp then sub_13 else sub_23;
+  v_177 = if instanciador_l3 then sub_13 else v_176;
+  v_178 = if instanciador_c3_lamp then sub_23 else false;
+  v_179 = if instanciador_l3 then v_178 else false;
+  sub_12 = if instanciador_c3 then v_177 else v_179;
+  v_180 = if instanciador_c2_lamp then sub_12 else sub_24;
+  v_181 = if instanciador_l2 then sub_12 else v_180;
+  v_182 = if instanciador_c2_lamp then sub_24 else false;
+  v_183 = if instanciador_l2 then v_182 else false;
+  sub_11 = if instanciador_c2 then v_181 else v_183;
+  v_184 = if instanciador_c1_lamp then sub_11 else sub_25;
+  v_185 = if instanciador_l1 then sub_11 else v_184;
+  v_186 = if instanciador_c1_lamp then sub_25 else false;
+  v_187 = if instanciador_l1 then v_186 else false;
+  sub_10 = if instanciador_c1 then v_185 else v_187;
+  sub_9 = sub_10;
+  sub_8 = sub_9;
+  sub_7 = sub_8;
+  sub_6 = sub_7;
+  sub_5 = sub_6;
+  sub_4 = if instanciador_ebd_input then sub_5 else sub_26;
+  sub_3 = if instanciador_v_299 then sub_41 else sub_4;
+  sub_2 = if instanciador_v_301 then sub_5 else sub_3;
+  v_188 = if instanciador_ebd_input then sub_5 else sub_41;
+  sub_1 = if instanciador_v_300 then v_188 else sub_2;
+  v_189 = if instanciador_ebd_input then sub_48 else sub_70;
+  v_190 = if instanciador_v_300 then v_189 else sub_45;
+  sub_0 = if p_instanciador_cv then v_190 else sub_1
+tel
+
+node instanciador_controller_instanciador_cx(instanciador_sexta_input : bool;
+                                              instanciador_ebd_input : bool;
+                                              instanciador_domingo_input : bool;
+                                              instanciador_domingol_input : bool;
+                                              instanciador_neutro_input : bool;
+                                              instanciador_seguranca_input : bool;
+                                              instanciador_l1 : bool;
+                                              instanciador_l2 : bool;
+                                              instanciador_l3 : bool;
+                                              instanciador_l4 : bool;
+                                              instanciador_lx : bool;
+                                              instanciador_lv : bool;
+                                              instanciador_v_301 : bool;
+                                              instanciador_v_300 : bool;
+                                              instanciador_v_299 : bool;
+                                              instanciador_pnr_6 : bool;
+                                              instanciador_ck_10_1 : bool;
+                                              instanciador_pnr_5 : bool;
+                                              instanciador_ck_12_1 : bool;
+                                              instanciador_pnr_4 : bool;
+                                              instanciador_ck_14_1 : bool;
+                                              instanciador_pnr_3 : bool;
+                                              instanciador_ck_16_1 : bool;
+                                              instanciador_pnr_2 : bool;
+                                              instanciador_ck_18_1 : bool;
+                                              instanciador_pnr_1 : bool;
+                                              instanciador_ck_20_1 : bool;
+                                              instanciador_pnr : bool;
+                                              p_instanciador_c_vent : bool;
+                                              p_instanciador_cv : bool;
+                                              p_instanciador_cx : bool;
+                                              p_instanciador_c4 : bool;
+                                              p_instanciador_c3 : bool;
+                                              p_instanciador_c2 : bool;
+                                              p_instanciador_c1 : bool;
+                                              p_instanciador_c_lampExt : bool;
+                                              p_instanciador_c4_lamp : bool;
+                                              p_instanciador_c3_lamp : bool;
+                                              p_instanciador_c2_lamp : bool;
+                                              p_instanciador_c1_lamp : bool;
+                                              instanciador_c4 : bool;
+                                              instanciador_c3 : bool;
+                                              instanciador_c2 : bool;
+                                              instanciador_c1 : bool;
+                                              instanciador_c_lampExt : bool;
+                                              instanciador_c4_lamp : bool;
+                                              instanciador_c3_lamp : bool;
+                                              instanciador_c2_lamp : bool;
+                                              instanciador_c1_lamp : bool)
+returns (instanciador_cx : bool)
+var v_270 : bool; v_269 : bool; v_268 : bool; v_267 : bool; v_266 : bool;
+    v_265 : bool; v_264 : bool; v_263 : bool; v_262 : bool; v_261 : bool;
+    v_260 : bool; v_259 : bool; v_258 : bool; v_257 : bool; v_256 : bool;
+    v_255 : bool; v_254 : bool; v_253 : bool; v_252 : bool; v_251 : bool;
+    v_250 : bool; v_249 : bool; v_248 : bool; v_247 : bool; v_246 : bool;
+    v_245 : bool; v_244 : bool; v_243 : bool; v_242 : bool; v_241 : bool;
+    v_240 : bool; v_239 : bool; v_238 : bool; v_237 : bool; v_236 : bool;
+    v_235 : bool; v_234 : bool; v_233 : bool; v_232 : bool; v_231 : bool;
+    v_230 : bool; v_229 : bool; v_228 : bool; v_227 : bool; v_226 : bool;
+    v_225 : bool; v_224 : bool; v_223 : bool; v_222 : bool; v_221 : bool;
+    v_220 : bool; v_219 : bool; v_218 : bool; v_217 : bool; v_216 : bool;
+    v_215 : bool; v_214 : bool; v_213 : bool; v_212 : bool; v_211 : bool;
+    v_210 : bool; v_209 : bool; v_208 : bool; v_207 : bool; v_206 : bool;
+    v_205 : bool; v_204 : bool; v_203 : bool; v_202 : bool; v_201 : bool;
+    v_200 : bool; v_199 : bool; v_198 : bool; v_197 : bool; v_196 : bool;
+    v_195 : bool; v_194 : bool; v_193 : bool; v_192 : bool; v_191 : bool;
+    v : bool; sub_0 : bool; sub_1 : bool; sub_2 : bool; sub_3 : bool;
+    sub_4 : bool; sub_5 : bool; sub_6 : bool; sub_7 : bool; sub_8 : bool;
+    sub_9 : bool; sub_10 : bool; sub_11 : bool; sub_12 : bool; sub_13 : bool;
+    sub_14 : bool; sub_15 : bool; sub_16 : bool; sub_17 : bool;
+    sub_18 : bool; sub_19 : bool; sub_20 : bool; sub_21 : bool;
+    sub_22 : bool; sub_23 : bool; sub_24 : bool; sub_25 : bool;
+    sub_26 : bool; sub_27 : bool; sub_28 : bool; sub_29 : bool;
+    sub_30 : bool; sub_31 : bool; sub_32 : bool; sub_33 : bool;
+    sub_34 : bool; sub_35 : bool; sub_36 : bool; sub_37 : bool;
+    sub_38 : bool; sub_39 : bool; sub_40 : bool; sub_41 : bool;
+    sub_42 : bool; sub_43 : bool; sub_44 : bool; sub_45 : bool;
+    sub_46 : bool; sub_47 : bool; sub_48 : bool; sub_49 : bool;
+    sub_50 : bool; sub_51 : bool; sub_52 : bool; sub_53 : bool;
+    sub_54 : bool; sub_55 : bool; sub_56 : bool; sub_57 : bool;
+    sub_58 : bool; sub_59 : bool; sub_60 : bool; sub_61 : bool;
+    sub_62 : bool; sub_63 : bool; sub_64 : bool; sub_65 : bool;
+    sub_66 : bool; sub_67 : bool; sub_68 : bool; sub_69 : bool;
+    sub_70 : bool;
+let
+  instanciador_cx = sub_0;
+  sub_70 = sub_57;
+  sub_69 = sub_70;
+  sub_68 = sub_69;
+  sub_67 = if instanciador_sexta_input then sub_68 else sub_42;
+  sub_66 = if instanciador_ck_10_1 then false else sub_58;
+  sub_65 = if instanciador_ck_12_1 then false else sub_59;
+  sub_64 = if instanciador_ck_14_1 then false else sub_60;
+  sub_63 = if instanciador_ck_16_1 then false else sub_61;
+  sub_62 = if instanciador_c_lampExt then true else sub_29;
+  sub_61 = sub_62;
+  v = if instanciador_c4_lamp then sub_61 else sub_63;
+  v_191 = if instanciador_l4 then sub_61 else v;
+  v_192 = if instanciador_c4_lamp then sub_63 else false;
+  v_193 = if instanciador_l4 then v_192 else false;
+  sub_60 = if instanciador_c4 then v_191 else v_193;
+  v_194 = if instanciador_c3_lamp then sub_60 else sub_64;
+  v_195 = if instanciador_l3 then sub_60 else v_194;
+  v_196 = if instanciador_c3_lamp then sub_64 else false;
+  v_197 = if instanciador_l3 then v_196 else false;
+  sub_59 = if instanciador_c3 then v_195 else v_197;
+  v_198 = if instanciador_c2_lamp then sub_59 else sub_65;
+  v_199 = if instanciador_l2 then sub_59 else v_198;
+  v_200 = if instanciador_c2_lamp then sub_65 else false;
+  v_201 = if instanciador_l2 then v_200 else false;
+  sub_58 = if instanciador_c2 then v_199 else v_201;
+  v_202 = if instanciador_c1_lamp then sub_58 else sub_66;
+  v_203 = if instanciador_l1 then sub_58 else v_202;
+  v_204 = if instanciador_c1_lamp then sub_66 else false;
+  v_205 = if instanciador_l1 then v_204 else false;
+  sub_57 = if instanciador_c1 then v_203 else v_205;
+  v_206 = if instanciador_domingo_input then sub_46 else sub_57;
+  v_207 = if instanciador_seguranca_input then sub_45 else v_206;
+  v_208 = if instanciador_neutro_input then sub_44 else v_207;
+  sub_56 = if instanciador_domingol_input then sub_43 else v_208;
+  sub_55 = if instanciador_ck_10_1 then false else sub_47;
+  sub_54 = if instanciador_ck_12_1 then false else sub_48;
+  sub_53 = if instanciador_ck_14_1 then false else sub_49;
+  v_209 = not(instanciador_lx);
+  v_210 = (v_209 & sub_28);
+  sub_52 = if instanciador_c_lampExt then sub_17 else v_210;
+  sub_51 = sub_52;
+  sub_50 = if instanciador_ck_16_1 then sub_51 else false;
+  v_211 = if instanciador_c4_lamp then false else sub_50;
+  v_212 = if instanciador_l4 then false else v_211;
+  v_213 = if instanciador_c4_lamp then sub_50 else sub_51;
+  v_214 = if instanciador_l4 then v_213 else sub_51;
+  sub_49 = if instanciador_c4 then v_212 else v_214;
+  v_215 = if instanciador_c3_lamp then sub_49 else sub_53;
+  v_216 = if instanciador_l3 then sub_49 else v_215;
+  v_217 = if instanciador_c3_lamp then sub_53 else false;
+  v_218 = if instanciador_l3 then v_217 else false;
+  sub_48 = if instanciador_c3 then v_216 else v_218;
+  v_219 = if instanciador_c2_lamp then sub_48 else sub_54;
+  v_220 = if instanciador_l2 then sub_48 else v_219;
+  v_221 = if instanciador_c2_lamp then sub_54 else false;
+  v_222 = if instanciador_l2 then v_221 else false;
+  sub_47 = if instanciador_c2 then v_220 else v_222;
+  v_223 = if instanciador_c1_lamp then sub_47 else sub_55;
+  v_224 = if instanciador_l1 then sub_47 else v_223;
+  v_225 = if instanciador_c1_lamp then sub_55 else false;
+  v_226 = if instanciador_l1 then v_225 else false;
+  sub_46 = if instanciador_c1 then v_224 else v_226;
+  sub_45 = sub_46;
+  sub_44 = sub_45;
+  sub_43 = sub_44;
+  sub_42 = sub_43;
+  sub_41 = sub_42;
+  sub_40 = if instanciador_ebd_input then sub_41 else sub_56;
+  sub_39 = if instanciador_v_299 then sub_67 else sub_40;
+  sub_38 = if instanciador_v_301 then sub_41 else sub_39;
+  sub_37 = sub_22;
+  sub_36 = sub_37;
+  sub_35 = sub_36;
+  sub_34 = if instanciador_sexta_input then sub_35 else sub_6;
+  sub_33 = if instanciador_ck_10_1 then false else sub_23;
+  sub_32 = if instanciador_ck_12_1 then false else sub_24;
+  sub_31 = if instanciador_ck_14_1 then false else sub_25;
+  sub_30 = if instanciador_ck_16_1 then false else sub_26;
+  v_227 = not(instanciador_ck_18_1);
+  v_228 = (v_227 or false);
+  sub_29 = (instanciador_lx or v_228);
+  sub_28 = instanciador_ck_18_1;
+  v_229 = not(instanciador_lx);
+  v_230 = (v_229 or sub_28);
+  sub_27 = if instanciador_c_lampExt then v_230 else sub_29;
+  sub_26 = sub_27;
+  v_231 = if instanciador_c4_lamp then sub_26 else sub_30;
+  v_232 = if instanciador_l4 then sub_26 else v_231;
+  v_233 = if instanciador_c4_lamp then sub_30 else false;
+  v_234 = if instanciador_l4 then v_233 else false;
+  sub_25 = if instanciador_c4 then v_232 else v_234;
+  v_235 = if instanciador_c3_lamp then sub_25 else sub_31;
+  v_236 = if instanciador_l3 then sub_25 else v_235;
+  v_237 = if instanciador_c3_lamp then sub_31 else false;
+  v_238 = if instanciador_l3 then v_237 else false;
+  sub_24 = if instanciador_c3 then v_236 else v_238;
+  v_239 = if instanciador_c2_lamp then sub_24 else sub_32;
+  v_240 = if instanciador_l2 then sub_24 else v_239;
+  v_241 = if instanciador_c2_lamp then sub_32 else false;
+  v_242 = if instanciador_l2 then v_241 else false;
+  sub_23 = if instanciador_c2 then v_240 else v_242;
+  v_243 = if instanciador_c1_lamp then sub_23 else sub_33;
+  v_244 = if instanciador_l1 then sub_23 else v_243;
+  v_245 = if instanciador_c1_lamp then sub_33 else false;
+  v_246 = if instanciador_l1 then v_245 else false;
+  sub_22 = if instanciador_c1 then v_244 else v_246;
+  v_247 = if instanciador_domingo_input then sub_10 else sub_22;
+  v_248 = if instanciador_seguranca_input then sub_9 else v_247;
+  v_249 = if instanciador_neutro_input then sub_8 else v_248;
+  sub_21 = if instanciador_domingol_input then sub_7 else v_249;
+  sub_20 = if instanciador_ck_10_1 then false else sub_11;
+  sub_19 = if instanciador_ck_12_1 then false else sub_12;
+  sub_18 = if instanciador_ck_14_1 then false else sub_13;
+  v_250 = not(instanciador_ck_18_1);
+  v_251 = (v_250 & false);
+  sub_17 = (instanciador_lx & v_251);
+  sub_16 = if instanciador_c_lampExt then sub_17 else false;
+  sub_15 = sub_16;
+  sub_14 = if instanciador_ck_16_1 then sub_15 else false;
+  v_252 = if instanciador_c4_lamp then false else sub_14;
+  v_253 = if instanciador_l4 then false else v_252;
+  v_254 = if instanciador_c4_lamp then sub_14 else sub_15;
+  v_255 = if instanciador_l4 then v_254 else sub_15;
+  sub_13 = if instanciador_c4 then v_253 else v_255;
+  v_256 = if instanciador_c3_lamp then sub_13 else sub_18;
+  v_257 = if instanciador_l3 then sub_13 else v_256;
+  v_258 = if instanciador_c3_lamp then sub_18 else false;
+  v_259 = if instanciador_l3 then v_258 else false;
+  sub_12 = if instanciador_c3 then v_257 else v_259;
+  v_260 = if instanciador_c2_lamp then sub_12 else sub_19;
+  v_261 = if instanciador_l2 then sub_12 else v_260;
+  v_262 = if instanciador_c2_lamp then sub_19 else false;
+  v_263 = if instanciador_l2 then v_262 else false;
+  sub_11 = if instanciador_c2 then v_261 else v_263;
+  v_264 = if instanciador_c1_lamp then sub_11 else sub_20;
+  v_265 = if instanciador_l1 then sub_11 else v_264;
+  v_266 = if instanciador_c1_lamp then sub_20 else false;
+  v_267 = if instanciador_l1 then v_266 else false;
+  sub_10 = if instanciador_c1 then v_265 else v_267;
+  sub_9 = sub_10;
+  sub_8 = sub_9;
+  sub_7 = sub_8;
+  sub_6 = sub_7;
+  sub_5 = sub_6;
+  sub_4 = if instanciador_ebd_input then sub_5 else sub_21;
+  sub_3 = if instanciador_v_299 then sub_34 else sub_4;
+  sub_2 = if instanciador_v_301 then sub_5 else sub_3;
+  v_268 = if instanciador_ebd_input then sub_5 else sub_34;
+  sub_1 = if instanciador_v_300 then v_268 else sub_2;
+  v_269 = if instanciador_ebd_input then sub_41 else sub_67;
+  v_270 = if instanciador_v_300 then v_269 else sub_38;
+  sub_0 = if p_instanciador_cx then v_270 else sub_1
+tel
+
+node instanciador_controller_instanciador_c4(instanciador_sexta_input : bool;
+                                              instanciador_ebd_input : bool;
+                                              instanciador_domingo_input : bool;
+                                              instanciador_domingol_input : bool;
+                                              instanciador_neutro_input : bool;
+                                              instanciador_seguranca_input : bool;
+                                              instanciador_l1 : bool;
+                                              instanciador_l2 : bool;
+                                              instanciador_l3 : bool;
+                                              instanciador_l4 : bool;
+                                              instanciador_lx : bool;
+                                              instanciador_lv : bool;
+                                              instanciador_v_301 : bool;
+                                              instanciador_v_300 : bool;
+                                              instanciador_v_299 : bool;
+                                              instanciador_pnr_6 : bool;
+                                              instanciador_ck_10_1 : bool;
+                                              instanciador_pnr_5 : bool;
+                                              instanciador_ck_12_1 : bool;
+                                              instanciador_pnr_4 : bool;
+                                              instanciador_ck_14_1 : bool;
+                                              instanciador_pnr_3 : bool;
+                                              instanciador_ck_16_1 : bool;
+                                              instanciador_pnr_2 : bool;
+                                              instanciador_ck_18_1 : bool;
+                                              instanciador_pnr_1 : bool;
+                                              instanciador_ck_20_1 : bool;
+                                              instanciador_pnr : bool;
+                                              p_instanciador_c_vent : bool;
+                                              p_instanciador_cv : bool;
+                                              p_instanciador_cx : bool;
+                                              p_instanciador_c4 : bool;
+                                              p_instanciador_c3 : bool;
+                                              p_instanciador_c2 : bool;
+                                              p_instanciador_c1 : bool;
+                                              p_instanciador_c_lampExt : bool;
+                                              p_instanciador_c4_lamp : bool;
+                                              p_instanciador_c3_lamp : bool;
+                                              p_instanciador_c2_lamp : bool;
+                                              p_instanciador_c1_lamp : bool;
+                                              instanciador_c3 : bool;
+                                              instanciador_c2 : bool;
+                                              instanciador_c1 : bool;
+                                              instanciador_c_lampExt : bool;
+                                              instanciador_c4_lamp : bool;
+                                              instanciador_c3_lamp : bool;
+                                              instanciador_c2_lamp : bool;
+                                              instanciador_c1_lamp : bool)
+returns (instanciador_c4 : bool)
+var v_344 : bool; v_343 : bool; v_342 : bool; v_341 : bool; v_340 : bool;
+    v_339 : bool; v_338 : bool; v_337 : bool; v_336 : bool; v_335 : bool;
+    v_334 : bool; v_333 : bool; v_332 : bool; v_331 : bool; v_330 : bool;
+    v_329 : bool; v_328 : bool; v_327 : bool; v_326 : bool; v_325 : bool;
+    v_324 : bool; v_323 : bool; v_322 : bool; v_321 : bool; v_320 : bool;
+    v_319 : bool; v_318 : bool; v_317 : bool; v_316 : bool; v_315 : bool;
+    v_314 : bool; v_313 : bool; v_312 : bool; v_311 : bool; v_310 : bool;
+    v_309 : bool; v_308 : bool; v_307 : bool; v_306 : bool; v_305 : bool;
+    v_304 : bool; v_303 : bool; v_302 : bool; v_301 : bool; v_300 : bool;
+    v_299 : bool; v_298 : bool; v_297 : bool; v_296 : bool; v_295 : bool;
+    v_294 : bool; v_293 : bool; v_292 : bool; v_291 : bool; v_290 : bool;
+    v_289 : bool; v_288 : bool; v_287 : bool; v_286 : bool; v_285 : bool;
+    v_284 : bool; v_283 : bool; v_282 : bool; v_281 : bool; v_280 : bool;
+    v_279 : bool; v_278 : bool; v_277 : bool; v_276 : bool; v_275 : bool;
+    v_274 : bool; v_273 : bool; v_272 : bool; v_271 : bool; v : bool;
+    sub_0 : bool; sub_1 : bool; sub_2 : bool; sub_3 : bool; sub_4 : bool;
+    sub_5 : bool; sub_6 : bool; sub_7 : bool; sub_8 : bool; sub_9 : bool;
+    sub_10 : bool; sub_11 : bool; sub_12 : bool; sub_13 : bool;
+    sub_14 : bool; sub_15 : bool; sub_16 : bool; sub_17 : bool;
+    sub_18 : bool; sub_19 : bool; sub_20 : bool; sub_21 : bool;
+    sub_22 : bool; sub_23 : bool; sub_24 : bool; sub_25 : bool;
+    sub_26 : bool; sub_27 : bool; sub_28 : bool; sub_29 : bool;
+    sub_30 : bool; sub_31 : bool; sub_32 : bool; sub_33 : bool;
+    sub_34 : bool; sub_35 : bool; sub_36 : bool; sub_37 : bool;
+    sub_38 : bool; sub_39 : bool; sub_40 : bool; sub_41 : bool;
+    sub_42 : bool; sub_43 : bool; sub_44 : bool; sub_45 : bool;
+    sub_46 : bool; sub_47 : bool; sub_48 : bool; sub_49 : bool;
+    sub_50 : bool; sub_51 : bool; sub_52 : bool; sub_53 : bool;
+    sub_54 : bool; sub_55 : bool; sub_56 : bool; sub_57 : bool;
+    sub_58 : bool; sub_59 : bool; sub_60 : bool; sub_61 : bool;
+    sub_62 : bool; sub_63 : bool; sub_64 : bool; sub_65 : bool;
+    sub_66 : bool;
+let
+  instanciador_c4 = sub_0;
+  sub_66 = sub_56;
+  sub_65 = sub_66;
+  sub_64 = sub_65;
+  sub_63 = if instanciador_sexta_input then sub_64 else sub_43;
+  sub_62 = if instanciador_ck_10_1 then false else sub_57;
+  sub_61 = if instanciador_ck_12_1 then false else sub_58;
+  sub_60 = if instanciador_ck_14_1 then false else sub_59;
+  sub_59 = if instanciador_l4 then sub_28 else sub_31;
+  v = if instanciador_c3_lamp then sub_59 else sub_60;
+  v_271 = if instanciador_l3 then sub_59 else v;
+  v_272 = if instanciador_c3_lamp then sub_60 else false;
+  v_273 = if instanciador_l3 then v_272 else false;
+  sub_58 = if instanciador_c3 then v_271 else v_273;
+  v_274 = if instanciador_c2_lamp then sub_58 else sub_61;
+  v_275 = if instanciador_l2 then sub_58 else v_274;
+  v_276 = if instanciador_c2_lamp then sub_61 else false;
+  v_277 = if instanciador_l2 then v_276 else false;
+  sub_57 = if instanciador_c2 then v_275 else v_277;
+  v_278 = if instanciador_c1_lamp then sub_57 else sub_62;
+  v_279 = if instanciador_l1 then sub_57 else v_278;
+  v_280 = if instanciador_c1_lamp then sub_62 else false;
+  v_281 = if instanciador_l1 then v_280 else false;
+  sub_56 = if instanciador_c1 then v_279 else v_281;
+  v_282 = if instanciador_domingo_input then sub_47 else sub_56;
+  v_283 = if instanciador_seguranca_input then sub_46 else v_282;
+  v_284 = if instanciador_neutro_input then sub_45 else v_283;
+  sub_55 = if instanciador_domingol_input then sub_44 else v_284;
+  sub_54 = if instanciador_ck_10_1 then false else sub_48;
+  sub_53 = if instanciador_ck_12_1 then false else sub_49;
+  sub_52 = if instanciador_ck_14_1 then false else sub_50;
+  v_285 = not(instanciador_lx);
+  v_286 = (instanciador_ck_18_1 or false);
+  v_287 = (v_285 or v_286);
+  sub_51 = if instanciador_c_lampExt then v_287 else sub_30;
+  v_288 = if instanciador_ck_16_1 then sub_51 else sub_15;
+  v_289 = if instanciador_c4_lamp then sub_15 else v_288;
+  sub_50 = if instanciador_l4 then sub_14 else v_289;
+  v_290 = if instanciador_c3_lamp then sub_50 else sub_52;
+  v_291 = if instanciador_l3 then sub_50 else v_290;
+  v_292 = if instanciador_c3_lamp then sub_52 else false;
+  v_293 = if instanciador_l3 then v_292 else false;
+  sub_49 = if instanciador_c3 then v_291 else v_293;
+  v_294 = if instanciador_c2_lamp then sub_49 else sub_53;
+  v_295 = if instanciador_l2 then sub_49 else v_294;
+  v_296 = if instanciador_c2_lamp then sub_53 else false;
+  v_297 = if instanciador_l2 then v_296 else false;
+  sub_48 = if instanciador_c2 then v_295 else v_297;
+  v_298 = if instanciador_c1_lamp then sub_48 else sub_54;
+  v_299 = if instanciador_l1 then sub_48 else v_298;
+  v_300 = if instanciador_c1_lamp then sub_54 else false;
+  v_301 = if instanciador_l1 then v_300 else false;
+  sub_47 = if instanciador_c1 then v_299 else v_301;
+  sub_46 = sub_47;
+  sub_45 = sub_46;
+  sub_44 = sub_45;
+  sub_43 = sub_44;
+  sub_42 = sub_43;
+  sub_41 = if instanciador_ebd_input then sub_42 else sub_55;
+  sub_40 = if instanciador_v_299 then sub_63 else sub_41;
+  sub_39 = if instanciador_v_301 then sub_42 else sub_40;
+  sub_38 = sub_22;
+  sub_37 = sub_38;
+  sub_36 = sub_37;
+  sub_35 = if instanciador_sexta_input then sub_36 else sub_6;
+  sub_34 = if instanciador_ck_10_1 then false else sub_23;
+  sub_33 = if instanciador_ck_12_1 then false else sub_24;
+  sub_32 = if instanciador_ck_14_1 then false else sub_25;
+  v_302 = if instanciador_ck_16_1 then false else sub_28;
+  sub_31 = if instanciador_c4_lamp then sub_28 else v_302;
+  sub_30 = true;
+  v_303 = not(instanciador_ck_18_1);
+  v_304 = (v_303 or false);
+  v_305 = (instanciador_lx or v_304);
+  sub_29 = if instanciador_c_lampExt then sub_30 else v_305;
+  sub_28 = sub_29;
+  v_306 = not(instanciador_lx);
+  v_307 = (instanciador_ck_18_1 & false);
+  v_308 = (v_306 & v_307);
+  sub_27 = if instanciador_c_lampExt then sub_17 else v_308;
+  sub_26 = sub_27;
+  v_309 = if instanciador_ck_16_1 then sub_28 else sub_26;
+  v_310 = if instanciador_c4_lamp then v_309 else sub_28;
+  sub_25 = if instanciador_l4 then v_310 else sub_31;
+  v_311 = if instanciador_c3_lamp then sub_25 else sub_32;
+  v_312 = if instanciador_l3 then sub_25 else v_311;
+  v_313 = if instanciador_c3_lamp then sub_32 else false;
+  v_314 = if instanciador_l3 then v_313 else false;
+  sub_24 = if instanciador_c3 then v_312 else v_314;
+  v_315 = if instanciador_c2_lamp then sub_24 else sub_33;
+  v_316 = if instanciador_l2 then sub_24 else v_315;
+  v_317 = if instanciador_c2_lamp then sub_33 else false;
+  v_318 = if instanciador_l2 then v_317 else false;
+  sub_23 = if instanciador_c2 then v_316 else v_318;
+  v_319 = if instanciador_c1_lamp then sub_23 else sub_34;
+  v_320 = if instanciador_l1 then sub_23 else v_319;
+  v_321 = if instanciador_c1_lamp then sub_34 else false;
+  v_322 = if instanciador_l1 then v_321 else false;
+  sub_22 = if instanciador_c1 then v_320 else v_322;
+  v_323 = if instanciador_domingo_input then sub_10 else sub_22;
+  v_324 = if instanciador_seguranca_input then sub_9 else v_323;
+  v_325 = if instanciador_neutro_input then sub_8 else v_324;
+  sub_21 = if instanciador_domingol_input then sub_7 else v_325;
+  sub_20 = if instanciador_ck_10_1 then false else sub_11;
+  sub_19 = if instanciador_ck_12_1 then false else sub_12;
+  sub_18 = if instanciador_ck_14_1 then false else sub_13;
+  sub_17 = false;
+  v_326 = not(instanciador_ck_18_1);
+  v_327 = (v_326 & false);
+  v_328 = (instanciador_lx & v_327);
+  sub_16 = if instanciador_c_lampExt then v_328 else sub_17;
+  sub_15 = sub_16;
+  v_329 = if instanciador_ck_16_1 then sub_15 else false;
+  sub_14 = if instanciador_c4_lamp then v_329 else sub_15;
+  sub_13 = if instanciador_l4 then sub_14 else sub_15;
+  v_330 = if instanciador_c3_lamp then sub_13 else sub_18;
+  v_331 = if instanciador_l3 then sub_13 else v_330;
+  v_332 = if instanciador_c3_lamp then sub_18 else false;
+  v_333 = if instanciador_l3 then v_332 else false;
+  sub_12 = if instanciador_c3 then v_331 else v_333;
+  v_334 = if instanciador_c2_lamp then sub_12 else sub_19;
+  v_335 = if instanciador_l2 then sub_12 else v_334;
+  v_336 = if instanciador_c2_lamp then sub_19 else false;
+  v_337 = if instanciador_l2 then v_336 else false;
+  sub_11 = if instanciador_c2 then v_335 else v_337;
+  v_338 = if instanciador_c1_lamp then sub_11 else sub_20;
+  v_339 = if instanciador_l1 then sub_11 else v_338;
+  v_340 = if instanciador_c1_lamp then sub_20 else false;
+  v_341 = if instanciador_l1 then v_340 else false;
+  sub_10 = if instanciador_c1 then v_339 else v_341;
+  sub_9 = sub_10;
+  sub_8 = sub_9;
+  sub_7 = sub_8;
+  sub_6 = sub_7;
+  sub_5 = sub_6;
+  sub_4 = if instanciador_ebd_input then sub_5 else sub_21;
+  sub_3 = if instanciador_v_299 then sub_35 else sub_4;
+  sub_2 = if instanciador_v_301 then sub_5 else sub_3;
+  v_342 = if instanciador_ebd_input then sub_5 else sub_35;
+  sub_1 = if instanciador_v_300 then v_342 else sub_2;
+  v_343 = if instanciador_ebd_input then sub_42 else sub_63;
+  v_344 = if instanciador_v_300 then v_343 else sub_39;
+  sub_0 = if p_instanciador_c4 then v_344 else sub_1
+tel
+
+node instanciador_controller_instanciador_c3(instanciador_sexta_input : bool;
+                                              instanciador_ebd_input : bool;
+                                              instanciador_domingo_input : bool;
+                                              instanciador_domingol_input : bool;
+                                              instanciador_neutro_input : bool;
+                                              instanciador_seguranca_input : bool;
+                                              instanciador_l1 : bool;
+                                              instanciador_l2 : bool;
+                                              instanciador_l3 : bool;
+                                              instanciador_l4 : bool;
+                                              instanciador_lx : bool;
+                                              instanciador_lv : bool;
+                                              instanciador_v_301 : bool;
+                                              instanciador_v_300 : bool;
+                                              instanciador_v_299 : bool;
+                                              instanciador_pnr_6 : bool;
+                                              instanciador_ck_10_1 : bool;
+                                              instanciador_pnr_5 : bool;
+                                              instanciador_ck_12_1 : bool;
+                                              instanciador_pnr_4 : bool;
+                                              instanciador_ck_14_1 : bool;
+                                              instanciador_pnr_3 : bool;
+                                              instanciador_ck_16_1 : bool;
+                                              instanciador_pnr_2 : bool;
+                                              instanciador_ck_18_1 : bool;
+                                              instanciador_pnr_1 : bool;
+                                              instanciador_ck_20_1 : bool;
+                                              instanciador_pnr : bool;
+                                              p_instanciador_c_vent : bool;
+                                              p_instanciador_cv : bool;
+                                              p_instanciador_cx : bool;
+                                              p_instanciador_c4 : bool;
+                                              p_instanciador_c3 : bool;
+                                              p_instanciador_c2 : bool;
+                                              p_instanciador_c1 : bool;
+                                              p_instanciador_c_lampExt : bool;
+                                              p_instanciador_c4_lamp : bool;
+                                              p_instanciador_c3_lamp : bool;
+                                              p_instanciador_c2_lamp : bool;
+                                              p_instanciador_c1_lamp : bool;
+                                              instanciador_c2 : bool;
+                                              instanciador_c1 : bool;
+                                              instanciador_c_lampExt : bool;
+                                              instanciador_c4_lamp : bool;
+                                              instanciador_c3_lamp : bool;
+                                              instanciador_c2_lamp : bool;
+                                              instanciador_c1_lamp : bool)
+returns (instanciador_c3 : bool)
+var v_391 : bool; v_390 : bool; v_389 : bool; v_388 : bool; v_387 : bool;
+    v_386 : bool; v_385 : bool; v_384 : bool; v_383 : bool; v_382 : bool;
+    v_381 : bool; v_380 : bool; v_379 : bool; v_378 : bool; v_377 : bool;
+    v_376 : bool; v_375 : bool; v_374 : bool; v_373 : bool; v_372 : bool;
+    v_371 : bool; v_370 : bool; v_369 : bool; v_368 : bool; v_367 : bool;
+    v_366 : bool; v_365 : bool; v_364 : bool; v_363 : bool; v_362 : bool;
+    v_361 : bool; v_360 : bool; v_359 : bool; v_358 : bool; v_357 : bool;
+    v_356 : bool; v_355 : bool; v_354 : bool; v_353 : bool; v_352 : bool;
+    v_351 : bool; v_350 : bool; v_349 : bool; v_348 : bool; v_347 : bool;
+    v_346 : bool; v_345 : bool; v : bool; sub_0 : bool; sub_1 : bool;
+    sub_2 : bool; sub_3 : bool; sub_4 : bool; sub_5 : bool; sub_6 : bool;
+    sub_7 : bool; sub_8 : bool; sub_9 : bool; sub_10 : bool; sub_11 : bool;
+    sub_12 : bool; sub_13 : bool; sub_14 : bool; sub_15 : bool;
+    sub_16 : bool; sub_17 : bool; sub_18 : bool; sub_19 : bool;
+    sub_20 : bool; sub_21 : bool; sub_22 : bool; sub_23 : bool;
+    sub_24 : bool; sub_25 : bool; sub_26 : bool; sub_27 : bool;
+    sub_28 : bool; sub_29 : bool; sub_30 : bool; sub_31 : bool;
+    sub_32 : bool; sub_33 : bool; sub_34 : bool; sub_35 : bool;
+    sub_36 : bool; sub_37 : bool; sub_38 : bool; sub_39 : bool;
+let
+  instanciador_c3 = sub_0;
+  sub_39 = sub_24;
+  sub_38 = sub_39;
+  sub_37 = sub_38;
+  sub_36 = if instanciador_sexta_input then sub_37 else sub_5;
+  sub_35 = if instanciador_ck_10_1 then false else sub_25;
+  sub_34 = if instanciador_ck_12_1 then false else sub_26;
+  v = not(instanciador_ck_18_1);
+  v_345 = (v or false);
+  v_346 = (instanciador_lx or v_345);
+  sub_33 = if instanciador_c_lampExt then sub_20 else v_346;
+  sub_32 = sub_33;
+  v_347 = if instanciador_ck_16_1 then false else sub_32;
+  v_348 = if instanciador_c4_lamp then sub_32 else v_347;
+  sub_31 = if instanciador_l4 then sub_32 else v_348;
+  v_349 = not(instanciador_lx);
+  v_350 = (instanciador_ck_18_1 & false);
+  v_351 = (v_349 & v_350);
+  sub_30 = if instanciador_c_lampExt then sub_16 else v_351;
+  sub_29 = sub_30;
+  v_352 = if instanciador_ck_16_1 then false else sub_29;
+  v_353 = if instanciador_c4_lamp then sub_29 else v_352;
+  sub_28 = if instanciador_l4 then sub_29 else v_353;
+  sub_27 = if instanciador_ck_14_1 then sub_31 else sub_28;
+  v_354 = if p_instanciador_c3 then sub_31 else sub_27;
+  v_355 = if instanciador_c3_lamp then v_354 else sub_31;
+  v_356 = if instanciador_ck_14_1 then false else sub_31;
+  v_357 = if instanciador_c3_lamp then sub_31 else v_356;
+  sub_26 = if instanciador_l3 then v_355 else v_357;
+  v_358 = if instanciador_c2_lamp then sub_26 else sub_34;
+  v_359 = if instanciador_l2 then sub_26 else v_358;
+  v_360 = if instanciador_c2_lamp then sub_34 else false;
+  v_361 = if instanciador_l2 then v_360 else false;
+  sub_25 = if instanciador_c2 then v_359 else v_361;
+  v_362 = if instanciador_c1_lamp then sub_25 else sub_35;
+  v_363 = if instanciador_l1 then sub_25 else v_362;
+  v_364 = if instanciador_c1_lamp then sub_35 else false;
+  v_365 = if instanciador_l1 then v_364 else false;
+  sub_24 = if instanciador_c1 then v_363 else v_365;
+  v_366 = if instanciador_domingo_input then sub_9 else sub_24;
+  v_367 = if instanciador_seguranca_input then sub_8 else v_366;
+  v_368 = if instanciador_neutro_input then sub_7 else v_367;
+  sub_23 = if instanciador_domingol_input then sub_6 else v_368;
+  sub_22 = if instanciador_ck_10_1 then false else sub_10;
+  sub_21 = if instanciador_ck_12_1 then false else sub_11;
+  sub_20 = true;
+  v_369 = not(instanciador_lx);
+  v_370 = (instanciador_ck_18_1 or false);
+  v_371 = (v_369 or v_370);
+  sub_19 = if instanciador_c_lampExt then v_371 else sub_20;
+  sub_18 = sub_19;
+  v_372 = if instanciador_ck_16_1 then sub_18 else false;
+  v_373 = if instanciador_c4_lamp then v_372 else sub_18;
+  sub_17 = if instanciador_l4 then v_373 else sub_18;
+  sub_16 = false;
+  v_374 = not(instanciador_ck_18_1);
+  v_375 = (v_374 & false);
+  v_376 = (instanciador_lx & v_375);
+  sub_15 = if instanciador_c_lampExt then v_376 else sub_16;
+  sub_14 = sub_15;
+  v_377 = if instanciador_ck_16_1 then sub_14 else false;
+  v_378 = if instanciador_c4_lamp then v_377 else sub_14;
+  sub_13 = if instanciador_l4 then v_378 else sub_14;
+  sub_12 = if instanciador_ck_14_1 then sub_17 else sub_13;
+  v_379 = if p_instanciador_c3 then sub_17 else sub_12;
+  v_380 = if instanciador_c3_lamp then v_379 else sub_17;
+  v_381 = if instanciador_ck_14_1 then false else sub_17;
+  v_382 = if instanciador_c3_lamp then sub_17 else v_381;
+  sub_11 = if instanciador_l3 then v_380 else v_382;
+  v_383 = if instanciador_c2_lamp then sub_11 else sub_21;
+  v_384 = if instanciador_l2 then sub_11 else v_383;
+  v_385 = if instanciador_c2_lamp then sub_21 else false;
+  v_386 = if instanciador_l2 then v_385 else false;
+  sub_10 = if instanciador_c2 then v_384 else v_386;
+  v_387 = if instanciador_c1_lamp then sub_10 else sub_22;
+  v_388 = if instanciador_l1 then sub_10 else v_387;
+  v_389 = if instanciador_c1_lamp then sub_22 else false;
+  v_390 = if instanciador_l1 then v_389 else false;
+  sub_9 = if instanciador_c1 then v_388 else v_390;
+  sub_8 = sub_9;
+  sub_7 = sub_8;
+  sub_6 = sub_7;
+  sub_5 = sub_6;
+  sub_4 = sub_5;
+  sub_3 = if instanciador_ebd_input then sub_4 else sub_23;
+  sub_2 = if instanciador_v_299 then sub_36 else sub_3;
+  sub_1 = if instanciador_v_301 then sub_4 else sub_2;
+  v_391 = if instanciador_ebd_input then sub_4 else sub_36;
+  sub_0 = if instanciador_v_300 then v_391 else sub_1
+tel
+
+node instanciador_controller_instanciador_c2(instanciador_sexta_input : bool;
+                                              instanciador_ebd_input : bool;
+                                              instanciador_domingo_input : bool;
+                                              instanciador_domingol_input : bool;
+                                              instanciador_neutro_input : bool;
+                                              instanciador_seguranca_input : bool;
+                                              instanciador_l1 : bool;
+                                              instanciador_l2 : bool;
+                                              instanciador_l3 : bool;
+                                              instanciador_l4 : bool;
+                                              instanciador_lx : bool;
+                                              instanciador_lv : bool;
+                                              instanciador_v_301 : bool;
+                                              instanciador_v_300 : bool;
+                                              instanciador_v_299 : bool;
+                                              instanciador_pnr_6 : bool;
+                                              instanciador_ck_10_1 : bool;
+                                              instanciador_pnr_5 : bool;
+                                              instanciador_ck_12_1 : bool;
+                                              instanciador_pnr_4 : bool;
+                                              instanciador_ck_14_1 : bool;
+                                              instanciador_pnr_3 : bool;
+                                              instanciador_ck_16_1 : bool;
+                                              instanciador_pnr_2 : bool;
+                                              instanciador_ck_18_1 : bool;
+                                              instanciador_pnr_1 : bool;
+                                              instanciador_ck_20_1 : bool;
+                                              instanciador_pnr : bool;
+                                              p_instanciador_c_vent : bool;
+                                              p_instanciador_cv : bool;
+                                              p_instanciador_cx : bool;
+                                              p_instanciador_c4 : bool;
+                                              p_instanciador_c3 : bool;
+                                              p_instanciador_c2 : bool;
+                                              p_instanciador_c1 : bool;
+                                              p_instanciador_c_lampExt : bool;
+                                              p_instanciador_c4_lamp : bool;
+                                              p_instanciador_c3_lamp : bool;
+                                              p_instanciador_c2_lamp : bool;
+                                              p_instanciador_c1_lamp : bool;
+                                              instanciador_c1 : bool;
+                                              instanciador_c_lampExt : bool;
+                                              instanciador_c4_lamp : bool;
+                                              instanciador_c3_lamp : bool;
+                                              instanciador_c2_lamp : bool;
+                                              instanciador_c1_lamp : bool)
+returns (instanciador_c2 : bool)
+var v_436 : bool; v_435 : bool; v_434 : bool; v_433 : bool; v_432 : bool;
+    v_431 : bool; v_430 : bool; v_429 : bool; v_428 : bool; v_427 : bool;
+    v_426 : bool; v_425 : bool; v_424 : bool; v_423 : bool; v_422 : bool;
+    v_421 : bool; v_420 : bool; v_419 : bool; v_418 : bool; v_417 : bool;
+    v_416 : bool; v_415 : bool; v_414 : bool; v_413 : bool; v_412 : bool;
+    v_411 : bool; v_410 : bool; v_409 : bool; v_408 : bool; v_407 : bool;
+    v_406 : bool; v_405 : bool; v_404 : bool; v_403 : bool; v_402 : bool;
+    v_401 : bool; v_400 : bool; v_399 : bool; v_398 : bool; v_397 : bool;
+    v_396 : bool; v_395 : bool; v_394 : bool; v_393 : bool; v_392 : bool;
+    v : bool; sub_0 : bool; sub_1 : bool; sub_2 : bool; sub_3 : bool;
+    sub_4 : bool; sub_5 : bool; sub_6 : bool; sub_7 : bool; sub_8 : bool;
+    sub_9 : bool; sub_10 : bool; sub_11 : bool; sub_12 : bool; sub_13 : bool;
+    sub_14 : bool; sub_15 : bool; sub_16 : bool; sub_17 : bool;
+    sub_18 : bool; sub_19 : bool; sub_20 : bool; sub_21 : bool;
+    sub_22 : bool; sub_23 : bool; sub_24 : bool; sub_25 : bool;
+    sub_26 : bool; sub_27 : bool; sub_28 : bool; sub_29 : bool;
+    sub_30 : bool; sub_31 : bool; sub_32 : bool; sub_33 : bool;
+    sub_34 : bool; sub_35 : bool; sub_36 : bool; sub_37 : bool;
+    sub_38 : bool; sub_39 : bool; sub_40 : bool; sub_41 : bool;
+    sub_42 : bool;
+let
+  instanciador_c2 = sub_0;
+  sub_42 = sub_26;
+  sub_41 = sub_42;
+  sub_40 = sub_41;
+  sub_39 = if instanciador_sexta_input then sub_40 else sub_5;
+  sub_38 = if instanciador_ck_10_1 then false else sub_27;
+  sub_37 = if instanciador_c_lampExt then sub_19 else sub_33;
+  sub_36 = sub_37;
+  v = if instanciador_ck_16_1 then false else sub_36;
+  v_392 = if instanciador_c4_lamp then sub_36 else v;
+  sub_35 = if instanciador_l4 then sub_36 else v_392;
+  v_393 = if instanciador_ck_14_1 then false else sub_35;
+  v_394 = if instanciador_c3_lamp then sub_35 else v_393;
+  sub_34 = if instanciador_l3 then sub_35 else v_394;
+  v_395 = not(instanciador_ck_18_1);
+  v_396 = (v_395 or false);
+  sub_33 = (instanciador_lx or v_396);
+  v_397 = not(instanciador_lx);
+  v_398 = (instanciador_ck_18_1 & false);
+  sub_32 = (v_397 & v_398);
+  v_399 = if p_instanciador_c2 then sub_33 else sub_32;
+  sub_31 = if instanciador_c_lampExt then sub_17 else v_399;
+  sub_30 = sub_31;
+  v_400 = if instanciador_ck_16_1 then false else sub_30;
+  v_401 = if instanciador_c4_lamp then sub_30 else v_400;
+  sub_29 = if instanciador_l4 then sub_30 else v_401;
+  v_402 = if instanciador_ck_14_1 then false else sub_29;
+  v_403 = if instanciador_c3_lamp then sub_29 else v_402;
+  sub_28 = if instanciador_l3 then sub_29 else v_403;
+  v_404 = if instanciador_ck_12_1 then sub_34 else sub_28;
+  v_405 = if instanciador_c2_lamp then v_404 else sub_34;
+  v_406 = if instanciador_ck_12_1 then false else sub_34;
+  v_407 = if instanciador_c2_lamp then sub_34 else v_406;
+  sub_27 = if instanciador_l2 then v_405 else v_407;
+  v_408 = if instanciador_c1_lamp then sub_27 else sub_38;
+  v_409 = if instanciador_l1 then sub_27 else v_408;
+  v_410 = if instanciador_c1_lamp then sub_38 else false;
+  v_411 = if instanciador_l1 then v_410 else false;
+  sub_26 = if instanciador_c1 then v_409 else v_411;
+  v_412 = if instanciador_domingo_input then sub_9 else sub_26;
+  v_413 = if instanciador_seguranca_input then sub_8 else v_412;
+  v_414 = if instanciador_neutro_input then sub_7 else v_413;
+  sub_25 = if instanciador_domingol_input then sub_6 else v_414;
+  sub_24 = if instanciador_ck_10_1 then false else sub_10;
+  sub_23 = if instanciador_c_lampExt then sub_16 else sub_19;
+  sub_22 = sub_23;
+  v_415 = if instanciador_ck_16_1 then sub_22 else false;
+  v_416 = if instanciador_c4_lamp then v_415 else sub_22;
+  sub_21 = if instanciador_l4 then v_416 else sub_22;
+  v_417 = if instanciador_ck_14_1 then false else sub_21;
+  v_418 = if instanciador_c3_lamp then sub_21 else v_417;
+  sub_20 = if instanciador_l3 then sub_21 else v_418;
+  sub_19 = true;
+  sub_18 = false;
+  sub_17 = if p_instanciador_c2 then sub_19 else sub_18;
+  v_419 = not(instanciador_lx);
+  v_420 = (instanciador_ck_18_1 or false);
+  sub_16 = (v_419 or v_420);
+  v_421 = not(instanciador_ck_18_1);
+  v_422 = (v_421 & false);
+  sub_15 = (instanciador_lx & v_422);
+  v_423 = if p_instanciador_c2 then sub_16 else sub_15;
+  sub_14 = if instanciador_c_lampExt then v_423 else sub_17;
+  sub_13 = sub_14;
+  v_424 = if instanciador_ck_16_1 then sub_13 else false;
+  v_425 = if instanciador_c4_lamp then v_424 else sub_13;
+  sub_12 = if instanciador_l4 then v_425 else sub_13;
+  v_426 = if instanciador_ck_14_1 then false else sub_12;
+  v_427 = if instanciador_c3_lamp then sub_12 else v_426;
+  sub_11 = if instanciador_l3 then sub_12 else v_427;
+  v_428 = if instanciador_ck_12_1 then sub_20 else sub_11;
+  v_429 = if instanciador_c2_lamp then v_428 else sub_20;
+  v_430 = if instanciador_ck_12_1 then false else sub_20;
+  v_431 = if instanciador_c2_lamp then sub_20 else v_430;
+  sub_10 = if instanciador_l2 then v_429 else v_431;
+  v_432 = if instanciador_c1_lamp then sub_10 else sub_24;
+  v_433 = if instanciador_l1 then sub_10 else v_432;
+  v_434 = if instanciador_c1_lamp then sub_24 else false;
+  v_435 = if instanciador_l1 then v_434 else false;
+  sub_9 = if instanciador_c1 then v_433 else v_435;
+  sub_8 = sub_9;
+  sub_7 = sub_8;
+  sub_6 = sub_7;
+  sub_5 = sub_6;
+  sub_4 = sub_5;
+  sub_3 = if instanciador_ebd_input then sub_4 else sub_25;
+  sub_2 = if instanciador_v_299 then sub_39 else sub_3;
+  sub_1 = if instanciador_v_301 then sub_4 else sub_2;
+  v_436 = if instanciador_ebd_input then sub_4 else sub_39;
+  sub_0 = if instanciador_v_300 then v_436 else sub_1
+tel
+
+node instanciador_controller_instanciador_c1(instanciador_sexta_input : bool;
+                                              instanciador_ebd_input : bool;
+                                              instanciador_domingo_input : bool;
+                                              instanciador_domingol_input : bool;
+                                              instanciador_neutro_input : bool;
+                                              instanciador_seguranca_input : bool;
+                                              instanciador_l1 : bool;
+                                              instanciador_l2 : bool;
+                                              instanciador_l3 : bool;
+                                              instanciador_l4 : bool;
+                                              instanciador_lx : bool;
+                                              instanciador_lv : bool;
+                                              instanciador_v_301 : bool;
+                                              instanciador_v_300 : bool;
+                                              instanciador_v_299 : bool;
+                                              instanciador_pnr_6 : bool;
+                                              instanciador_ck_10_1 : bool;
+                                              instanciador_pnr_5 : bool;
+                                              instanciador_ck_12_1 : bool;
+                                              instanciador_pnr_4 : bool;
+                                              instanciador_ck_14_1 : bool;
+                                              instanciador_pnr_3 : bool;
+                                              instanciador_ck_16_1 : bool;
+                                              instanciador_pnr_2 : bool;
+                                              instanciador_ck_18_1 : bool;
+                                              instanciador_pnr_1 : bool;
+                                              instanciador_ck_20_1 : bool;
+                                              instanciador_pnr : bool;
+                                              p_instanciador_c_vent : bool;
+                                              p_instanciador_cv : bool;
+                                              p_instanciador_cx : bool;
+                                              p_instanciador_c4 : bool;
+                                              p_instanciador_c3 : bool;
+                                              p_instanciador_c2 : bool;
+                                              p_instanciador_c1 : bool;
+                                              p_instanciador_c_lampExt : bool;
+                                              p_instanciador_c4_lamp : bool;
+                                              p_instanciador_c3_lamp : bool;
+                                              p_instanciador_c2_lamp : bool;
+                                              p_instanciador_c1_lamp : bool;
+                                              instanciador_c_lampExt : bool;
+                                              instanciador_c4_lamp : bool;
+                                              instanciador_c3_lamp : bool;
+                                              instanciador_c2_lamp : bool;
+                                              instanciador_c1_lamp : bool)
+returns (instanciador_c1 : bool)
+var v_486 : bool; v_485 : bool; v_484 : bool; v_483 : bool; v_482 : bool;
+    v_481 : bool; v_480 : bool; v_479 : bool; v_478 : bool; v_477 : bool;
+    v_476 : bool; v_475 : bool; v_474 : bool; v_473 : bool; v_472 : bool;
+    v_471 : bool; v_470 : bool; v_469 : bool; v_468 : bool; v_467 : bool;
+    v_466 : bool; v_465 : bool; v_464 : bool; v_463 : bool; v_462 : bool;
+    v_461 : bool; v_460 : bool; v_459 : bool; v_458 : bool; v_457 : bool;
+    v_456 : bool; v_455 : bool; v_454 : bool; v_453 : bool; v_452 : bool;
+    v_451 : bool; v_450 : bool; v_449 : bool; v_448 : bool; v_447 : bool;
+    v_446 : bool; v_445 : bool; v_444 : bool; v_443 : bool; v_442 : bool;
+    v_441 : bool; v_440 : bool; v_439 : bool; v_438 : bool; v_437 : bool;
+    v : bool; sub_0 : bool; sub_1 : bool; sub_2 : bool; sub_3 : bool;
+    sub_4 : bool; sub_5 : bool; sub_6 : bool; sub_7 : bool; sub_8 : bool;
+    sub_9 : bool; sub_10 : bool; sub_11 : bool; sub_12 : bool; sub_13 : bool;
+    sub_14 : bool; sub_15 : bool; sub_16 : bool; sub_17 : bool;
+    sub_18 : bool; sub_19 : bool; sub_20 : bool; sub_21 : bool;
+    sub_22 : bool; sub_23 : bool; sub_24 : bool; sub_25 : bool;
+    sub_26 : bool; sub_27 : bool; sub_28 : bool; sub_29 : bool;
+    sub_30 : bool; sub_31 : bool; sub_32 : bool; sub_33 : bool;
+    sub_34 : bool; sub_35 : bool; sub_36 : bool; sub_37 : bool;
+    sub_38 : bool; sub_39 : bool; sub_40 : bool; sub_41 : bool;
+    sub_42 : bool; sub_43 : bool; sub_44 : bool; sub_45 : bool;
+    sub_46 : bool; sub_47 : bool; sub_48 : bool; sub_49 : bool;
+    sub_50 : bool; sub_51 : bool; sub_52 : bool; sub_53 : bool;
+    sub_54 : bool; sub_55 : bool;
+let
+  instanciador_c1 = sub_0;
+  sub_55 = sub_51;
+  sub_54 = sub_55;
+  sub_53 = sub_54;
+  sub_52 = if instanciador_sexta_input then sub_53 else sub_45;
+  sub_51 = if instanciador_l1 then sub_31 else sub_36;
+  v = if instanciador_domingo_input then sub_49 else sub_51;
+  v_437 = if instanciador_seguranca_input then sub_48 else v;
+  v_438 = if instanciador_neutro_input then sub_47 else v_437;
+  sub_50 = if instanciador_domingol_input then sub_46 else v_438;
+  sub_49 = if instanciador_l1 then sub_17 else sub_23;
+  sub_48 = sub_49;
+  sub_47 = sub_48;
+  sub_46 = sub_47;
+  sub_45 = sub_46;
+  sub_44 = sub_45;
+  sub_43 = if instanciador_ebd_input then sub_44 else sub_50;
+  sub_42 = if instanciador_v_299 then sub_52 else sub_43;
+  sub_41 = if instanciador_v_301 then sub_44 else sub_42;
+  sub_40 = sub_25;
+  sub_39 = sub_40;
+  sub_38 = sub_39;
+  sub_37 = if instanciador_sexta_input then sub_38 else sub_6;
+  v_439 = if instanciador_ck_10_1 then false else sub_31;
+  sub_36 = if instanciador_c1_lamp then sub_31 else v_439;
+  v_440 = not(instanciador_ck_18_1);
+  v_441 = (v_440 or false);
+  v_442 = (instanciador_lx or v_441);
+  sub_35 = if instanciador_c_lampExt then sub_22 else v_442;
+  sub_34 = sub_35;
+  v_443 = if instanciador_ck_16_1 then false else sub_34;
+  v_444 = if instanciador_c4_lamp then sub_34 else v_443;
+  sub_33 = if instanciador_l4 then sub_34 else v_444;
+  v_445 = if instanciador_ck_14_1 then false else sub_33;
+  v_446 = if instanciador_c3_lamp then sub_33 else v_445;
+  sub_32 = if instanciador_l3 then sub_33 else v_446;
+  v_447 = if instanciador_ck_12_1 then false else sub_32;
+  v_448 = if instanciador_c2_lamp then sub_32 else v_447;
+  sub_31 = if instanciador_l2 then sub_32 else v_448;
+  v_449 = not(instanciador_lx);
+  v_450 = (instanciador_ck_18_1 & false);
+  v_451 = (v_449 & v_450);
+  sub_30 = if instanciador_c_lampExt then sub_16 else v_451;
+  sub_29 = sub_30;
+  v_452 = if instanciador_ck_16_1 then false else sub_29;
+  v_453 = if instanciador_c4_lamp then sub_29 else v_452;
+  sub_28 = if instanciador_l4 then sub_29 else v_453;
+  v_454 = if instanciador_ck_14_1 then false else sub_28;
+  v_455 = if instanciador_c3_lamp then sub_28 else v_454;
+  sub_27 = if instanciador_l3 then sub_28 else v_455;
+  v_456 = if instanciador_ck_12_1 then false else sub_27;
+  v_457 = if instanciador_c2_lamp then sub_27 else v_456;
+  sub_26 = if instanciador_l2 then sub_27 else v_457;
+  v_458 = if instanciador_ck_10_1 then sub_31 else sub_26;
+  v_459 = if instanciador_c1_lamp then v_458 else sub_31;
+  sub_25 = if instanciador_l1 then v_459 else sub_36;
+  v_460 = if instanciador_domingo_input then sub_10 else sub_25;
+  v_461 = if instanciador_seguranca_input then sub_9 else v_460;
+  v_462 = if instanciador_neutro_input then sub_8 else v_461;
+  sub_24 = if instanciador_domingol_input then sub_7 else v_462;
+  v_463 = if instanciador_ck_10_1 then false else sub_17;
+  sub_23 = if instanciador_c1_lamp then sub_17 else v_463;
+  sub_22 = true;
+  v_464 = not(instanciador_lx);
+  v_465 = (instanciador_ck_18_1 or false);
+  v_466 = (v_464 or v_465);
+  sub_21 = if instanciador_c_lampExt then v_466 else sub_22;
+  sub_20 = sub_21;
+  v_467 = if instanciador_ck_16_1 then sub_20 else false;
+  v_468 = if instanciador_c4_lamp then v_467 else sub_20;
+  sub_19 = if instanciador_l4 then v_468 else sub_20;
+  v_469 = if instanciador_ck_14_1 then false else sub_19;
+  v_470 = if instanciador_c3_lamp then sub_19 else v_469;
+  sub_18 = if instanciador_l3 then sub_19 else v_470;
+  v_471 = if instanciador_ck_12_1 then false else sub_18;
+  v_472 = if instanciador_c2_lamp then sub_18 else v_471;
+  sub_17 = if instanciador_l2 then sub_18 else v_472;
+  sub_16 = false;
+  v_473 = not(instanciador_ck_18_1);
+  v_474 = (v_473 & false);
+  v_475 = (instanciador_lx & v_474);
+  sub_15 = if instanciador_c_lampExt then v_475 else sub_16;
+  sub_14 = sub_15;
+  v_476 = if instanciador_ck_16_1 then sub_14 else false;
+  v_477 = if instanciador_c4_lamp then v_476 else sub_14;
+  sub_13 = if instanciador_l4 then v_477 else sub_14;
+  v_478 = if instanciador_ck_14_1 then false else sub_13;
+  v_479 = if instanciador_c3_lamp then sub_13 else v_478;
+  sub_12 = if instanciador_l3 then sub_13 else v_479;
+  v_480 = if instanciador_ck_12_1 then false else sub_12;
+  v_481 = if instanciador_c2_lamp then sub_12 else v_480;
+  sub_11 = if instanciador_l2 then sub_12 else v_481;
+  v_482 = if instanciador_ck_10_1 then sub_17 else sub_11;
+  v_483 = if instanciador_c1_lamp then v_482 else sub_17;
+  sub_10 = if instanciador_l1 then v_483 else sub_23;
+  sub_9 = sub_10;
+  sub_8 = sub_9;
+  sub_7 = sub_8;
+  sub_6 = sub_7;
+  sub_5 = sub_6;
+  sub_4 = if instanciador_ebd_input then sub_5 else sub_24;
+  sub_3 = if instanciador_v_299 then sub_37 else sub_4;
+  sub_2 = if instanciador_v_301 then sub_5 else sub_3;
+  v_484 = if instanciador_ebd_input then sub_5 else sub_37;
+  sub_1 = if instanciador_v_300 then v_484 else sub_2;
+  v_485 = if instanciador_ebd_input then sub_44 else sub_52;
+  v_486 = if instanciador_v_300 then v_485 else sub_41;
+  sub_0 = if p_instanciador_c1 then v_486 else sub_1
+tel
+
+node instanciador_controller_instanciador_c_lampExt(instanciador_sexta_input : bool;
+                                                     instanciador_ebd_input : bool;
+                                                     instanciador_domingo_input : bool;
+                                                     instanciador_domingol_input : bool;
+                                                     instanciador_neutro_input : bool;
+                                                     instanciador_seguranca_input : bool;
+                                                     instanciador_l1 : bool;
+                                                     instanciador_l2 : bool;
+                                                     instanciador_l3 : bool;
+                                                     instanciador_l4 : bool;
+                                                     instanciador_lx : bool;
+                                                     instanciador_lv : bool;
+                                                     instanciador_v_301 : bool;
+                                                     instanciador_v_300 : bool;
+                                                     instanciador_v_299 : bool;
+                                                     instanciador_pnr_6 : bool;
+                                                     instanciador_ck_10_1 : bool;
+                                                     instanciador_pnr_5 : bool;
+                                                     instanciador_ck_12_1 : bool;
+                                                     instanciador_pnr_4 : bool;
+                                                     instanciador_ck_14_1 : bool;
+                                                     instanciador_pnr_3 : bool;
+                                                     instanciador_ck_16_1 : bool;
+                                                     instanciador_pnr_2 : bool;
+                                                     instanciador_ck_18_1 : bool;
+                                                     instanciador_pnr_1 : bool;
+                                                     instanciador_ck_20_1 : bool;
+                                                     instanciador_pnr : bool;
+                                                     p_instanciador_c_vent : bool;
+                                                     p_instanciador_cv : bool;
+                                                     p_instanciador_cx : bool;
+                                                     p_instanciador_c4 : bool;
+                                                     p_instanciador_c3 : bool;
+                                                     p_instanciador_c2 : bool;
+                                                     p_instanciador_c1 : bool;
+                                                     p_instanciador_c_lampExt : bool;
+                                                     p_instanciador_c4_lamp : bool;
+                                                     p_instanciador_c3_lamp : bool;
+                                                     p_instanciador_c2_lamp : bool;
+                                                     p_instanciador_c1_lamp : bool;
+                                                     instanciador_c4_lamp : bool;
+                                                     instanciador_c3_lamp : bool;
+                                                     instanciador_c2_lamp : bool;
+                                                     instanciador_c1_lamp : bool)
+returns (instanciador_c_lampExt : bool)
+var v_508 : bool; v_507 : bool; v_506 : bool; v_505 : bool; v_504 : bool;
+    v_503 : bool; v_502 : bool; v_501 : bool; v_500 : bool; v_499 : bool;
+    v_498 : bool; v_497 : bool; v_496 : bool; v_495 : bool; v_494 : bool;
+    v_493 : bool; v_492 : bool; v_491 : bool; v_490 : bool; v_489 : bool;
+    v_488 : bool; v_487 : bool; v : bool; sub_0 : bool; sub_1 : bool;
+    sub_2 : bool; sub_3 : bool; sub_4 : bool; sub_5 : bool; sub_6 : bool;
+    sub_7 : bool; sub_8 : bool; sub_9 : bool; sub_10 : bool; sub_11 : bool;
+    sub_12 : bool; sub_13 : bool; sub_14 : bool; sub_15 : bool;
+    sub_16 : bool; sub_17 : bool; sub_18 : bool; sub_19 : bool;
+    sub_20 : bool; sub_21 : bool; sub_22 : bool; sub_23 : bool;
+    sub_24 : bool; sub_25 : bool; sub_26 : bool; sub_27 : bool;
+    sub_28 : bool;
+let
+  instanciador_c_lampExt = sub_0;
+  sub_28 = sub_18;
+  sub_27 = sub_28;
+  sub_26 = sub_27;
+  sub_25 = if instanciador_sexta_input then sub_26 else sub_5;
+  v = not(instanciador_lx);
+  sub_24 = (v & sub_16);
+  sub_23 = if p_instanciador_c_lampExt then true else sub_24;
+  sub_22 = sub_23;
+  v_487 = if instanciador_ck_16_1 then false else sub_22;
+  v_488 = if instanciador_c4_lamp then sub_22 else v_487;
+  sub_21 = if instanciador_l4 then sub_22 else v_488;
+  v_489 = if instanciador_ck_14_1 then false else sub_21;
+  v_490 = if instanciador_c3_lamp then sub_21 else v_489;
+  sub_20 = if instanciador_l3 then sub_21 else v_490;
+  v_491 = if instanciador_ck_12_1 then false else sub_20;
+  v_492 = if instanciador_c2_lamp then sub_20 else v_491;
+  sub_19 = if instanciador_l2 then sub_20 else v_492;
+  v_493 = if instanciador_ck_10_1 then false else sub_19;
+  v_494 = if instanciador_c1_lamp then sub_19 else v_493;
+  sub_18 = if instanciador_l1 then sub_19 else v_494;
+  v_495 = if instanciador_domingo_input then sub_9 else sub_18;
+  v_496 = if instanciador_seguranca_input then sub_8 else v_495;
+  v_497 = if instanciador_neutro_input then sub_7 else v_496;
+  sub_17 = if instanciador_domingol_input then sub_6 else v_497;
+  sub_16 = instanciador_ck_18_1;
+  sub_15 = false;
+  v_498 = not(instanciador_lx);
+  v_499 = (v_498 or sub_16);
+  sub_14 = if p_instanciador_c_lampExt then v_499 else sub_15;
+  sub_13 = sub_14;
+  v_500 = if instanciador_ck_16_1 then sub_13 else false;
+  v_501 = if instanciador_c4_lamp then v_500 else sub_13;
+  sub_12 = if instanciador_l4 then v_501 else sub_13;
+  v_502 = if instanciador_ck_14_1 then false else sub_12;
+  v_503 = if instanciador_c3_lamp then sub_12 else v_502;
+  sub_11 = if instanciador_l3 then sub_12 else v_503;
+  v_504 = if instanciador_ck_12_1 then false else sub_11;
+  v_505 = if instanciador_c2_lamp then sub_11 else v_504;
+  sub_10 = if instanciador_l2 then sub_11 else v_505;
+  v_506 = if instanciador_ck_10_1 then false else sub_10;
+  v_507 = if instanciador_c1_lamp then sub_10 else v_506;
+  sub_9 = if instanciador_l1 then sub_10 else v_507;
+  sub_8 = sub_9;
+  sub_7 = sub_8;
+  sub_6 = sub_7;
+  sub_5 = sub_6;
+  sub_4 = sub_5;
+  sub_3 = if instanciador_ebd_input then sub_4 else sub_17;
+  sub_2 = if instanciador_v_299 then sub_25 else sub_3;
+  sub_1 = if instanciador_v_301 then sub_4 else sub_2;
+  v_508 = if instanciador_ebd_input then sub_4 else sub_25;
+  sub_0 = if instanciador_v_300 then v_508 else sub_1
+tel
+
+node instanciador_controller_instanciador_c4_lamp(instanciador_sexta_input : bool;
+                                                   instanciador_ebd_input : bool;
+                                                   instanciador_domingo_input : bool;
+                                                   instanciador_domingol_input : bool;
+                                                   instanciador_neutro_input : bool;
+                                                   instanciador_seguranca_input : bool;
+                                                   instanciador_l1 : bool;
+                                                   instanciador_l2 : bool;
+                                                   instanciador_l3 : bool;
+                                                   instanciador_l4 : bool;
+                                                   instanciador_lx : bool;
+                                                   instanciador_lv : bool;
+                                                   instanciador_v_301 : bool;
+                                                   instanciador_v_300 : bool;
+                                                   instanciador_v_299 : bool;
+                                                   instanciador_pnr_6 : bool;
+                                                   instanciador_ck_10_1 : bool;
+                                                   instanciador_pnr_5 : bool;
+                                                   instanciador_ck_12_1 : bool;
+                                                   instanciador_pnr_4 : bool;
+                                                   instanciador_ck_14_1 : bool;
+                                                   instanciador_pnr_3 : bool;
+                                                   instanciador_ck_16_1 : bool;
+                                                   instanciador_pnr_2 : bool;
+                                                   instanciador_ck_18_1 : bool;
+                                                   instanciador_pnr_1 : bool;
+                                                   instanciador_ck_20_1 : bool;
+                                                   instanciador_pnr : bool;
+                                                   p_instanciador_c_vent : bool;
+                                                   p_instanciador_cv : bool;
+                                                   p_instanciador_cx : bool;
+                                                   p_instanciador_c4 : bool;
+                                                   p_instanciador_c3 : bool;
+                                                   p_instanciador_c2 : bool;
+                                                   p_instanciador_c1 : bool;
+                                                   p_instanciador_c_lampExt : bool;
+                                                   p_instanciador_c4_lamp : bool;
+                                                   p_instanciador_c3_lamp : bool;
+                                                   p_instanciador_c2_lamp : bool;
+                                                   p_instanciador_c1_lamp : bool;
+                                                   instanciador_c3_lamp : bool;
+                                                   instanciador_c2_lamp : bool;
+                                                   instanciador_c1_lamp : bool)
+returns (instanciador_c4_lamp : bool)
+var v_525 : bool; v_524 : bool; v_523 : bool; v_522 : bool; v_521 : bool;
+    v_520 : bool; v_519 : bool; v_518 : bool; v_517 : bool; v_516 : bool;
+    v_515 : bool; v_514 : bool; v_513 : bool; v_512 : bool; v_511 : bool;
+    v_510 : bool; v_509 : bool; v : bool; sub_0 : bool; sub_1 : bool;
+    sub_2 : bool; sub_3 : bool; sub_4 : bool; sub_5 : bool; sub_6 : bool;
+    sub_7 : bool; sub_8 : bool; sub_9 : bool; sub_10 : bool; sub_11 : bool;
+    sub_12 : bool; sub_13 : bool; sub_14 : bool; sub_15 : bool;
+    sub_16 : bool; sub_17 : bool; sub_18 : bool; sub_19 : bool;
+    sub_20 : bool; sub_21 : bool; sub_22 : bool; sub_23 : bool;
+    sub_24 : bool; sub_25 : bool; sub_26 : bool; sub_27 : bool;
+let
+  instanciador_c4_lamp = sub_0;
+  sub_27 = sub_19;
+  sub_26 = sub_27;
+  sub_25 = sub_26;
+  sub_24 = if instanciador_sexta_input then sub_25 else sub_5;
+  sub_23 = true;
+  v = if instanciador_ck_16_1 then sub_23 else sub_15;
+  sub_22 = if instanciador_l4 then sub_15 else v;
+  v_509 = if instanciador_ck_14_1 then false else sub_22;
+  v_510 = if instanciador_c3_lamp then sub_22 else v_509;
+  sub_21 = if instanciador_l3 then sub_22 else v_510;
+  v_511 = if instanciador_ck_12_1 then false else sub_21;
+  v_512 = if instanciador_c2_lamp then sub_21 else v_511;
+  sub_20 = if instanciador_l2 then sub_21 else v_512;
+  v_513 = if instanciador_ck_10_1 then false else sub_20;
+  v_514 = if instanciador_c1_lamp then sub_20 else v_513;
+  sub_19 = if instanciador_l1 then sub_20 else v_514;
+  v_515 = if instanciador_domingo_input then sub_9 else sub_19;
+  v_516 = if instanciador_seguranca_input then sub_8 else v_515;
+  v_517 = if instanciador_neutro_input then sub_7 else v_516;
+  sub_18 = if instanciador_domingol_input then sub_6 else v_517;
+  sub_17 = p_instanciador_c4_lamp;
+  sub_16 = sub_17;
+  sub_15 = sub_16;
+  sub_14 = false;
+  sub_13 = sub_14;
+  v_518 = if instanciador_ck_16_1 then sub_15 else sub_13;
+  sub_12 = if instanciador_l4 then v_518 else sub_15;
+  v_519 = if instanciador_ck_14_1 then false else sub_12;
+  v_520 = if instanciador_c3_lamp then sub_12 else v_519;
+  sub_11 = if instanciador_l3 then sub_12 else v_520;
+  v_521 = if instanciador_ck_12_1 then false else sub_11;
+  v_522 = if instanciador_c2_lamp then sub_11 else v_521;
+  sub_10 = if instanciador_l2 then sub_11 else v_522;
+  v_523 = if instanciador_ck_10_1 then false else sub_10;
+  v_524 = if instanciador_c1_lamp then sub_10 else v_523;
+  sub_9 = if instanciador_l1 then sub_10 else v_524;
+  sub_8 = sub_9;
+  sub_7 = sub_8;
+  sub_6 = sub_7;
+  sub_5 = sub_6;
+  sub_4 = sub_5;
+  sub_3 = if instanciador_ebd_input then sub_4 else sub_18;
+  sub_2 = if instanciador_v_299 then sub_24 else sub_3;
+  sub_1 = if instanciador_v_301 then sub_4 else sub_2;
+  v_525 = if instanciador_ebd_input then sub_4 else sub_24;
+  sub_0 = if instanciador_v_300 then v_525 else sub_1
+tel
+
+node instanciador_controller_instanciador_c3_lamp(instanciador_sexta_input : bool;
+                                                   instanciador_ebd_input : bool;
+                                                   instanciador_domingo_input : bool;
+                                                   instanciador_domingol_input : bool;
+                                                   instanciador_neutro_input : bool;
+                                                   instanciador_seguranca_input : bool;
+                                                   instanciador_l1 : bool;
+                                                   instanciador_l2 : bool;
+                                                   instanciador_l3 : bool;
+                                                   instanciador_l4 : bool;
+                                                   instanciador_lx : bool;
+                                                   instanciador_lv : bool;
+                                                   instanciador_v_301 : bool;
+                                                   instanciador_v_300 : bool;
+                                                   instanciador_v_299 : bool;
+                                                   instanciador_pnr_6 : bool;
+                                                   instanciador_ck_10_1 : bool;
+                                                   instanciador_pnr_5 : bool;
+                                                   instanciador_ck_12_1 : bool;
+                                                   instanciador_pnr_4 : bool;
+                                                   instanciador_ck_14_1 : bool;
+                                                   instanciador_pnr_3 : bool;
+                                                   instanciador_ck_16_1 : bool;
+                                                   instanciador_pnr_2 : bool;
+                                                   instanciador_ck_18_1 : bool;
+                                                   instanciador_pnr_1 : bool;
+                                                   instanciador_ck_20_1 : bool;
+                                                   instanciador_pnr : bool;
+                                                   p_instanciador_c_vent : bool;
+                                                   p_instanciador_cv : bool;
+                                                   p_instanciador_cx : bool;
+                                                   p_instanciador_c4 : bool;
+                                                   p_instanciador_c3 : bool;
+                                                   p_instanciador_c2 : bool;
+                                                   p_instanciador_c1 : bool;
+                                                   p_instanciador_c_lampExt : bool;
+                                                   p_instanciador_c4_lamp : bool;
+                                                   p_instanciador_c3_lamp : bool;
+                                                   p_instanciador_c2_lamp : bool;
+                                                   p_instanciador_c1_lamp : bool;
+                                                   instanciador_c2_lamp : bool;
+                                                   instanciador_c1_lamp : bool)
+returns (instanciador_c3_lamp : bool)
+var v_529 : bool; v_528 : bool; v_527 : bool; v_526 : bool; v : bool;
+    sub_0 : bool; sub_1 : bool; sub_2 : bool; sub_3 : bool; sub_4 : bool;
+    sub_5 : bool; sub_6 : bool; sub_7 : bool; sub_8 : bool; sub_9 : bool;
+    sub_10 : bool; sub_11 : bool; sub_12 : bool; sub_13 : bool;
+    sub_14 : bool;
+let
+  instanciador_c3_lamp = sub_0;
+  sub_14 = true;
+  sub_13 = sub_14;
+  sub_12 = p_instanciador_c3_lamp;
+  sub_11 = sub_12;
+  sub_10 = sub_11;
+  sub_9 = sub_10;
+  v = if instanciador_ck_14_1 then sub_13 else sub_9;
+  sub_8 = if instanciador_l3 then sub_9 else v;
+  v_526 = if instanciador_ck_12_1 then false else sub_8;
+  v_527 = if instanciador_c2_lamp then sub_8 else v_526;
+  sub_7 = if instanciador_l2 then sub_8 else v_527;
+  v_528 = if instanciador_ck_10_1 then false else sub_7;
+  v_529 = if instanciador_c1_lamp then sub_7 else v_528;
+  sub_6 = if instanciador_l1 then sub_7 else v_529;
+  sub_5 = sub_6;
+  sub_4 = sub_5;
+  sub_3 = sub_4;
+  sub_2 = sub_3;
+  sub_1 = sub_2;
+  sub_0 = sub_1
+tel
+
+node instanciador_controller_instanciador_c2_lamp(instanciador_sexta_input : bool;
+                                                   instanciador_ebd_input : bool;
+                                                   instanciador_domingo_input : bool;
+                                                   instanciador_domingol_input : bool;
+                                                   instanciador_neutro_input : bool;
+                                                   instanciador_seguranca_input : bool;
+                                                   instanciador_l1 : bool;
+                                                   instanciador_l2 : bool;
+                                                   instanciador_l3 : bool;
+                                                   instanciador_l4 : bool;
+                                                   instanciador_lx : bool;
+                                                   instanciador_lv : bool;
+                                                   instanciador_v_301 : bool;
+                                                   instanciador_v_300 : bool;
+                                                   instanciador_v_299 : bool;
+                                                   instanciador_pnr_6 : bool;
+                                                   instanciador_ck_10_1 : bool;
+                                                   instanciador_pnr_5 : bool;
+                                                   instanciador_ck_12_1 : bool;
+                                                   instanciador_pnr_4 : bool;
+                                                   instanciador_ck_14_1 : bool;
+                                                   instanciador_pnr_3 : bool;
+                                                   instanciador_ck_16_1 : bool;
+                                                   instanciador_pnr_2 : bool;
+                                                   instanciador_ck_18_1 : bool;
+                                                   instanciador_pnr_1 : bool;
+                                                   instanciador_ck_20_1 : bool;
+                                                   instanciador_pnr : bool;
+                                                   p_instanciador_c_vent : bool;
+                                                   p_instanciador_cv : bool;
+                                                   p_instanciador_cx : bool;
+                                                   p_instanciador_c4 : bool;
+                                                   p_instanciador_c3 : bool;
+                                                   p_instanciador_c2 : bool;
+                                                   p_instanciador_c1 : bool;
+                                                   p_instanciador_c_lampExt : bool;
+                                                   p_instanciador_c4_lamp : bool;
+                                                   p_instanciador_c3_lamp : bool;
+                                                   p_instanciador_c2_lamp : bool;
+                                                   p_instanciador_c1_lamp : bool;
+                                                   instanciador_c1_lamp : bool)
+returns (instanciador_c2_lamp : bool)
+var v_531 : bool; v_530 : bool; v : bool; sub_0 : bool; sub_1 : bool;
+    sub_2 : bool; sub_3 : bool; sub_4 : bool; sub_5 : bool; sub_6 : bool;
+    sub_7 : bool; sub_8 : bool; sub_9 : bool; sub_10 : bool; sub_11 : bool;
+    sub_12 : bool; sub_13 : bool; sub_14 : bool; sub_15 : bool;
+let
+  instanciador_c2_lamp = sub_0;
+  sub_15 = true;
+  sub_14 = sub_15;
+  sub_13 = sub_14;
+  sub_12 = p_instanciador_c2_lamp;
+  sub_11 = sub_12;
+  sub_10 = sub_11;
+  sub_9 = sub_10;
+  sub_8 = sub_9;
+  v = if instanciador_ck_12_1 then sub_13 else sub_8;
+  sub_7 = if instanciador_l2 then sub_8 else v;
+  v_530 = if instanciador_ck_10_1 then false else sub_7;
+  v_531 = if instanciador_c1_lamp then sub_7 else v_530;
+  sub_6 = if instanciador_l1 then sub_7 else v_531;
+  sub_5 = sub_6;
+  sub_4 = sub_5;
+  sub_3 = sub_4;
+  sub_2 = sub_3;
+  sub_1 = sub_2;
+  sub_0 = sub_1
+tel
+
+node instanciador_controller_instanciador_c1_lamp(instanciador_sexta_input : bool;
+                                                   instanciador_ebd_input : bool;
+                                                   instanciador_domingo_input : bool;
+                                                   instanciador_domingol_input : bool;
+                                                   instanciador_neutro_input : bool;
+                                                   instanciador_seguranca_input : bool;
+                                                   instanciador_l1 : bool;
+                                                   instanciador_l2 : bool;
+                                                   instanciador_l3 : bool;
+                                                   instanciador_l4 : bool;
+                                                   instanciador_lx : bool;
+                                                   instanciador_lv : bool;
+                                                   instanciador_v_301 : bool;
+                                                   instanciador_v_300 : bool;
+                                                   instanciador_v_299 : bool;
+                                                   instanciador_pnr_6 : bool;
+                                                   instanciador_ck_10_1 : bool;
+                                                   instanciador_pnr_5 : bool;
+                                                   instanciador_ck_12_1 : bool;
+                                                   instanciador_pnr_4 : bool;
+                                                   instanciador_ck_14_1 : bool;
+                                                   instanciador_pnr_3 : bool;
+                                                   instanciador_ck_16_1 : bool;
+                                                   instanciador_pnr_2 : bool;
+                                                   instanciador_ck_18_1 : bool;
+                                                   instanciador_pnr_1 : bool;
+                                                   instanciador_ck_20_1 : bool;
+                                                   instanciador_pnr : bool;
+                                                   p_instanciador_c_vent : bool;
+                                                   p_instanciador_cv : bool;
+                                                   p_instanciador_cx : bool;
+                                                   p_instanciador_c4 : bool;
+                                                   p_instanciador_c3 : bool;
+                                                   p_instanciador_c2 : bool;
+                                                   p_instanciador_c1 : bool;
+                                                   p_instanciador_c_lampExt : bool;
+                                                   p_instanciador_c4_lamp : bool;
+                                                   p_instanciador_c3_lamp : bool;
+                                                   p_instanciador_c2_lamp : bool;
+                                                   p_instanciador_c1_lamp : bool)
+returns (instanciador_c1_lamp : bool)
+var v : bool; sub_0 : bool; sub_1 : bool; sub_2 : bool; sub_3 : bool;
+    sub_4 : bool; sub_5 : bool; sub_6 : bool; sub_7 : bool; sub_8 : bool;
+    sub_9 : bool; sub_10 : bool; sub_11 : bool; sub_12 : bool; sub_13 : bool;
+    sub_14 : bool; sub_15 : bool; sub_16 : bool;
+let
+  instanciador_c1_lamp = sub_0;
+  sub_16 = true;
+  sub_15 = sub_16;
+  sub_14 = sub_15;
+  sub_13 = sub_14;
+  sub_12 = p_instanciador_c1_lamp;
+  sub_11 = sub_12;
+  sub_10 = sub_11;
+  sub_9 = sub_10;
+  sub_8 = sub_9;
+  sub_7 = sub_8;
+  v = if instanciador_ck_10_1 then sub_13 else sub_7;
+  sub_6 = if instanciador_l1 then sub_7 else v;
+  sub_5 = sub_6;
+  sub_4 = sub_5;
+  sub_3 = sub_4;
+  sub_2 = sub_3;
+  sub_1 = sub_2;
+  sub_0 = sub_1
+tel
+
+node instanciador_controller(instanciador_sexta_input : bool;
+                              instanciador_ebd_input : bool;
+                              instanciador_domingo_input : bool;
+                              instanciador_domingol_input : bool;
+                              instanciador_neutro_input : bool;
+                              instanciador_seguranca_input : bool;
+                              instanciador_l1 : bool; instanciador_l2 : bool;
+                              instanciador_l3 : bool; instanciador_l4 : bool;
+                              instanciador_lx : bool; instanciador_lv : bool;
+                              instanciador_v_301 : bool;
+                              instanciador_v_300 : bool;
+                              instanciador_v_299 : bool;
+                              instanciador_pnr_6 : bool;
+                              instanciador_ck_10_1 : bool;
+                              instanciador_pnr_5 : bool;
+                              instanciador_ck_12_1 : bool;
+                              instanciador_pnr_4 : bool;
+                              instanciador_ck_14_1 : bool;
+                              instanciador_pnr_3 : bool;
+                              instanciador_ck_16_1 : bool;
+                              instanciador_pnr_2 : bool;
+                              instanciador_ck_18_1 : bool;
+                              instanciador_pnr_1 : bool;
+                              instanciador_ck_20_1 : bool;
+                              instanciador_pnr : bool;
+                              p_instanciador_c_vent : bool;
+                              p_instanciador_cv : bool;
+                              p_instanciador_cx : bool;
+                              p_instanciador_c4 : bool;
+                              p_instanciador_c3 : bool;
+                              p_instanciador_c2 : bool;
+                              p_instanciador_c1 : bool;
+                              p_instanciador_c_lampExt : bool;
+                              p_instanciador_c4_lamp : bool;
+                              p_instanciador_c3_lamp : bool;
+                              p_instanciador_c2_lamp : bool;
+                              p_instanciador_c1_lamp : bool)
+returns (instanciador_c_vent : bool; instanciador_cv : bool;
+          instanciador_cx : bool; instanciador_c4 : bool;
+          instanciador_c3 : bool; instanciador_c2 : bool;
+          instanciador_c1 : bool; instanciador_c_lampExt : bool;
+          instanciador_c4_lamp : bool; instanciador_c3_lamp : bool;
+          instanciador_c2_lamp : bool; instanciador_c1_lamp : bool)
+let
+  instanciador_c1_lamp =
+    instanciador_controller_instanciador_c1_lamp
+    (instanciador_sexta_input, instanciador_ebd_input,
+      instanciador_domingo_input, instanciador_domingol_input,
+      instanciador_neutro_input, instanciador_seguranca_input,
+      instanciador_l1, instanciador_l2, instanciador_l3, instanciador_l4,
+      instanciador_lx, instanciador_lv, instanciador_v_301,
+      instanciador_v_300, instanciador_v_299, instanciador_pnr_6,
+      instanciador_ck_10_1, instanciador_pnr_5, instanciador_ck_12_1,
+      instanciador_pnr_4, instanciador_ck_14_1, instanciador_pnr_3,
+      instanciador_ck_16_1, instanciador_pnr_2, instanciador_ck_18_1,
+      instanciador_pnr_1, instanciador_ck_20_1, instanciador_pnr,
+      p_instanciador_c_vent, p_instanciador_cv, p_instanciador_cx,
+      p_instanciador_c4, p_instanciador_c3, p_instanciador_c2,
+      p_instanciador_c1, p_instanciador_c_lampExt, p_instanciador_c4_lamp,
+      p_instanciador_c3_lamp, p_instanciador_c2_lamp, p_instanciador_c1_lamp);
+  instanciador_c2_lamp =
+    instanciador_controller_instanciador_c2_lamp
+    (instanciador_sexta_input, instanciador_ebd_input,
+      instanciador_domingo_input, instanciador_domingol_input,
+      instanciador_neutro_input, instanciador_seguranca_input,
+      instanciador_l1, instanciador_l2, instanciador_l3, instanciador_l4,
+      instanciador_lx, instanciador_lv, instanciador_v_301,
+      instanciador_v_300, instanciador_v_299, instanciador_pnr_6,
+      instanciador_ck_10_1, instanciador_pnr_5, instanciador_ck_12_1,
+      instanciador_pnr_4, instanciador_ck_14_1, instanciador_pnr_3,
+      instanciador_ck_16_1, instanciador_pnr_2, instanciador_ck_18_1,
+      instanciador_pnr_1, instanciador_ck_20_1, instanciador_pnr,
+      p_instanciador_c_vent, p_instanciador_cv, p_instanciador_cx,
+      p_instanciador_c4, p_instanciador_c3, p_instanciador_c2,
+      p_instanciador_c1, p_instanciador_c_lampExt, p_instanciador_c4_lamp,
+      p_instanciador_c3_lamp, p_instanciador_c2_lamp, p_instanciador_c1_lamp,
+      instanciador_c1_lamp);
+  instanciador_c3_lamp =
+    instanciador_controller_instanciador_c3_lamp
+    (instanciador_sexta_input, instanciador_ebd_input,
+      instanciador_domingo_input, instanciador_domingol_input,
+      instanciador_neutro_input, instanciador_seguranca_input,
+      instanciador_l1, instanciador_l2, instanciador_l3, instanciador_l4,
+      instanciador_lx, instanciador_lv, instanciador_v_301,
+      instanciador_v_300, instanciador_v_299, instanciador_pnr_6,
+      instanciador_ck_10_1, instanciador_pnr_5, instanciador_ck_12_1,
+      instanciador_pnr_4, instanciador_ck_14_1, instanciador_pnr_3,
+      instanciador_ck_16_1, instanciador_pnr_2, instanciador_ck_18_1,
+      instanciador_pnr_1, instanciador_ck_20_1, instanciador_pnr,
+      p_instanciador_c_vent, p_instanciador_cv, p_instanciador_cx,
+      p_instanciador_c4, p_instanciador_c3, p_instanciador_c2,
+      p_instanciador_c1, p_instanciador_c_lampExt, p_instanciador_c4_lamp,
+      p_instanciador_c3_lamp, p_instanciador_c2_lamp, p_instanciador_c1_lamp,
+      instanciador_c2_lamp, instanciador_c1_lamp);
+  instanciador_c4_lamp =
+    instanciador_controller_instanciador_c4_lamp
+    (instanciador_sexta_input, instanciador_ebd_input,
+      instanciador_domingo_input, instanciador_domingol_input,
+      instanciador_neutro_input, instanciador_seguranca_input,
+      instanciador_l1, instanciador_l2, instanciador_l3, instanciador_l4,
+      instanciador_lx, instanciador_lv, instanciador_v_301,
+      instanciador_v_300, instanciador_v_299, instanciador_pnr_6,
+      instanciador_ck_10_1, instanciador_pnr_5, instanciador_ck_12_1,
+      instanciador_pnr_4, instanciador_ck_14_1, instanciador_pnr_3,
+      instanciador_ck_16_1, instanciador_pnr_2, instanciador_ck_18_1,
+      instanciador_pnr_1, instanciador_ck_20_1, instanciador_pnr,
+      p_instanciador_c_vent, p_instanciador_cv, p_instanciador_cx,
+      p_instanciador_c4, p_instanciador_c3, p_instanciador_c2,
+      p_instanciador_c1, p_instanciador_c_lampExt, p_instanciador_c4_lamp,
+      p_instanciador_c3_lamp, p_instanciador_c2_lamp, p_instanciador_c1_lamp,
+      instanciador_c3_lamp, instanciador_c2_lamp, instanciador_c1_lamp);
+  instanciador_c_lampExt =
+    instanciador_controller_instanciador_c_lampExt
+    (instanciador_sexta_input, instanciador_ebd_input,
+      instanciador_domingo_input, instanciador_domingol_input,
+      instanciador_neutro_input, instanciador_seguranca_input,
+      instanciador_l1, instanciador_l2, instanciador_l3, instanciador_l4,
+      instanciador_lx, instanciador_lv, instanciador_v_301,
+      instanciador_v_300, instanciador_v_299, instanciador_pnr_6,
+      instanciador_ck_10_1, instanciador_pnr_5, instanciador_ck_12_1,
+      instanciador_pnr_4, instanciador_ck_14_1, instanciador_pnr_3,
+      instanciador_ck_16_1, instanciador_pnr_2, instanciador_ck_18_1,
+      instanciador_pnr_1, instanciador_ck_20_1, instanciador_pnr,
+      p_instanciador_c_vent, p_instanciador_cv, p_instanciador_cx,
+      p_instanciador_c4, p_instanciador_c3, p_instanciador_c2,
+      p_instanciador_c1, p_instanciador_c_lampExt, p_instanciador_c4_lamp,
+      p_instanciador_c3_lamp, p_instanciador_c2_lamp, p_instanciador_c1_lamp,
+      instanciador_c4_lamp, instanciador_c3_lamp, instanciador_c2_lamp,
+      instanciador_c1_lamp);
+  instanciador_c1 =
+    instanciador_controller_instanciador_c1
+    (instanciador_sexta_input, instanciador_ebd_input,
+      instanciador_domingo_input, instanciador_domingol_input,
+      instanciador_neutro_input, instanciador_seguranca_input,
+      instanciador_l1, instanciador_l2, instanciador_l3, instanciador_l4,
+      instanciador_lx, instanciador_lv, instanciador_v_301,
+      instanciador_v_300, instanciador_v_299, instanciador_pnr_6,
+      instanciador_ck_10_1, instanciador_pnr_5, instanciador_ck_12_1,
+      instanciador_pnr_4, instanciador_ck_14_1, instanciador_pnr_3,
+      instanciador_ck_16_1, instanciador_pnr_2, instanciador_ck_18_1,
+      instanciador_pnr_1, instanciador_ck_20_1, instanciador_pnr,
+      p_instanciador_c_vent, p_instanciador_cv, p_instanciador_cx,
+      p_instanciador_c4, p_instanciador_c3, p_instanciador_c2,
+      p_instanciador_c1, p_instanciador_c_lampExt, p_instanciador_c4_lamp,
+      p_instanciador_c3_lamp, p_instanciador_c2_lamp, p_instanciador_c1_lamp,
+      instanciador_c_lampExt, instanciador_c4_lamp, instanciador_c3_lamp,
+      instanciador_c2_lamp, instanciador_c1_lamp);
+  instanciador_c2 =
+    instanciador_controller_instanciador_c2
+    (instanciador_sexta_input, instanciador_ebd_input,
+      instanciador_domingo_input, instanciador_domingol_input,
+      instanciador_neutro_input, instanciador_seguranca_input,
+      instanciador_l1, instanciador_l2, instanciador_l3, instanciador_l4,
+      instanciador_lx, instanciador_lv, instanciador_v_301,
+      instanciador_v_300, instanciador_v_299, instanciador_pnr_6,
+      instanciador_ck_10_1, instanciador_pnr_5, instanciador_ck_12_1,
+      instanciador_pnr_4, instanciador_ck_14_1, instanciador_pnr_3,
+      instanciador_ck_16_1, instanciador_pnr_2, instanciador_ck_18_1,
+      instanciador_pnr_1, instanciador_ck_20_1, instanciador_pnr,
+      p_instanciador_c_vent, p_instanciador_cv, p_instanciador_cx,
+      p_instanciador_c4, p_instanciador_c3, p_instanciador_c2,
+      p_instanciador_c1, p_instanciador_c_lampExt, p_instanciador_c4_lamp,
+      p_instanciador_c3_lamp, p_instanciador_c2_lamp, p_instanciador_c1_lamp,
+      instanciador_c1, instanciador_c_lampExt, instanciador_c4_lamp,
+      instanciador_c3_lamp, instanciador_c2_lamp, instanciador_c1_lamp);
+  instanciador_c3 =
+    instanciador_controller_instanciador_c3
+    (instanciador_sexta_input, instanciador_ebd_input,
+      instanciador_domingo_input, instanciador_domingol_input,
+      instanciador_neutro_input, instanciador_seguranca_input,
+      instanciador_l1, instanciador_l2, instanciador_l3, instanciador_l4,
+      instanciador_lx, instanciador_lv, instanciador_v_301,
+      instanciador_v_300, instanciador_v_299, instanciador_pnr_6,
+      instanciador_ck_10_1, instanciador_pnr_5, instanciador_ck_12_1,
+      instanciador_pnr_4, instanciador_ck_14_1, instanciador_pnr_3,
+      instanciador_ck_16_1, instanciador_pnr_2, instanciador_ck_18_1,
+      instanciador_pnr_1, instanciador_ck_20_1, instanciador_pnr,
+      p_instanciador_c_vent, p_instanciador_cv, p_instanciador_cx,
+      p_instanciador_c4, p_instanciador_c3, p_instanciador_c2,
+      p_instanciador_c1, p_instanciador_c_lampExt, p_instanciador_c4_lamp,
+      p_instanciador_c3_lamp, p_instanciador_c2_lamp, p_instanciador_c1_lamp,
+      instanciador_c2, instanciador_c1, instanciador_c_lampExt,
+      instanciador_c4_lamp, instanciador_c3_lamp, instanciador_c2_lamp,
+      instanciador_c1_lamp);
+  instanciador_c4 =
+    instanciador_controller_instanciador_c4
+    (instanciador_sexta_input, instanciador_ebd_input,
+      instanciador_domingo_input, instanciador_domingol_input,
+      instanciador_neutro_input, instanciador_seguranca_input,
+      instanciador_l1, instanciador_l2, instanciador_l3, instanciador_l4,
+      instanciador_lx, instanciador_lv, instanciador_v_301,
+      instanciador_v_300, instanciador_v_299, instanciador_pnr_6,
+      instanciador_ck_10_1, instanciador_pnr_5, instanciador_ck_12_1,
+      instanciador_pnr_4, instanciador_ck_14_1, instanciador_pnr_3,
+      instanciador_ck_16_1, instanciador_pnr_2, instanciador_ck_18_1,
+      instanciador_pnr_1, instanciador_ck_20_1, instanciador_pnr,
+      p_instanciador_c_vent, p_instanciador_cv, p_instanciador_cx,
+      p_instanciador_c4, p_instanciador_c3, p_instanciador_c2,
+      p_instanciador_c1, p_instanciador_c_lampExt, p_instanciador_c4_lamp,
+      p_instanciador_c3_lamp, p_instanciador_c2_lamp, p_instanciador_c1_lamp,
+      instanciador_c3, instanciador_c2, instanciador_c1,
+      instanciador_c_lampExt, instanciador_c4_lamp, instanciador_c3_lamp,
+      instanciador_c2_lamp, instanciador_c1_lamp);
+  instanciador_cx =
+    instanciador_controller_instanciador_cx
+    (instanciador_sexta_input, instanciador_ebd_input,
+      instanciador_domingo_input, instanciador_domingol_input,
+      instanciador_neutro_input, instanciador_seguranca_input,
+      instanciador_l1, instanciador_l2, instanciador_l3, instanciador_l4,
+      instanciador_lx, instanciador_lv, instanciador_v_301,
+      instanciador_v_300, instanciador_v_299, instanciador_pnr_6,
+      instanciador_ck_10_1, instanciador_pnr_5, instanciador_ck_12_1,
+      instanciador_pnr_4, instanciador_ck_14_1, instanciador_pnr_3,
+      instanciador_ck_16_1, instanciador_pnr_2, instanciador_ck_18_1,
+      instanciador_pnr_1, instanciador_ck_20_1, instanciador_pnr,
+      p_instanciador_c_vent, p_instanciador_cv, p_instanciador_cx,
+      p_instanciador_c4, p_instanciador_c3, p_instanciador_c2,
+      p_instanciador_c1, p_instanciador_c_lampExt, p_instanciador_c4_lamp,
+      p_instanciador_c3_lamp, p_instanciador_c2_lamp, p_instanciador_c1_lamp,
+      instanciador_c4, instanciador_c3, instanciador_c2, instanciador_c1,
+      instanciador_c_lampExt, instanciador_c4_lamp, instanciador_c3_lamp,
+      instanciador_c2_lamp, instanciador_c1_lamp);
+  instanciador_cv =
+    instanciador_controller_instanciador_cv
+    (instanciador_sexta_input, instanciador_ebd_input,
+      instanciador_domingo_input, instanciador_domingol_input,
+      instanciador_neutro_input, instanciador_seguranca_input,
+      instanciador_l1, instanciador_l2, instanciador_l3, instanciador_l4,
+      instanciador_lx, instanciador_lv, instanciador_v_301,
+      instanciador_v_300, instanciador_v_299, instanciador_pnr_6,
+      instanciador_ck_10_1, instanciador_pnr_5, instanciador_ck_12_1,
+      instanciador_pnr_4, instanciador_ck_14_1, instanciador_pnr_3,
+      instanciador_ck_16_1, instanciador_pnr_2, instanciador_ck_18_1,
+      instanciador_pnr_1, instanciador_ck_20_1, instanciador_pnr,
+      p_instanciador_c_vent, p_instanciador_cv, p_instanciador_cx,
+      p_instanciador_c4, p_instanciador_c3, p_instanciador_c2,
+      p_instanciador_c1, p_instanciador_c_lampExt, p_instanciador_c4_lamp,
+      p_instanciador_c3_lamp, p_instanciador_c2_lamp, p_instanciador_c1_lamp,
+      instanciador_cx, instanciador_c4, instanciador_c3, instanciador_c2,
+      instanciador_c1, instanciador_c_lampExt, instanciador_c4_lamp,
+      instanciador_c3_lamp, instanciador_c2_lamp, instanciador_c1_lamp);
+  instanciador_c_vent =
+    instanciador_controller_instanciador_c_vent
+    (instanciador_sexta_input, instanciador_ebd_input,
+      instanciador_domingo_input, instanciador_domingol_input,
+      instanciador_neutro_input, instanciador_seguranca_input,
+      instanciador_l1, instanciador_l2, instanciador_l3, instanciador_l4,
+      instanciador_lx, instanciador_lv, instanciador_v_301,
+      instanciador_v_300, instanciador_v_299, instanciador_pnr_6,
+      instanciador_ck_10_1, instanciador_pnr_5, instanciador_ck_12_1,
+      instanciador_pnr_4, instanciador_ck_14_1, instanciador_pnr_3,
+      instanciador_ck_16_1, instanciador_pnr_2, instanciador_ck_18_1,
+      instanciador_pnr_1, instanciador_ck_20_1, instanciador_pnr,
+      p_instanciador_c_vent, p_instanciador_cv, p_instanciador_cx,
+      p_instanciador_c4, p_instanciador_c3, p_instanciador_c2,
+      p_instanciador_c1, p_instanciador_c_lampExt, p_instanciador_c4_lamp,
+      p_instanciador_c3_lamp, p_instanciador_c2_lamp, p_instanciador_c1_lamp,
+      instanciador_cv, instanciador_cx, instanciador_c4, instanciador_c3,
+      instanciador_c2, instanciador_c1, instanciador_c_lampExt,
+      instanciador_c4_lamp, instanciador_c3_lamp, instanciador_c2_lamp,
+      instanciador_c1_lamp)
+tel
+

@@ -1,0 +1,635 @@
+node instanciador_controller_instanciador_c_vent(instanciador_sexta_input,instanciador_ebd_input,instanciador_domingo_input,instanciador_domingol_input,instanciador_neutro_input,instanciador_seguranca_input,instanciador_l1,instanciador_l2,instanciador_l3,instanciador_l4,instanciador_lx,instanciador_lv,instanciador_v_301,instanciador_v_300,instanciador_v_299,instanciador_pnr_6,instanciador_ck_10_1,instanciador_pnr_5,instanciador_ck_12_1,instanciador_pnr_4,instanciador_ck_14_1,instanciador_pnr_3,instanciador_ck_16_1,instanciador_pnr_2,instanciador_ck_18_1,instanciador_pnr_1,instanciador_ck_20_1,instanciador_pnr,p_instanciador_c_vent,p_instanciador_cv,p_instanciador_cx,p_instanciador_c4,p_instanciador_c3,p_instanciador_c2,p_instanciador_c1,p_instanciador_c_lampExt,p_instanciador_c4_lamp,p_instanciador_c3_lamp,p_instanciador_c2_lamp,p_instanciador_c1_lamp,instanciador_cv,instanciador_cx,instanciador_c4,instanciador_c3,instanciador_c2,instanciador_c1,instanciador_c_lampExt,instanciador_c4_lamp,instanciador_c3_lamp,instanciador_c2_lamp,instanciador_c1_lamp:bool) returns (instanciador_c_vent:bool)
+  var sub_0,sub_1,sub_2,sub_3,sub_4,sub_5,sub_6,sub_7,sub_8,sub_9,sub_10,sub_11,sub_12,sub_13,sub_14,sub_15,sub_16,sub_17,sub_18,sub_19,sub_20,sub_21,sub_22,sub_23,sub_24,sub_25,sub_26,sub_27,sub_28,sub_29,sub_30,sub_31,sub_32,sub_33,sub_34,sub_35,sub_36,sub_37,sub_38,sub_39,sub_40,sub_41,sub_42,sub_43,sub_44,sub_45,sub_46,sub_47,sub_48,sub_49,sub_50,sub_51,sub_52,sub_53,sub_54,sub_55,sub_56,sub_57,sub_58,sub_59,sub_60,sub_61,sub_62,sub_63,sub_64,sub_65,sub_66,sub_67,sub_68,sub_69,sub_70,sub_71,sub_72,sub_73,sub_74,sub_75,sub_76,sub_77,sub_78,sub_79:bool;
+
+let
+  sub_0 = (if p_instanciador_c_vent then (if instanciador_v_300 then (if instanciador_ebd_input then sub_52 else sub_76) else sub_49) else sub_1);
+  sub_1 = (if instanciador_v_300 then (if instanciador_ebd_input then sub_5 else sub_45) else sub_2);
+  sub_2 = (if instanciador_v_301 then (sub_5) else sub_3);
+  sub_3 = (if instanciador_v_299 then (sub_45) else sub_4);
+  sub_4 = (if instanciador_ebd_input then sub_5 else (sub_28));
+  sub_5 = (sub_6);
+  sub_6 = (sub_7);
+  sub_7 = (sub_8);
+  sub_8 = (sub_9);
+  sub_9 = (sub_10);
+  sub_10 = (if instanciador_c1 then (if instanciador_l1 then (sub_11) else (if instanciador_c1_lamp then sub_11 else sub_27)) else (if instanciador_l1 then (if instanciador_c1_lamp then sub_27 else false) else false));
+  sub_11 = (if instanciador_c2 then (if instanciador_l2 then (sub_12) else (if instanciador_c2_lamp then sub_12 else sub_26)) else (if instanciador_l2 then (if instanciador_c2_lamp then sub_26 else false) else false));
+  sub_12 = (if instanciador_c3 then (if instanciador_l3 then (sub_13) else (if instanciador_c3_lamp then sub_13 else sub_25)) else (if instanciador_l3 then (if instanciador_c3_lamp then sub_25 else false) else false));
+  sub_13 = (if instanciador_c4 then (if instanciador_l4 then false else (if instanciador_c4_lamp then false else sub_14)) else (if instanciador_l4 then (if instanciador_c4_lamp then sub_14 else sub_15) else (sub_15)));
+  sub_14 = (if instanciador_ck_16_1 then sub_15 else false);
+  sub_15 = (if instanciador_cv then (if instanciador_ck_20_1 then (if instanciador_lv then sub_17 else sub_20) else sub_16) else sub_23);
+  sub_16 = (sub_17);
+  sub_17 = (if instanciador_cx then (if instanciador_c_lampExt then false else (if instanciador_lx then false else sub_18)) else (if instanciador_c_lampExt then instanciador_lx & (sub_18) else sub_19));
+  sub_18 = (not instanciador_ck_18_1) & (false);
+  sub_19 = (false);
+  sub_20 = (if instanciador_cx then (if instanciador_c_lampExt then false else (if instanciador_lx then false else sub_21)) else (if instanciador_c_lampExt then (not instanciador_lx) or (sub_21) else sub_22));
+  sub_21 = instanciador_ck_18_1 or (false);
+  sub_22 = (true);
+  sub_23 = (if instanciador_ck_20_1 then false else sub_24);
+  sub_24 = (if instanciador_lv then sub_20 else false);
+  sub_25 = (if instanciador_ck_14_1 then false else sub_13);
+  sub_26 = (if instanciador_ck_12_1 then false else sub_12);
+  sub_27 = (if instanciador_ck_10_1 then false else sub_11);
+  sub_28 = (if instanciador_domingol_input then sub_7 else (if instanciador_neutro_input then sub_8 else (if instanciador_seguranca_input then sub_9 else (if instanciador_domingo_input then sub_10 else sub_29))));
+  sub_29 = (if instanciador_c1 then (if instanciador_l1 then (sub_30) else (if instanciador_c1_lamp then sub_30 else sub_44)) else (if instanciador_l1 then (if instanciador_c1_lamp then sub_44 else false) else false));
+  sub_30 = (if instanciador_c2 then (if instanciador_l2 then (sub_31) else (if instanciador_c2_lamp then sub_31 else sub_43)) else (if instanciador_l2 then (if instanciador_c2_lamp then sub_43 else false) else false));
+  sub_31 = (if instanciador_c3 then (if instanciador_l3 then (sub_32) else (if instanciador_c3_lamp then sub_32 else sub_42)) else (if instanciador_l3 then (if instanciador_c3_lamp then sub_42 else false) else false));
+  sub_32 = (if instanciador_c4 then (if instanciador_l4 then (sub_33) else (if instanciador_c4_lamp then sub_33 else sub_41)) else (if instanciador_l4 then (if instanciador_c4_lamp then sub_41 else false) else false));
+  sub_33 = (if instanciador_cv then (if instanciador_ck_20_1 then (if instanciador_lv then sub_35 else sub_37) else sub_34) else sub_39);
+  sub_34 = (sub_35);
+  sub_35 = (if instanciador_cx then (if instanciador_c_lampExt then sub_19 else (not instanciador_lx) & (sub_36)) else (if instanciador_c_lampExt then (if instanciador_lx then sub_36 else false) else false));
+  sub_36 = instanciador_ck_18_1 & (false);
+  sub_37 = (if instanciador_cx then (if instanciador_c_lampExt then sub_22 else instanciador_lx or (sub_38)) else (if instanciador_c_lampExt then (if instanciador_lx then sub_38 else false) else false));
+  sub_38 = (not instanciador_ck_18_1) or (false);
+  sub_39 = (if instanciador_ck_20_1 then false else sub_40);
+  sub_40 = (if instanciador_lv then sub_37 else false);
+  sub_41 = (if instanciador_ck_16_1 then false else sub_33);
+  sub_42 = (if instanciador_ck_14_1 then false else sub_32);
+  sub_43 = (if instanciador_ck_12_1 then false else sub_31);
+  sub_44 = (if instanciador_ck_10_1 then false else sub_30);
+  sub_45 = (if instanciador_sexta_input then (sub_46) else sub_6);
+  sub_46 = (sub_47);
+  sub_47 = (sub_48);
+  sub_48 = (sub_29);
+  sub_49 = (if instanciador_v_301 then (sub_52) else sub_50);
+  sub_50 = (if instanciador_v_299 then (sub_76) else sub_51);
+  sub_51 = (if instanciador_ebd_input then sub_52 else (sub_66));
+  sub_52 = (sub_53);
+  sub_53 = (sub_54);
+  sub_54 = (sub_55);
+  sub_55 = (sub_56);
+  sub_56 = (sub_57);
+  sub_57 = (if instanciador_c1 then (if instanciador_l1 then (sub_58) else (if instanciador_c1_lamp then sub_58 else sub_65)) else (if instanciador_l1 then (if instanciador_c1_lamp then sub_65 else false) else false));
+  sub_58 = (if instanciador_c2 then (if instanciador_l2 then (sub_59) else (if instanciador_c2_lamp then sub_59 else sub_64)) else (if instanciador_l2 then (if instanciador_c2_lamp then sub_64 else false) else false));
+  sub_59 = (if instanciador_c3 then (if instanciador_l3 then (sub_60) else (if instanciador_c3_lamp then sub_60 else sub_63)) else (if instanciador_l3 then (if instanciador_c3_lamp then sub_63 else false) else false));
+  sub_60 = (if instanciador_c4 then (if instanciador_l4 then false else (if instanciador_c4_lamp then false else sub_61)) else (if instanciador_l4 then (if instanciador_c4_lamp then sub_61 else sub_62) else (sub_62)));
+  sub_61 = (if instanciador_ck_16_1 then sub_62 else false);
+  sub_62 = (if instanciador_cv then (sub_20) else sub_23);
+  sub_63 = (if instanciador_ck_14_1 then false else sub_60);
+  sub_64 = (if instanciador_ck_12_1 then false else sub_59);
+  sub_65 = (if instanciador_ck_10_1 then false else sub_58);
+  sub_66 = (if instanciador_domingol_input then sub_54 else (if instanciador_neutro_input then sub_55 else (if instanciador_seguranca_input then sub_56 else (if instanciador_domingo_input then sub_57 else sub_67))));
+  sub_67 = (if instanciador_c1 then (if instanciador_l1 then (sub_68) else (if instanciador_c1_lamp then sub_68 else sub_75)) else (if instanciador_l1 then (if instanciador_c1_lamp then sub_75 else false) else false));
+  sub_68 = (if instanciador_c2 then (if instanciador_l2 then (sub_69) else (if instanciador_c2_lamp then sub_69 else sub_74)) else (if instanciador_l2 then (if instanciador_c2_lamp then sub_74 else false) else false));
+  sub_69 = (if instanciador_c3 then (if instanciador_l3 then (sub_70) else (if instanciador_c3_lamp then sub_70 else sub_73)) else (if instanciador_l3 then (if instanciador_c3_lamp then sub_73 else false) else false));
+  sub_70 = (if instanciador_c4 then (if instanciador_l4 then (sub_71) else (if instanciador_c4_lamp then sub_71 else sub_72)) else (if instanciador_l4 then (if instanciador_c4_lamp then sub_72 else false) else false));
+  sub_71 = (if instanciador_cv then (sub_37) else sub_39);
+  sub_72 = (if instanciador_ck_16_1 then false else sub_71);
+  sub_73 = (if instanciador_ck_14_1 then false else sub_70);
+  sub_74 = (if instanciador_ck_12_1 then false else sub_69);
+  sub_75 = (if instanciador_ck_10_1 then false else sub_68);
+  sub_76 = (if instanciador_sexta_input then (sub_77) else sub_53);
+  sub_77 = (sub_78);
+  sub_78 = (sub_79);
+  sub_79 = (sub_67);
+  instanciador_c_vent = sub_0;
+tel
+
+node instanciador_controller_instanciador_cv(instanciador_sexta_input,instanciador_ebd_input,instanciador_domingo_input,instanciador_domingol_input,instanciador_neutro_input,instanciador_seguranca_input,instanciador_l1,instanciador_l2,instanciador_l3,instanciador_l4,instanciador_lx,instanciador_lv,instanciador_v_301,instanciador_v_300,instanciador_v_299,instanciador_pnr_6,instanciador_ck_10_1,instanciador_pnr_5,instanciador_ck_12_1,instanciador_pnr_4,instanciador_ck_14_1,instanciador_pnr_3,instanciador_ck_16_1,instanciador_pnr_2,instanciador_ck_18_1,instanciador_pnr_1,instanciador_ck_20_1,instanciador_pnr,p_instanciador_c_vent,p_instanciador_cv,p_instanciador_cx,p_instanciador_c4,p_instanciador_c3,p_instanciador_c2,p_instanciador_c1,p_instanciador_c_lampExt,p_instanciador_c4_lamp,p_instanciador_c3_lamp,p_instanciador_c2_lamp,p_instanciador_c1_lamp,instanciador_cx,instanciador_c4,instanciador_c3,instanciador_c2,instanciador_c1,instanciador_c_lampExt,instanciador_c4_lamp,instanciador_c3_lamp,instanciador_c2_lamp,instanciador_c1_lamp:bool) returns (instanciador_cv:bool)
+  var sub_0,sub_1,sub_2,sub_3,sub_4,sub_5,sub_6,sub_7,sub_8,sub_9,sub_10,sub_11,sub_12,sub_13,sub_14,sub_15,sub_16,sub_17,sub_18,sub_19,sub_20,sub_21,sub_22,sub_23,sub_24,sub_25,sub_26,sub_27,sub_28,sub_29,sub_30,sub_31,sub_32,sub_33,sub_34,sub_35,sub_36,sub_37,sub_38,sub_39,sub_40,sub_41,sub_42,sub_43,sub_44,sub_45,sub_46,sub_47,sub_48,sub_49,sub_50,sub_51,sub_52,sub_53,sub_54,sub_55,sub_56,sub_57,sub_58,sub_59,sub_60,sub_61,sub_62,sub_63,sub_64,sub_65,sub_66,sub_67,sub_68,sub_69,sub_70,sub_71,sub_72,sub_73:bool;
+
+let
+  sub_0 = (if p_instanciador_cv then (if instanciador_v_300 then (if instanciador_ebd_input then sub_48 else sub_70) else sub_45) else sub_1);
+  sub_1 = (if instanciador_v_300 then (if instanciador_ebd_input then sub_5 else sub_41) else sub_2);
+  sub_2 = (if instanciador_v_301 then (sub_5) else sub_3);
+  sub_3 = (if instanciador_v_299 then (sub_41) else sub_4);
+  sub_4 = (if instanciador_ebd_input then sub_5 else (sub_26));
+  sub_5 = (sub_6);
+  sub_6 = (sub_7);
+  sub_7 = (sub_8);
+  sub_8 = (sub_9);
+  sub_9 = (sub_10);
+  sub_10 = (if instanciador_c1 then (if instanciador_l1 then (sub_11) else (if instanciador_c1_lamp then sub_11 else sub_25)) else (if instanciador_l1 then (if instanciador_c1_lamp then sub_25 else false) else false));
+  sub_11 = (if instanciador_c2 then (if instanciador_l2 then (sub_12) else (if instanciador_c2_lamp then sub_12 else sub_24)) else (if instanciador_l2 then (if instanciador_c2_lamp then sub_24 else false) else false));
+  sub_12 = (if instanciador_c3 then (if instanciador_l3 then (sub_13) else (if instanciador_c3_lamp then sub_13 else sub_23)) else (if instanciador_l3 then (if instanciador_c3_lamp then sub_23 else false) else false));
+  sub_13 = (if instanciador_c4 then (if instanciador_l4 then false else (if instanciador_c4_lamp then false else sub_14)) else (if instanciador_l4 then (if instanciador_c4_lamp then sub_14 else sub_15) else (sub_15)));
+  sub_14 = (if instanciador_ck_16_1 then sub_15 else false);
+  sub_15 = (if instanciador_ck_20_1 then sub_22 else sub_16);
+  sub_16 = (if instanciador_lv then (if instanciador_cx then (if instanciador_c_lampExt then false else (if instanciador_lx then false else sub_17)) else (if instanciador_c_lampExt then instanciador_lx & (sub_17) else sub_18)) else sub_19);
+  sub_17 = (not instanciador_ck_18_1) & (false);
+  sub_18 = (false);
+  sub_19 = (if instanciador_cx then (if instanciador_c_lampExt then false else (if instanciador_lx then false else sub_20)) else (if instanciador_c_lampExt then (not instanciador_lx) or (sub_20) else sub_21));
+  sub_20 = instanciador_ck_18_1 or (false);
+  sub_21 = (true);
+  sub_22 = (sub_19);
+  sub_23 = (if instanciador_ck_14_1 then false else sub_13);
+  sub_24 = (if instanciador_ck_12_1 then false else sub_12);
+  sub_25 = (if instanciador_ck_10_1 then false else sub_11);
+  sub_26 = (if instanciador_domingol_input then sub_7 else (if instanciador_neutro_input then sub_8 else (if instanciador_seguranca_input then sub_9 else (if instanciador_domingo_input then sub_10 else sub_27))));
+  sub_27 = (if instanciador_c1 then (if instanciador_l1 then (sub_28) else (if instanciador_c1_lamp then sub_28 else sub_40)) else (if instanciador_l1 then (if instanciador_c1_lamp then sub_40 else false) else false));
+  sub_28 = (if instanciador_c2 then (if instanciador_l2 then (sub_29) else (if instanciador_c2_lamp then sub_29 else sub_39)) else (if instanciador_l2 then (if instanciador_c2_lamp then sub_39 else false) else false));
+  sub_29 = (if instanciador_c3 then (if instanciador_l3 then (sub_30) else (if instanciador_c3_lamp then sub_30 else sub_38)) else (if instanciador_l3 then (if instanciador_c3_lamp then sub_38 else false) else false));
+  sub_30 = (if instanciador_c4 then (if instanciador_l4 then (sub_31) else (if instanciador_c4_lamp then sub_31 else sub_37)) else (if instanciador_l4 then (if instanciador_c4_lamp then sub_37 else false) else false));
+  sub_31 = (if instanciador_ck_20_1 then sub_36 else sub_32);
+  sub_32 = (if instanciador_lv then (if instanciador_cx then (if instanciador_c_lampExt then sub_18 else (not instanciador_lx) & (sub_33)) else (if instanciador_c_lampExt then (if instanciador_lx then sub_33 else false) else false)) else sub_34);
+  sub_33 = instanciador_ck_18_1 & (false);
+  sub_34 = (if instanciador_cx then (if instanciador_c_lampExt then sub_21 else instanciador_lx or (sub_35)) else (if instanciador_c_lampExt then (if instanciador_lx then sub_35 else false) else false));
+  sub_35 = (not instanciador_ck_18_1) or (false);
+  sub_36 = (sub_34);
+  sub_37 = (if instanciador_ck_16_1 then false else sub_31);
+  sub_38 = (if instanciador_ck_14_1 then false else sub_30);
+  sub_39 = (if instanciador_ck_12_1 then false else sub_29);
+  sub_40 = (if instanciador_ck_10_1 then false else sub_28);
+  sub_41 = (if instanciador_sexta_input then (sub_42) else sub_6);
+  sub_42 = (sub_43);
+  sub_43 = (sub_44);
+  sub_44 = (sub_27);
+  sub_45 = (if instanciador_v_301 then (sub_48) else sub_46);
+  sub_46 = (if instanciador_v_299 then (sub_70) else sub_47);
+  sub_47 = (if instanciador_ebd_input then sub_48 else (sub_61));
+  sub_48 = (sub_49);
+  sub_49 = (sub_50);
+  sub_50 = (sub_51);
+  sub_51 = (sub_52);
+  sub_52 = (sub_53);
+  sub_53 = (if instanciador_c1 then (if instanciador_l1 then (sub_54) else (if instanciador_c1_lamp then sub_54 else sub_60)) else (if instanciador_l1 then (if instanciador_c1_lamp then sub_60 else false) else false));
+  sub_54 = (if instanciador_c2 then (if instanciador_l2 then (sub_55) else (if instanciador_c2_lamp then sub_55 else sub_59)) else (if instanciador_l2 then (if instanciador_c2_lamp then sub_59 else false) else false));
+  sub_55 = (if instanciador_c3 then (if instanciador_l3 then (sub_56) else (if instanciador_c3_lamp then sub_56 else sub_58)) else (if instanciador_l3 then (if instanciador_c3_lamp then sub_58 else false) else false));
+  sub_56 = (if instanciador_c4 then (if instanciador_l4 then false else (if instanciador_c4_lamp then false else sub_57)) else (if instanciador_l4 then (if instanciador_c4_lamp then sub_57 else sub_22) else (sub_22)));
+  sub_57 = (if instanciador_ck_16_1 then sub_22 else false);
+  sub_58 = (if instanciador_ck_14_1 then false else sub_56);
+  sub_59 = (if instanciador_ck_12_1 then false else sub_55);
+  sub_60 = (if instanciador_ck_10_1 then false else sub_54);
+  sub_61 = (if instanciador_domingol_input then sub_50 else (if instanciador_neutro_input then sub_51 else (if instanciador_seguranca_input then sub_52 else (if instanciador_domingo_input then sub_53 else sub_62))));
+  sub_62 = (if instanciador_c1 then (if instanciador_l1 then (sub_63) else (if instanciador_c1_lamp then sub_63 else sub_69)) else (if instanciador_l1 then (if instanciador_c1_lamp then sub_69 else false) else false));
+  sub_63 = (if instanciador_c2 then (if instanciador_l2 then (sub_64) else (if instanciador_c2_lamp then sub_64 else sub_68)) else (if instanciador_l2 then (if instanciador_c2_lamp then sub_68 else false) else false));
+  sub_64 = (if instanciador_c3 then (if instanciador_l3 then (sub_65) else (if instanciador_c3_lamp then sub_65 else sub_67)) else (if instanciador_l3 then (if instanciador_c3_lamp then sub_67 else false) else false));
+  sub_65 = (if instanciador_c4 then (if instanciador_l4 then (sub_36) else (if instanciador_c4_lamp then sub_36 else sub_66)) else (if instanciador_l4 then (if instanciador_c4_lamp then sub_66 else false) else false));
+  sub_66 = (if instanciador_ck_16_1 then false else sub_36);
+  sub_67 = (if instanciador_ck_14_1 then false else sub_65);
+  sub_68 = (if instanciador_ck_12_1 then false else sub_64);
+  sub_69 = (if instanciador_ck_10_1 then false else sub_63);
+  sub_70 = (if instanciador_sexta_input then (sub_71) else sub_49);
+  sub_71 = (sub_72);
+  sub_72 = (sub_73);
+  sub_73 = (sub_62);
+  instanciador_cv = sub_0;
+tel
+
+node instanciador_controller_instanciador_cx(instanciador_sexta_input,instanciador_ebd_input,instanciador_domingo_input,instanciador_domingol_input,instanciador_neutro_input,instanciador_seguranca_input,instanciador_l1,instanciador_l2,instanciador_l3,instanciador_l4,instanciador_lx,instanciador_lv,instanciador_v_301,instanciador_v_300,instanciador_v_299,instanciador_pnr_6,instanciador_ck_10_1,instanciador_pnr_5,instanciador_ck_12_1,instanciador_pnr_4,instanciador_ck_14_1,instanciador_pnr_3,instanciador_ck_16_1,instanciador_pnr_2,instanciador_ck_18_1,instanciador_pnr_1,instanciador_ck_20_1,instanciador_pnr,p_instanciador_c_vent,p_instanciador_cv,p_instanciador_cx,p_instanciador_c4,p_instanciador_c3,p_instanciador_c2,p_instanciador_c1,p_instanciador_c_lampExt,p_instanciador_c4_lamp,p_instanciador_c3_lamp,p_instanciador_c2_lamp,p_instanciador_c1_lamp,instanciador_c4,instanciador_c3,instanciador_c2,instanciador_c1,instanciador_c_lampExt,instanciador_c4_lamp,instanciador_c3_lamp,instanciador_c2_lamp,instanciador_c1_lamp:bool) returns (instanciador_cx:bool)
+  var sub_0,sub_1,sub_2,sub_3,sub_4,sub_5,sub_6,sub_7,sub_8,sub_9,sub_10,sub_11,sub_12,sub_13,sub_14,sub_15,sub_16,sub_17,sub_18,sub_19,sub_20,sub_21,sub_22,sub_23,sub_24,sub_25,sub_26,sub_27,sub_28,sub_29,sub_30,sub_31,sub_32,sub_33,sub_34,sub_35,sub_36,sub_37,sub_38,sub_39,sub_40,sub_41,sub_42,sub_43,sub_44,sub_45,sub_46,sub_47,sub_48,sub_49,sub_50,sub_51,sub_52,sub_53,sub_54,sub_55,sub_56,sub_57,sub_58,sub_59,sub_60,sub_61,sub_62,sub_63,sub_64,sub_65,sub_66,sub_67,sub_68,sub_69,sub_70:bool;
+
+let
+  sub_0 = (if p_instanciador_cx then (if instanciador_v_300 then (if instanciador_ebd_input then sub_41 else sub_67) else sub_38) else sub_1);
+  sub_1 = (if instanciador_v_300 then (if instanciador_ebd_input then sub_5 else sub_34) else sub_2);
+  sub_2 = (if instanciador_v_301 then (sub_5) else sub_3);
+  sub_3 = (if instanciador_v_299 then (sub_34) else sub_4);
+  sub_4 = (if instanciador_ebd_input then sub_5 else (sub_21));
+  sub_5 = (sub_6);
+  sub_6 = (sub_7);
+  sub_7 = (sub_8);
+  sub_8 = (sub_9);
+  sub_9 = (sub_10);
+  sub_10 = (if instanciador_c1 then (if instanciador_l1 then (sub_11) else (if instanciador_c1_lamp then sub_11 else sub_20)) else (if instanciador_l1 then (if instanciador_c1_lamp then sub_20 else false) else false));
+  sub_11 = (if instanciador_c2 then (if instanciador_l2 then (sub_12) else (if instanciador_c2_lamp then sub_12 else sub_19)) else (if instanciador_l2 then (if instanciador_c2_lamp then sub_19 else false) else false));
+  sub_12 = (if instanciador_c3 then (if instanciador_l3 then (sub_13) else (if instanciador_c3_lamp then sub_13 else sub_18)) else (if instanciador_l3 then (if instanciador_c3_lamp then sub_18 else false) else false));
+  sub_13 = (if instanciador_c4 then (if instanciador_l4 then false else (if instanciador_c4_lamp then false else sub_14)) else (if instanciador_l4 then (if instanciador_c4_lamp then sub_14 else sub_15) else (sub_15)));
+  sub_14 = (if instanciador_ck_16_1 then sub_15 else false);
+  sub_15 = (sub_16);
+  sub_16 = (if instanciador_c_lampExt then sub_17 else (false));
+  sub_17 = instanciador_lx & ((not instanciador_ck_18_1) & (false));
+  sub_18 = (if instanciador_ck_14_1 then false else sub_13);
+  sub_19 = (if instanciador_ck_12_1 then false else sub_12);
+  sub_20 = (if instanciador_ck_10_1 then false else sub_11);
+  sub_21 = (if instanciador_domingol_input then sub_7 else (if instanciador_neutro_input then sub_8 else (if instanciador_seguranca_input then sub_9 else (if instanciador_domingo_input then sub_10 else sub_22))));
+  sub_22 = (if instanciador_c1 then (if instanciador_l1 then (sub_23) else (if instanciador_c1_lamp then sub_23 else sub_33)) else (if instanciador_l1 then (if instanciador_c1_lamp then sub_33 else false) else false));
+  sub_23 = (if instanciador_c2 then (if instanciador_l2 then (sub_24) else (if instanciador_c2_lamp then sub_24 else sub_32)) else (if instanciador_l2 then (if instanciador_c2_lamp then sub_32 else false) else false));
+  sub_24 = (if instanciador_c3 then (if instanciador_l3 then (sub_25) else (if instanciador_c3_lamp then sub_25 else sub_31)) else (if instanciador_l3 then (if instanciador_c3_lamp then sub_31 else false) else false));
+  sub_25 = (if instanciador_c4 then (if instanciador_l4 then (sub_26) else (if instanciador_c4_lamp then sub_26 else sub_30)) else (if instanciador_l4 then (if instanciador_c4_lamp then sub_30 else false) else false));
+  sub_26 = (sub_27);
+  sub_27 = (if instanciador_c_lampExt then (not instanciador_lx) or (sub_28) else sub_29);
+  sub_28 = instanciador_ck_18_1;
+  sub_29 = instanciador_lx or ((not instanciador_ck_18_1) or (false));
+  sub_30 = (if instanciador_ck_16_1 then false else sub_26);
+  sub_31 = (if instanciador_ck_14_1 then false else sub_25);
+  sub_32 = (if instanciador_ck_12_1 then false else sub_24);
+  sub_33 = (if instanciador_ck_10_1 then false else sub_23);
+  sub_34 = (if instanciador_sexta_input then (sub_35) else sub_6);
+  sub_35 = (sub_36);
+  sub_36 = (sub_37);
+  sub_37 = (sub_22);
+  sub_38 = (if instanciador_v_301 then (sub_41) else sub_39);
+  sub_39 = (if instanciador_v_299 then (sub_67) else sub_40);
+  sub_40 = (if instanciador_ebd_input then sub_41 else (sub_56));
+  sub_41 = (sub_42);
+  sub_42 = (sub_43);
+  sub_43 = (sub_44);
+  sub_44 = (sub_45);
+  sub_45 = (sub_46);
+  sub_46 = (if instanciador_c1 then (if instanciador_l1 then (sub_47) else (if instanciador_c1_lamp then sub_47 else sub_55)) else (if instanciador_l1 then (if instanciador_c1_lamp then sub_55 else false) else false));
+  sub_47 = (if instanciador_c2 then (if instanciador_l2 then (sub_48) else (if instanciador_c2_lamp then sub_48 else sub_54)) else (if instanciador_l2 then (if instanciador_c2_lamp then sub_54 else false) else false));
+  sub_48 = (if instanciador_c3 then (if instanciador_l3 then (sub_49) else (if instanciador_c3_lamp then sub_49 else sub_53)) else (if instanciador_l3 then (if instanciador_c3_lamp then sub_53 else false) else false));
+  sub_49 = (if instanciador_c4 then (if instanciador_l4 then false else (if instanciador_c4_lamp then false else sub_50)) else (if instanciador_l4 then (if instanciador_c4_lamp then sub_50 else sub_51) else (sub_51)));
+  sub_50 = (if instanciador_ck_16_1 then sub_51 else false);
+  sub_51 = (sub_52);
+  sub_52 = (if instanciador_c_lampExt then sub_17 else (not instanciador_lx) & (sub_28));
+  sub_53 = (if instanciador_ck_14_1 then false else sub_49);
+  sub_54 = (if instanciador_ck_12_1 then false else sub_48);
+  sub_55 = (if instanciador_ck_10_1 then false else sub_47);
+  sub_56 = (if instanciador_domingol_input then sub_43 else (if instanciador_neutro_input then sub_44 else (if instanciador_seguranca_input then sub_45 else (if instanciador_domingo_input then sub_46 else sub_57))));
+  sub_57 = (if instanciador_c1 then (if instanciador_l1 then (sub_58) else (if instanciador_c1_lamp then sub_58 else sub_66)) else (if instanciador_l1 then (if instanciador_c1_lamp then sub_66 else false) else false));
+  sub_58 = (if instanciador_c2 then (if instanciador_l2 then (sub_59) else (if instanciador_c2_lamp then sub_59 else sub_65)) else (if instanciador_l2 then (if instanciador_c2_lamp then sub_65 else false) else false));
+  sub_59 = (if instanciador_c3 then (if instanciador_l3 then (sub_60) else (if instanciador_c3_lamp then sub_60 else sub_64)) else (if instanciador_l3 then (if instanciador_c3_lamp then sub_64 else false) else false));
+  sub_60 = (if instanciador_c4 then (if instanciador_l4 then (sub_61) else (if instanciador_c4_lamp then sub_61 else sub_63)) else (if instanciador_l4 then (if instanciador_c4_lamp then sub_63 else false) else false));
+  sub_61 = (sub_62);
+  sub_62 = (if instanciador_c_lampExt then (true) else sub_29);
+  sub_63 = (if instanciador_ck_16_1 then false else sub_61);
+  sub_64 = (if instanciador_ck_14_1 then false else sub_60);
+  sub_65 = (if instanciador_ck_12_1 then false else sub_59);
+  sub_66 = (if instanciador_ck_10_1 then false else sub_58);
+  sub_67 = (if instanciador_sexta_input then (sub_68) else sub_42);
+  sub_68 = (sub_69);
+  sub_69 = (sub_70);
+  sub_70 = (sub_57);
+  instanciador_cx = sub_0;
+tel
+
+node instanciador_controller_instanciador_c4(instanciador_sexta_input,instanciador_ebd_input,instanciador_domingo_input,instanciador_domingol_input,instanciador_neutro_input,instanciador_seguranca_input,instanciador_l1,instanciador_l2,instanciador_l3,instanciador_l4,instanciador_lx,instanciador_lv,instanciador_v_301,instanciador_v_300,instanciador_v_299,instanciador_pnr_6,instanciador_ck_10_1,instanciador_pnr_5,instanciador_ck_12_1,instanciador_pnr_4,instanciador_ck_14_1,instanciador_pnr_3,instanciador_ck_16_1,instanciador_pnr_2,instanciador_ck_18_1,instanciador_pnr_1,instanciador_ck_20_1,instanciador_pnr,p_instanciador_c_vent,p_instanciador_cv,p_instanciador_cx,p_instanciador_c4,p_instanciador_c3,p_instanciador_c2,p_instanciador_c1,p_instanciador_c_lampExt,p_instanciador_c4_lamp,p_instanciador_c3_lamp,p_instanciador_c2_lamp,p_instanciador_c1_lamp,instanciador_c3,instanciador_c2,instanciador_c1,instanciador_c_lampExt,instanciador_c4_lamp,instanciador_c3_lamp,instanciador_c2_lamp,instanciador_c1_lamp:bool) returns (instanciador_c4:bool)
+  var sub_0,sub_1,sub_2,sub_3,sub_4,sub_5,sub_6,sub_7,sub_8,sub_9,sub_10,sub_11,sub_12,sub_13,sub_14,sub_15,sub_16,sub_17,sub_18,sub_19,sub_20,sub_21,sub_22,sub_23,sub_24,sub_25,sub_26,sub_27,sub_28,sub_29,sub_30,sub_31,sub_32,sub_33,sub_34,sub_35,sub_36,sub_37,sub_38,sub_39,sub_40,sub_41,sub_42,sub_43,sub_44,sub_45,sub_46,sub_47,sub_48,sub_49,sub_50,sub_51,sub_52,sub_53,sub_54,sub_55,sub_56,sub_57,sub_58,sub_59,sub_60,sub_61,sub_62,sub_63,sub_64,sub_65,sub_66:bool;
+
+let
+  sub_0 = (if p_instanciador_c4 then (if instanciador_v_300 then (if instanciador_ebd_input then sub_42 else sub_63) else sub_39) else sub_1);
+  sub_1 = (if instanciador_v_300 then (if instanciador_ebd_input then sub_5 else sub_35) else sub_2);
+  sub_2 = (if instanciador_v_301 then (sub_5) else sub_3);
+  sub_3 = (if instanciador_v_299 then (sub_35) else sub_4);
+  sub_4 = (if instanciador_ebd_input then sub_5 else (sub_21));
+  sub_5 = (sub_6);
+  sub_6 = (sub_7);
+  sub_7 = (sub_8);
+  sub_8 = (sub_9);
+  sub_9 = (sub_10);
+  sub_10 = (if instanciador_c1 then (if instanciador_l1 then (sub_11) else (if instanciador_c1_lamp then sub_11 else sub_20)) else (if instanciador_l1 then (if instanciador_c1_lamp then sub_20 else false) else false));
+  sub_11 = (if instanciador_c2 then (if instanciador_l2 then (sub_12) else (if instanciador_c2_lamp then sub_12 else sub_19)) else (if instanciador_l2 then (if instanciador_c2_lamp then sub_19 else false) else false));
+  sub_12 = (if instanciador_c3 then (if instanciador_l3 then (sub_13) else (if instanciador_c3_lamp then sub_13 else sub_18)) else (if instanciador_l3 then (if instanciador_c3_lamp then sub_18 else false) else false));
+  sub_13 = (if instanciador_l4 then sub_14 else (sub_15));
+  sub_14 = (if instanciador_c4_lamp then (if instanciador_ck_16_1 then sub_15 else false) else sub_15);
+  sub_15 = (sub_16);
+  sub_16 = (if instanciador_c_lampExt then instanciador_lx & ((not instanciador_ck_18_1) & (false)) else sub_17);
+  sub_17 = (false);
+  sub_18 = (if instanciador_ck_14_1 then false else sub_13);
+  sub_19 = (if instanciador_ck_12_1 then false else sub_12);
+  sub_20 = (if instanciador_ck_10_1 then false else sub_11);
+  sub_21 = (if instanciador_domingol_input then sub_7 else (if instanciador_neutro_input then sub_8 else (if instanciador_seguranca_input then sub_9 else (if instanciador_domingo_input then sub_10 else sub_22))));
+  sub_22 = (if instanciador_c1 then (if instanciador_l1 then (sub_23) else (if instanciador_c1_lamp then sub_23 else sub_34)) else (if instanciador_l1 then (if instanciador_c1_lamp then sub_34 else false) else false));
+  sub_23 = (if instanciador_c2 then (if instanciador_l2 then (sub_24) else (if instanciador_c2_lamp then sub_24 else sub_33)) else (if instanciador_l2 then (if instanciador_c2_lamp then sub_33 else false) else false));
+  sub_24 = (if instanciador_c3 then (if instanciador_l3 then (sub_25) else (if instanciador_c3_lamp then sub_25 else sub_32)) else (if instanciador_l3 then (if instanciador_c3_lamp then sub_32 else false) else false));
+  sub_25 = (if instanciador_l4 then (if instanciador_c4_lamp then (if instanciador_ck_16_1 then sub_28 else sub_26) else sub_28) else sub_31);
+  sub_26 = (sub_27);
+  sub_27 = (if instanciador_c_lampExt then sub_17 else (not instanciador_lx) & (instanciador_ck_18_1 & (false)));
+  sub_28 = (sub_29);
+  sub_29 = (if instanciador_c_lampExt then sub_30 else instanciador_lx or ((not instanciador_ck_18_1) or (false)));
+  sub_30 = (true);
+  sub_31 = (if instanciador_c4_lamp then sub_28 else (if instanciador_ck_16_1 then false else sub_28));
+  sub_32 = (if instanciador_ck_14_1 then false else sub_25);
+  sub_33 = (if instanciador_ck_12_1 then false else sub_24);
+  sub_34 = (if instanciador_ck_10_1 then false else sub_23);
+  sub_35 = (if instanciador_sexta_input then (sub_36) else sub_6);
+  sub_36 = (sub_37);
+  sub_37 = (sub_38);
+  sub_38 = (sub_22);
+  sub_39 = (if instanciador_v_301 then (sub_42) else sub_40);
+  sub_40 = (if instanciador_v_299 then (sub_63) else sub_41);
+  sub_41 = (if instanciador_ebd_input then sub_42 else (sub_55));
+  sub_42 = (sub_43);
+  sub_43 = (sub_44);
+  sub_44 = (sub_45);
+  sub_45 = (sub_46);
+  sub_46 = (sub_47);
+  sub_47 = (if instanciador_c1 then (if instanciador_l1 then (sub_48) else (if instanciador_c1_lamp then sub_48 else sub_54)) else (if instanciador_l1 then (if instanciador_c1_lamp then sub_54 else false) else false));
+  sub_48 = (if instanciador_c2 then (if instanciador_l2 then (sub_49) else (if instanciador_c2_lamp then sub_49 else sub_53)) else (if instanciador_l2 then (if instanciador_c2_lamp then sub_53 else false) else false));
+  sub_49 = (if instanciador_c3 then (if instanciador_l3 then (sub_50) else (if instanciador_c3_lamp then sub_50 else sub_52)) else (if instanciador_l3 then (if instanciador_c3_lamp then sub_52 else false) else false));
+  sub_50 = (if instanciador_l4 then sub_14 else (if instanciador_c4_lamp then sub_15 else (if instanciador_ck_16_1 then (sub_51) else sub_15)));
+  sub_51 = (if instanciador_c_lampExt then (not instanciador_lx) or (instanciador_ck_18_1 or (false)) else sub_30);
+  sub_52 = (if instanciador_ck_14_1 then false else sub_50);
+  sub_53 = (if instanciador_ck_12_1 then false else sub_49);
+  sub_54 = (if instanciador_ck_10_1 then false else sub_48);
+  sub_55 = (if instanciador_domingol_input then sub_44 else (if instanciador_neutro_input then sub_45 else (if instanciador_seguranca_input then sub_46 else (if instanciador_domingo_input then sub_47 else sub_56))));
+  sub_56 = (if instanciador_c1 then (if instanciador_l1 then (sub_57) else (if instanciador_c1_lamp then sub_57 else sub_62)) else (if instanciador_l1 then (if instanciador_c1_lamp then sub_62 else false) else false));
+  sub_57 = (if instanciador_c2 then (if instanciador_l2 then (sub_58) else (if instanciador_c2_lamp then sub_58 else sub_61)) else (if instanciador_l2 then (if instanciador_c2_lamp then sub_61 else false) else false));
+  sub_58 = (if instanciador_c3 then (if instanciador_l3 then (sub_59) else (if instanciador_c3_lamp then sub_59 else sub_60)) else (if instanciador_l3 then (if instanciador_c3_lamp then sub_60 else false) else false));
+  sub_59 = (if instanciador_l4 then (sub_28) else sub_31);
+  sub_60 = (if instanciador_ck_14_1 then false else sub_59);
+  sub_61 = (if instanciador_ck_12_1 then false else sub_58);
+  sub_62 = (if instanciador_ck_10_1 then false else sub_57);
+  sub_63 = (if instanciador_sexta_input then (sub_64) else sub_43);
+  sub_64 = (sub_65);
+  sub_65 = (sub_66);
+  sub_66 = (sub_56);
+  instanciador_c4 = sub_0;
+tel
+
+node instanciador_controller_instanciador_c3(instanciador_sexta_input,instanciador_ebd_input,instanciador_domingo_input,instanciador_domingol_input,instanciador_neutro_input,instanciador_seguranca_input,instanciador_l1,instanciador_l2,instanciador_l3,instanciador_l4,instanciador_lx,instanciador_lv,instanciador_v_301,instanciador_v_300,instanciador_v_299,instanciador_pnr_6,instanciador_ck_10_1,instanciador_pnr_5,instanciador_ck_12_1,instanciador_pnr_4,instanciador_ck_14_1,instanciador_pnr_3,instanciador_ck_16_1,instanciador_pnr_2,instanciador_ck_18_1,instanciador_pnr_1,instanciador_ck_20_1,instanciador_pnr,p_instanciador_c_vent,p_instanciador_cv,p_instanciador_cx,p_instanciador_c4,p_instanciador_c3,p_instanciador_c2,p_instanciador_c1,p_instanciador_c_lampExt,p_instanciador_c4_lamp,p_instanciador_c3_lamp,p_instanciador_c2_lamp,p_instanciador_c1_lamp,instanciador_c2,instanciador_c1,instanciador_c_lampExt,instanciador_c4_lamp,instanciador_c3_lamp,instanciador_c2_lamp,instanciador_c1_lamp:bool) returns (instanciador_c3:bool)
+  var sub_0,sub_1,sub_2,sub_3,sub_4,sub_5,sub_6,sub_7,sub_8,sub_9,sub_10,sub_11,sub_12,sub_13,sub_14,sub_15,sub_16,sub_17,sub_18,sub_19,sub_20,sub_21,sub_22,sub_23,sub_24,sub_25,sub_26,sub_27,sub_28,sub_29,sub_30,sub_31,sub_32,sub_33,sub_34,sub_35,sub_36,sub_37,sub_38,sub_39:bool;
+
+let
+  sub_0 = (if instanciador_v_300 then (if instanciador_ebd_input then sub_4 else sub_36) else sub_1);
+  sub_1 = (if instanciador_v_301 then (sub_4) else sub_2);
+  sub_2 = (if instanciador_v_299 then (sub_36) else sub_3);
+  sub_3 = (if instanciador_ebd_input then sub_4 else (sub_23));
+  sub_4 = (sub_5);
+  sub_5 = (sub_6);
+  sub_6 = (sub_7);
+  sub_7 = (sub_8);
+  sub_8 = (sub_9);
+  sub_9 = (if instanciador_c1 then (if instanciador_l1 then (sub_10) else (if instanciador_c1_lamp then sub_10 else sub_22)) else (if instanciador_l1 then (if instanciador_c1_lamp then sub_22 else false) else false));
+  sub_10 = (if instanciador_c2 then (if instanciador_l2 then (sub_11) else (if instanciador_c2_lamp then sub_11 else sub_21)) else (if instanciador_l2 then (if instanciador_c2_lamp then sub_21 else false) else false));
+  sub_11 = (if instanciador_l3 then (if instanciador_c3_lamp then (if p_instanciador_c3 then sub_17 else sub_12) else sub_17) else (if instanciador_c3_lamp then sub_17 else (if instanciador_ck_14_1 then false else sub_17)));
+  sub_12 = (if instanciador_ck_14_1 then sub_17 else sub_13);
+  sub_13 = (if instanciador_l4 then (if instanciador_c4_lamp then (if instanciador_ck_16_1 then sub_14 else false) else sub_14) else (sub_14));
+  sub_14 = (sub_15);
+  sub_15 = (if instanciador_c_lampExt then instanciador_lx & ((not instanciador_ck_18_1) & (false)) else sub_16);
+  sub_16 = (false);
+  sub_17 = (if instanciador_l4 then (if instanciador_c4_lamp then (if instanciador_ck_16_1 then sub_18 else false) else sub_18) else (sub_18));
+  sub_18 = (sub_19);
+  sub_19 = (if instanciador_c_lampExt then (not instanciador_lx) or (instanciador_ck_18_1 or (false)) else sub_20);
+  sub_20 = (true);
+  sub_21 = (if instanciador_ck_12_1 then false else sub_11);
+  sub_22 = (if instanciador_ck_10_1 then false else sub_10);
+  sub_23 = (if instanciador_domingol_input then sub_6 else (if instanciador_neutro_input then sub_7 else (if instanciador_seguranca_input then sub_8 else (if instanciador_domingo_input then sub_9 else sub_24))));
+  sub_24 = (if instanciador_c1 then (if instanciador_l1 then (sub_25) else (if instanciador_c1_lamp then sub_25 else sub_35)) else (if instanciador_l1 then (if instanciador_c1_lamp then sub_35 else false) else false));
+  sub_25 = (if instanciador_c2 then (if instanciador_l2 then (sub_26) else (if instanciador_c2_lamp then sub_26 else sub_34)) else (if instanciador_l2 then (if instanciador_c2_lamp then sub_34 else false) else false));
+  sub_26 = (if instanciador_l3 then (if instanciador_c3_lamp then (if p_instanciador_c3 then sub_31 else sub_27) else sub_31) else (if instanciador_c3_lamp then sub_31 else (if instanciador_ck_14_1 then false else sub_31)));
+  sub_27 = (if instanciador_ck_14_1 then sub_31 else sub_28);
+  sub_28 = (if instanciador_l4 then (sub_29) else (if instanciador_c4_lamp then sub_29 else (if instanciador_ck_16_1 then false else sub_29)));
+  sub_29 = (sub_30);
+  sub_30 = (if instanciador_c_lampExt then sub_16 else (not instanciador_lx) & (instanciador_ck_18_1 & (false)));
+  sub_31 = (if instanciador_l4 then (sub_32) else (if instanciador_c4_lamp then sub_32 else (if instanciador_ck_16_1 then false else sub_32)));
+  sub_32 = (sub_33);
+  sub_33 = (if instanciador_c_lampExt then sub_20 else instanciador_lx or ((not instanciador_ck_18_1) or (false)));
+  sub_34 = (if instanciador_ck_12_1 then false else sub_26);
+  sub_35 = (if instanciador_ck_10_1 then false else sub_25);
+  sub_36 = (if instanciador_sexta_input then (sub_37) else sub_5);
+  sub_37 = (sub_38);
+  sub_38 = (sub_39);
+  sub_39 = (sub_24);
+  instanciador_c3 = sub_0;
+tel
+
+node instanciador_controller_instanciador_c2(instanciador_sexta_input,instanciador_ebd_input,instanciador_domingo_input,instanciador_domingol_input,instanciador_neutro_input,instanciador_seguranca_input,instanciador_l1,instanciador_l2,instanciador_l3,instanciador_l4,instanciador_lx,instanciador_lv,instanciador_v_301,instanciador_v_300,instanciador_v_299,instanciador_pnr_6,instanciador_ck_10_1,instanciador_pnr_5,instanciador_ck_12_1,instanciador_pnr_4,instanciador_ck_14_1,instanciador_pnr_3,instanciador_ck_16_1,instanciador_pnr_2,instanciador_ck_18_1,instanciador_pnr_1,instanciador_ck_20_1,instanciador_pnr,p_instanciador_c_vent,p_instanciador_cv,p_instanciador_cx,p_instanciador_c4,p_instanciador_c3,p_instanciador_c2,p_instanciador_c1,p_instanciador_c_lampExt,p_instanciador_c4_lamp,p_instanciador_c3_lamp,p_instanciador_c2_lamp,p_instanciador_c1_lamp,instanciador_c1,instanciador_c_lampExt,instanciador_c4_lamp,instanciador_c3_lamp,instanciador_c2_lamp,instanciador_c1_lamp:bool) returns (instanciador_c2:bool)
+  var sub_0,sub_1,sub_2,sub_3,sub_4,sub_5,sub_6,sub_7,sub_8,sub_9,sub_10,sub_11,sub_12,sub_13,sub_14,sub_15,sub_16,sub_17,sub_18,sub_19,sub_20,sub_21,sub_22,sub_23,sub_24,sub_25,sub_26,sub_27,sub_28,sub_29,sub_30,sub_31,sub_32,sub_33,sub_34,sub_35,sub_36,sub_37,sub_38,sub_39,sub_40,sub_41,sub_42:bool;
+
+let
+  sub_0 = (if instanciador_v_300 then (if instanciador_ebd_input then sub_4 else sub_39) else sub_1);
+  sub_1 = (if instanciador_v_301 then (sub_4) else sub_2);
+  sub_2 = (if instanciador_v_299 then (sub_39) else sub_3);
+  sub_3 = (if instanciador_ebd_input then sub_4 else (sub_25));
+  sub_4 = (sub_5);
+  sub_5 = (sub_6);
+  sub_6 = (sub_7);
+  sub_7 = (sub_8);
+  sub_8 = (sub_9);
+  sub_9 = (if instanciador_c1 then (if instanciador_l1 then (sub_10) else (if instanciador_c1_lamp then sub_10 else sub_24)) else (if instanciador_l1 then (if instanciador_c1_lamp then sub_24 else false) else false));
+  sub_10 = (if instanciador_l2 then (if instanciador_c2_lamp then (if instanciador_ck_12_1 then sub_20 else sub_11) else sub_20) else (if instanciador_c2_lamp then sub_20 else (if instanciador_ck_12_1 then false else sub_20)));
+  sub_11 = (if instanciador_l3 then (sub_12) else (if instanciador_c3_lamp then sub_12 else (if instanciador_ck_14_1 then false else sub_12)));
+  sub_12 = (if instanciador_l4 then (if instanciador_c4_lamp then (if instanciador_ck_16_1 then sub_13 else false) else sub_13) else (sub_13));
+  sub_13 = (sub_14);
+  sub_14 = (if instanciador_c_lampExt then (if p_instanciador_c2 then sub_16 else sub_15) else sub_17);
+  sub_15 = instanciador_lx & ((not instanciador_ck_18_1) & (false));
+  sub_16 = (not instanciador_lx) or (instanciador_ck_18_1 or (false));
+  sub_17 = (if p_instanciador_c2 then sub_19 else sub_18);
+  sub_18 = (false);
+  sub_19 = (true);
+  sub_20 = (if instanciador_l3 then (sub_21) else (if instanciador_c3_lamp then sub_21 else (if instanciador_ck_14_1 then false else sub_21)));
+  sub_21 = (if instanciador_l4 then (if instanciador_c4_lamp then (if instanciador_ck_16_1 then sub_22 else false) else sub_22) else (sub_22));
+  sub_22 = (sub_23);
+  sub_23 = (if instanciador_c_lampExt then sub_16 else sub_19);
+  sub_24 = (if instanciador_ck_10_1 then false else sub_10);
+  sub_25 = (if instanciador_domingol_input then sub_6 else (if instanciador_neutro_input then sub_7 else (if instanciador_seguranca_input then sub_8 else (if instanciador_domingo_input then sub_9 else sub_26))));
+  sub_26 = (if instanciador_c1 then (if instanciador_l1 then (sub_27) else (if instanciador_c1_lamp then sub_27 else sub_38)) else (if instanciador_l1 then (if instanciador_c1_lamp then sub_38 else false) else false));
+  sub_27 = (if instanciador_l2 then (if instanciador_c2_lamp then (if instanciador_ck_12_1 then sub_34 else sub_28) else sub_34) else (if instanciador_c2_lamp then sub_34 else (if instanciador_ck_12_1 then false else sub_34)));
+  sub_28 = (if instanciador_l3 then (sub_29) else (if instanciador_c3_lamp then sub_29 else (if instanciador_ck_14_1 then false else sub_29)));
+  sub_29 = (if instanciador_l4 then (sub_30) else (if instanciador_c4_lamp then sub_30 else (if instanciador_ck_16_1 then false else sub_30)));
+  sub_30 = (sub_31);
+  sub_31 = (if instanciador_c_lampExt then sub_17 else (if p_instanciador_c2 then sub_33 else sub_32));
+  sub_32 = (not instanciador_lx) & (instanciador_ck_18_1 & (false));
+  sub_33 = instanciador_lx or ((not instanciador_ck_18_1) or (false));
+  sub_34 = (if instanciador_l3 then (sub_35) else (if instanciador_c3_lamp then sub_35 else (if instanciador_ck_14_1 then false else sub_35)));
+  sub_35 = (if instanciador_l4 then (sub_36) else (if instanciador_c4_lamp then sub_36 else (if instanciador_ck_16_1 then false else sub_36)));
+  sub_36 = (sub_37);
+  sub_37 = (if instanciador_c_lampExt then sub_19 else sub_33);
+  sub_38 = (if instanciador_ck_10_1 then false else sub_27);
+  sub_39 = (if instanciador_sexta_input then (sub_40) else sub_5);
+  sub_40 = (sub_41);
+  sub_41 = (sub_42);
+  sub_42 = (sub_26);
+  instanciador_c2 = sub_0;
+tel
+
+node instanciador_controller_instanciador_c1(instanciador_sexta_input,instanciador_ebd_input,instanciador_domingo_input,instanciador_domingol_input,instanciador_neutro_input,instanciador_seguranca_input,instanciador_l1,instanciador_l2,instanciador_l3,instanciador_l4,instanciador_lx,instanciador_lv,instanciador_v_301,instanciador_v_300,instanciador_v_299,instanciador_pnr_6,instanciador_ck_10_1,instanciador_pnr_5,instanciador_ck_12_1,instanciador_pnr_4,instanciador_ck_14_1,instanciador_pnr_3,instanciador_ck_16_1,instanciador_pnr_2,instanciador_ck_18_1,instanciador_pnr_1,instanciador_ck_20_1,instanciador_pnr,p_instanciador_c_vent,p_instanciador_cv,p_instanciador_cx,p_instanciador_c4,p_instanciador_c3,p_instanciador_c2,p_instanciador_c1,p_instanciador_c_lampExt,p_instanciador_c4_lamp,p_instanciador_c3_lamp,p_instanciador_c2_lamp,p_instanciador_c1_lamp,instanciador_c_lampExt,instanciador_c4_lamp,instanciador_c3_lamp,instanciador_c2_lamp,instanciador_c1_lamp:bool) returns (instanciador_c1:bool)
+  var sub_0,sub_1,sub_2,sub_3,sub_4,sub_5,sub_6,sub_7,sub_8,sub_9,sub_10,sub_11,sub_12,sub_13,sub_14,sub_15,sub_16,sub_17,sub_18,sub_19,sub_20,sub_21,sub_22,sub_23,sub_24,sub_25,sub_26,sub_27,sub_28,sub_29,sub_30,sub_31,sub_32,sub_33,sub_34,sub_35,sub_36,sub_37,sub_38,sub_39,sub_40,sub_41,sub_42,sub_43,sub_44,sub_45,sub_46,sub_47,sub_48,sub_49,sub_50,sub_51,sub_52,sub_53,sub_54,sub_55:bool;
+
+let
+  sub_0 = (if p_instanciador_c1 then (if instanciador_v_300 then (if instanciador_ebd_input then sub_44 else sub_52) else sub_41) else sub_1);
+  sub_1 = (if instanciador_v_300 then (if instanciador_ebd_input then sub_5 else sub_37) else sub_2);
+  sub_2 = (if instanciador_v_301 then (sub_5) else sub_3);
+  sub_3 = (if instanciador_v_299 then (sub_37) else sub_4);
+  sub_4 = (if instanciador_ebd_input then sub_5 else (sub_24));
+  sub_5 = (sub_6);
+  sub_6 = (sub_7);
+  sub_7 = (sub_8);
+  sub_8 = (sub_9);
+  sub_9 = (sub_10);
+  sub_10 = (if instanciador_l1 then (if instanciador_c1_lamp then (if instanciador_ck_10_1 then sub_17 else sub_11) else sub_17) else sub_23);
+  sub_11 = (if instanciador_l2 then (sub_12) else (if instanciador_c2_lamp then sub_12 else (if instanciador_ck_12_1 then false else sub_12)));
+  sub_12 = (if instanciador_l3 then (sub_13) else (if instanciador_c3_lamp then sub_13 else (if instanciador_ck_14_1 then false else sub_13)));
+  sub_13 = (if instanciador_l4 then (if instanciador_c4_lamp then (if instanciador_ck_16_1 then sub_14 else false) else sub_14) else (sub_14));
+  sub_14 = (sub_15);
+  sub_15 = (if instanciador_c_lampExt then instanciador_lx & ((not instanciador_ck_18_1) & (false)) else sub_16);
+  sub_16 = (false);
+  sub_17 = (if instanciador_l2 then (sub_18) else (if instanciador_c2_lamp then sub_18 else (if instanciador_ck_12_1 then false else sub_18)));
+  sub_18 = (if instanciador_l3 then (sub_19) else (if instanciador_c3_lamp then sub_19 else (if instanciador_ck_14_1 then false else sub_19)));
+  sub_19 = (if instanciador_l4 then (if instanciador_c4_lamp then (if instanciador_ck_16_1 then sub_20 else false) else sub_20) else (sub_20));
+  sub_20 = (sub_21);
+  sub_21 = (if instanciador_c_lampExt then (not instanciador_lx) or (instanciador_ck_18_1 or (false)) else sub_22);
+  sub_22 = (true);
+  sub_23 = (if instanciador_c1_lamp then sub_17 else (if instanciador_ck_10_1 then false else sub_17));
+  sub_24 = (if instanciador_domingol_input then sub_7 else (if instanciador_neutro_input then sub_8 else (if instanciador_seguranca_input then sub_9 else (if instanciador_domingo_input then sub_10 else sub_25))));
+  sub_25 = (if instanciador_l1 then (if instanciador_c1_lamp then (if instanciador_ck_10_1 then sub_31 else sub_26) else sub_31) else sub_36);
+  sub_26 = (if instanciador_l2 then (sub_27) else (if instanciador_c2_lamp then sub_27 else (if instanciador_ck_12_1 then false else sub_27)));
+  sub_27 = (if instanciador_l3 then (sub_28) else (if instanciador_c3_lamp then sub_28 else (if instanciador_ck_14_1 then false else sub_28)));
+  sub_28 = (if instanciador_l4 then (sub_29) else (if instanciador_c4_lamp then sub_29 else (if instanciador_ck_16_1 then false else sub_29)));
+  sub_29 = (sub_30);
+  sub_30 = (if instanciador_c_lampExt then sub_16 else (not instanciador_lx) & (instanciador_ck_18_1 & (false)));
+  sub_31 = (if instanciador_l2 then (sub_32) else (if instanciador_c2_lamp then sub_32 else (if instanciador_ck_12_1 then false else sub_32)));
+  sub_32 = (if instanciador_l3 then (sub_33) else (if instanciador_c3_lamp then sub_33 else (if instanciador_ck_14_1 then false else sub_33)));
+  sub_33 = (if instanciador_l4 then (sub_34) else (if instanciador_c4_lamp then sub_34 else (if instanciador_ck_16_1 then false else sub_34)));
+  sub_34 = (sub_35);
+  sub_35 = (if instanciador_c_lampExt then sub_22 else instanciador_lx or ((not instanciador_ck_18_1) or (false)));
+  sub_36 = (if instanciador_c1_lamp then sub_31 else (if instanciador_ck_10_1 then false else sub_31));
+  sub_37 = (if instanciador_sexta_input then (sub_38) else sub_6);
+  sub_38 = (sub_39);
+  sub_39 = (sub_40);
+  sub_40 = (sub_25);
+  sub_41 = (if instanciador_v_301 then (sub_44) else sub_42);
+  sub_42 = (if instanciador_v_299 then (sub_52) else sub_43);
+  sub_43 = (if instanciador_ebd_input then sub_44 else (sub_50));
+  sub_44 = (sub_45);
+  sub_45 = (sub_46);
+  sub_46 = (sub_47);
+  sub_47 = (sub_48);
+  sub_48 = (sub_49);
+  sub_49 = (if instanciador_l1 then (sub_17) else sub_23);
+  sub_50 = (if instanciador_domingol_input then sub_46 else (if instanciador_neutro_input then sub_47 else (if instanciador_seguranca_input then sub_48 else (if instanciador_domingo_input then sub_49 else sub_51))));
+  sub_51 = (if instanciador_l1 then (sub_31) else sub_36);
+  sub_52 = (if instanciador_sexta_input then (sub_53) else sub_45);
+  sub_53 = (sub_54);
+  sub_54 = (sub_55);
+  sub_55 = (sub_51);
+  instanciador_c1 = sub_0;
+tel
+
+node instanciador_controller_instanciador_c_lampExt(instanciador_sexta_input,instanciador_ebd_input,instanciador_domingo_input,instanciador_domingol_input,instanciador_neutro_input,instanciador_seguranca_input,instanciador_l1,instanciador_l2,instanciador_l3,instanciador_l4,instanciador_lx,instanciador_lv,instanciador_v_301,instanciador_v_300,instanciador_v_299,instanciador_pnr_6,instanciador_ck_10_1,instanciador_pnr_5,instanciador_ck_12_1,instanciador_pnr_4,instanciador_ck_14_1,instanciador_pnr_3,instanciador_ck_16_1,instanciador_pnr_2,instanciador_ck_18_1,instanciador_pnr_1,instanciador_ck_20_1,instanciador_pnr,p_instanciador_c_vent,p_instanciador_cv,p_instanciador_cx,p_instanciador_c4,p_instanciador_c3,p_instanciador_c2,p_instanciador_c1,p_instanciador_c_lampExt,p_instanciador_c4_lamp,p_instanciador_c3_lamp,p_instanciador_c2_lamp,p_instanciador_c1_lamp,instanciador_c4_lamp,instanciador_c3_lamp,instanciador_c2_lamp,instanciador_c1_lamp:bool) returns (instanciador_c_lampExt:bool)
+  var sub_0,sub_1,sub_2,sub_3,sub_4,sub_5,sub_6,sub_7,sub_8,sub_9,sub_10,sub_11,sub_12,sub_13,sub_14,sub_15,sub_16,sub_17,sub_18,sub_19,sub_20,sub_21,sub_22,sub_23,sub_24,sub_25,sub_26,sub_27,sub_28:bool;
+
+let
+  sub_0 = (if instanciador_v_300 then (if instanciador_ebd_input then sub_4 else sub_25) else sub_1);
+  sub_1 = (if instanciador_v_301 then (sub_4) else sub_2);
+  sub_2 = (if instanciador_v_299 then (sub_25) else sub_3);
+  sub_3 = (if instanciador_ebd_input then sub_4 else (sub_17));
+  sub_4 = (sub_5);
+  sub_5 = (sub_6);
+  sub_6 = (sub_7);
+  sub_7 = (sub_8);
+  sub_8 = (sub_9);
+  sub_9 = (if instanciador_l1 then (sub_10) else (if instanciador_c1_lamp then sub_10 else (if instanciador_ck_10_1 then false else sub_10)));
+  sub_10 = (if instanciador_l2 then (sub_11) else (if instanciador_c2_lamp then sub_11 else (if instanciador_ck_12_1 then false else sub_11)));
+  sub_11 = (if instanciador_l3 then (sub_12) else (if instanciador_c3_lamp then sub_12 else (if instanciador_ck_14_1 then false else sub_12)));
+  sub_12 = (if instanciador_l4 then (if instanciador_c4_lamp then (if instanciador_ck_16_1 then sub_13 else false) else sub_13) else (sub_13));
+  sub_13 = (sub_14);
+  sub_14 = (if p_instanciador_c_lampExt then (not instanciador_lx) or (sub_16) else sub_15);
+  sub_15 = (false);
+  sub_16 = instanciador_ck_18_1;
+  sub_17 = (if instanciador_domingol_input then sub_6 else (if instanciador_neutro_input then sub_7 else (if instanciador_seguranca_input then sub_8 else (if instanciador_domingo_input then sub_9 else sub_18))));
+  sub_18 = (if instanciador_l1 then (sub_19) else (if instanciador_c1_lamp then sub_19 else (if instanciador_ck_10_1 then false else sub_19)));
+  sub_19 = (if instanciador_l2 then (sub_20) else (if instanciador_c2_lamp then sub_20 else (if instanciador_ck_12_1 then false else sub_20)));
+  sub_20 = (if instanciador_l3 then (sub_21) else (if instanciador_c3_lamp then sub_21 else (if instanciador_ck_14_1 then false else sub_21)));
+  sub_21 = (if instanciador_l4 then (sub_22) else (if instanciador_c4_lamp then sub_22 else (if instanciador_ck_16_1 then false else sub_22)));
+  sub_22 = (sub_23);
+  sub_23 = (if p_instanciador_c_lampExt then (true) else sub_24);
+  sub_24 = (not instanciador_lx) & (sub_16);
+  sub_25 = (if instanciador_sexta_input then (sub_26) else sub_5);
+  sub_26 = (sub_27);
+  sub_27 = (sub_28);
+  sub_28 = (sub_18);
+  instanciador_c_lampExt = sub_0;
+tel
+
+node instanciador_controller_instanciador_c4_lamp(instanciador_sexta_input,instanciador_ebd_input,instanciador_domingo_input,instanciador_domingol_input,instanciador_neutro_input,instanciador_seguranca_input,instanciador_l1,instanciador_l2,instanciador_l3,instanciador_l4,instanciador_lx,instanciador_lv,instanciador_v_301,instanciador_v_300,instanciador_v_299,instanciador_pnr_6,instanciador_ck_10_1,instanciador_pnr_5,instanciador_ck_12_1,instanciador_pnr_4,instanciador_ck_14_1,instanciador_pnr_3,instanciador_ck_16_1,instanciador_pnr_2,instanciador_ck_18_1,instanciador_pnr_1,instanciador_ck_20_1,instanciador_pnr,p_instanciador_c_vent,p_instanciador_cv,p_instanciador_cx,p_instanciador_c4,p_instanciador_c3,p_instanciador_c2,p_instanciador_c1,p_instanciador_c_lampExt,p_instanciador_c4_lamp,p_instanciador_c3_lamp,p_instanciador_c2_lamp,p_instanciador_c1_lamp,instanciador_c3_lamp,instanciador_c2_lamp,instanciador_c1_lamp:bool) returns (instanciador_c4_lamp:bool)
+  var sub_0,sub_1,sub_2,sub_3,sub_4,sub_5,sub_6,sub_7,sub_8,sub_9,sub_10,sub_11,sub_12,sub_13,sub_14,sub_15,sub_16,sub_17,sub_18,sub_19,sub_20,sub_21,sub_22,sub_23,sub_24,sub_25,sub_26,sub_27:bool;
+
+let
+  sub_0 = (if instanciador_v_300 then (if instanciador_ebd_input then sub_4 else sub_24) else sub_1);
+  sub_1 = (if instanciador_v_301 then (sub_4) else sub_2);
+  sub_2 = (if instanciador_v_299 then (sub_24) else sub_3);
+  sub_3 = (if instanciador_ebd_input then sub_4 else (sub_18));
+  sub_4 = (sub_5);
+  sub_5 = (sub_6);
+  sub_6 = (sub_7);
+  sub_7 = (sub_8);
+  sub_8 = (sub_9);
+  sub_9 = (if instanciador_l1 then (sub_10) else (if instanciador_c1_lamp then sub_10 else (if instanciador_ck_10_1 then false else sub_10)));
+  sub_10 = (if instanciador_l2 then (sub_11) else (if instanciador_c2_lamp then sub_11 else (if instanciador_ck_12_1 then false else sub_11)));
+  sub_11 = (if instanciador_l3 then (sub_12) else (if instanciador_c3_lamp then sub_12 else (if instanciador_ck_14_1 then false else sub_12)));
+  sub_12 = (if instanciador_l4 then (if instanciador_ck_16_1 then sub_15 else sub_13) else sub_15);
+  sub_13 = (sub_14);
+  sub_14 = (false);
+  sub_15 = (sub_16);
+  sub_16 = (sub_17);
+  sub_17 = p_instanciador_c4_lamp;
+  sub_18 = (if instanciador_domingol_input then sub_6 else (if instanciador_neutro_input then sub_7 else (if instanciador_seguranca_input then sub_8 else (if instanciador_domingo_input then sub_9 else sub_19))));
+  sub_19 = (if instanciador_l1 then (sub_20) else (if instanciador_c1_lamp then sub_20 else (if instanciador_ck_10_1 then false else sub_20)));
+  sub_20 = (if instanciador_l2 then (sub_21) else (if instanciador_c2_lamp then sub_21 else (if instanciador_ck_12_1 then false else sub_21)));
+  sub_21 = (if instanciador_l3 then (sub_22) else (if instanciador_c3_lamp then sub_22 else (if instanciador_ck_14_1 then false else sub_22)));
+  sub_22 = (if instanciador_l4 then sub_15 else (if instanciador_ck_16_1 then (sub_23) else sub_15));
+  sub_23 = (true);
+  sub_24 = (if instanciador_sexta_input then (sub_25) else sub_5);
+  sub_25 = (sub_26);
+  sub_26 = (sub_27);
+  sub_27 = (sub_19);
+  instanciador_c4_lamp = sub_0;
+tel
+
+node instanciador_controller_instanciador_c3_lamp(instanciador_sexta_input,instanciador_ebd_input,instanciador_domingo_input,instanciador_domingol_input,instanciador_neutro_input,instanciador_seguranca_input,instanciador_l1,instanciador_l2,instanciador_l3,instanciador_l4,instanciador_lx,instanciador_lv,instanciador_v_301,instanciador_v_300,instanciador_v_299,instanciador_pnr_6,instanciador_ck_10_1,instanciador_pnr_5,instanciador_ck_12_1,instanciador_pnr_4,instanciador_ck_14_1,instanciador_pnr_3,instanciador_ck_16_1,instanciador_pnr_2,instanciador_ck_18_1,instanciador_pnr_1,instanciador_ck_20_1,instanciador_pnr,p_instanciador_c_vent,p_instanciador_cv,p_instanciador_cx,p_instanciador_c4,p_instanciador_c3,p_instanciador_c2,p_instanciador_c1,p_instanciador_c_lampExt,p_instanciador_c4_lamp,p_instanciador_c3_lamp,p_instanciador_c2_lamp,p_instanciador_c1_lamp,instanciador_c2_lamp,instanciador_c1_lamp:bool) returns (instanciador_c3_lamp:bool)
+  var sub_0,sub_1,sub_2,sub_3,sub_4,sub_5,sub_6,sub_7,sub_8,sub_9,sub_10,sub_11,sub_12,sub_13,sub_14:bool;
+
+let
+  sub_0 = (sub_1);
+  sub_1 = (sub_2);
+  sub_2 = (sub_3);
+  sub_3 = (sub_4);
+  sub_4 = (sub_5);
+  sub_5 = (sub_6);
+  sub_6 = (if instanciador_l1 then (sub_7) else (if instanciador_c1_lamp then sub_7 else (if instanciador_ck_10_1 then false else sub_7)));
+  sub_7 = (if instanciador_l2 then (sub_8) else (if instanciador_c2_lamp then sub_8 else (if instanciador_ck_12_1 then false else sub_8)));
+  sub_8 = (if instanciador_l3 then sub_9 else (if instanciador_ck_14_1 then (sub_13) else sub_9));
+  sub_9 = (sub_10);
+  sub_10 = (sub_11);
+  sub_11 = (sub_12);
+  sub_12 = p_instanciador_c3_lamp;
+  sub_13 = (sub_14);
+  sub_14 = (true);
+  instanciador_c3_lamp = sub_0;
+tel
+
+node instanciador_controller_instanciador_c2_lamp(instanciador_sexta_input,instanciador_ebd_input,instanciador_domingo_input,instanciador_domingol_input,instanciador_neutro_input,instanciador_seguranca_input,instanciador_l1,instanciador_l2,instanciador_l3,instanciador_l4,instanciador_lx,instanciador_lv,instanciador_v_301,instanciador_v_300,instanciador_v_299,instanciador_pnr_6,instanciador_ck_10_1,instanciador_pnr_5,instanciador_ck_12_1,instanciador_pnr_4,instanciador_ck_14_1,instanciador_pnr_3,instanciador_ck_16_1,instanciador_pnr_2,instanciador_ck_18_1,instanciador_pnr_1,instanciador_ck_20_1,instanciador_pnr,p_instanciador_c_vent,p_instanciador_cv,p_instanciador_cx,p_instanciador_c4,p_instanciador_c3,p_instanciador_c2,p_instanciador_c1,p_instanciador_c_lampExt,p_instanciador_c4_lamp,p_instanciador_c3_lamp,p_instanciador_c2_lamp,p_instanciador_c1_lamp,instanciador_c1_lamp:bool) returns (instanciador_c2_lamp:bool)
+  var sub_0,sub_1,sub_2,sub_3,sub_4,sub_5,sub_6,sub_7,sub_8,sub_9,sub_10,sub_11,sub_12,sub_13,sub_14,sub_15:bool;
+
+let
+  sub_0 = (sub_1);
+  sub_1 = (sub_2);
+  sub_2 = (sub_3);
+  sub_3 = (sub_4);
+  sub_4 = (sub_5);
+  sub_5 = (sub_6);
+  sub_6 = (if instanciador_l1 then (sub_7) else (if instanciador_c1_lamp then sub_7 else (if instanciador_ck_10_1 then false else sub_7)));
+  sub_7 = (if instanciador_l2 then sub_8 else (if instanciador_ck_12_1 then (sub_13) else sub_8));
+  sub_8 = (sub_9);
+  sub_9 = (sub_10);
+  sub_10 = (sub_11);
+  sub_11 = (sub_12);
+  sub_12 = p_instanciador_c2_lamp;
+  sub_13 = (sub_14);
+  sub_14 = (sub_15);
+  sub_15 = (true);
+  instanciador_c2_lamp = sub_0;
+tel
+
+node instanciador_controller_instanciador_c1_lamp(instanciador_sexta_input,instanciador_ebd_input,instanciador_domingo_input,instanciador_domingol_input,instanciador_neutro_input,instanciador_seguranca_input,instanciador_l1,instanciador_l2,instanciador_l3,instanciador_l4,instanciador_lx,instanciador_lv,instanciador_v_301,instanciador_v_300,instanciador_v_299,instanciador_pnr_6,instanciador_ck_10_1,instanciador_pnr_5,instanciador_ck_12_1,instanciador_pnr_4,instanciador_ck_14_1,instanciador_pnr_3,instanciador_ck_16_1,instanciador_pnr_2,instanciador_ck_18_1,instanciador_pnr_1,instanciador_ck_20_1,instanciador_pnr,p_instanciador_c_vent,p_instanciador_cv,p_instanciador_cx,p_instanciador_c4,p_instanciador_c3,p_instanciador_c2,p_instanciador_c1,p_instanciador_c_lampExt,p_instanciador_c4_lamp,p_instanciador_c3_lamp,p_instanciador_c2_lamp,p_instanciador_c1_lamp:bool) returns (instanciador_c1_lamp:bool)
+  var sub_0,sub_1,sub_2,sub_3,sub_4,sub_5,sub_6,sub_7,sub_8,sub_9,sub_10,sub_11,sub_12,sub_13,sub_14,sub_15,sub_16:bool;
+
+let
+  sub_0 = (sub_1);
+  sub_1 = (sub_2);
+  sub_2 = (sub_3);
+  sub_3 = (sub_4);
+  sub_4 = (sub_5);
+  sub_5 = (sub_6);
+  sub_6 = (if instanciador_l1 then sub_7 else (if instanciador_ck_10_1 then (sub_13) else sub_7));
+  sub_7 = (sub_8);
+  sub_8 = (sub_9);
+  sub_9 = (sub_10);
+  sub_10 = (sub_11);
+  sub_11 = (sub_12);
+  sub_12 = p_instanciador_c1_lamp;
+  sub_13 = (sub_14);
+  sub_14 = (sub_15);
+  sub_15 = (sub_16);
+  sub_16 = (true);
+  instanciador_c1_lamp = sub_0;
+tel
+
+node instanciador_controller(instanciador_sexta_input,instanciador_ebd_input,instanciador_domingo_input,instanciador_domingol_input,instanciador_neutro_input,instanciador_seguranca_input,instanciador_l1,instanciador_l2,instanciador_l3,instanciador_l4,instanciador_lx,instanciador_lv,instanciador_v_301,instanciador_v_300,instanciador_v_299,instanciador_pnr_6,instanciador_ck_10_1,instanciador_pnr_5,instanciador_ck_12_1,instanciador_pnr_4,instanciador_ck_14_1,instanciador_pnr_3,instanciador_ck_16_1,instanciador_pnr_2,instanciador_ck_18_1,instanciador_pnr_1,instanciador_ck_20_1,instanciador_pnr,p_instanciador_c_vent,p_instanciador_cv,p_instanciador_cx,p_instanciador_c4,p_instanciador_c3,p_instanciador_c2,p_instanciador_c1,p_instanciador_c_lampExt,p_instanciador_c4_lamp,p_instanciador_c3_lamp,p_instanciador_c2_lamp,p_instanciador_c1_lamp:bool) returns (instanciador_c_vent,instanciador_cv,instanciador_cx,instanciador_c4,instanciador_c3,instanciador_c2,instanciador_c1,instanciador_c_lampExt,instanciador_c4_lamp,instanciador_c3_lamp,instanciador_c2_lamp,instanciador_c1_lamp:bool)
+let
+  instanciador_c_vent = instanciador_controller_instanciador_c_vent(instanciador_sexta_input,instanciador_ebd_input,instanciador_domingo_input,instanciador_domingol_input,instanciador_neutro_input,instanciador_seguranca_input,instanciador_l1,instanciador_l2,instanciador_l3,instanciador_l4,instanciador_lx,instanciador_lv,instanciador_v_301,instanciador_v_300,instanciador_v_299,instanciador_pnr_6,instanciador_ck_10_1,instanciador_pnr_5,instanciador_ck_12_1,instanciador_pnr_4,instanciador_ck_14_1,instanciador_pnr_3,instanciador_ck_16_1,instanciador_pnr_2,instanciador_ck_18_1,instanciador_pnr_1,instanciador_ck_20_1,instanciador_pnr,p_instanciador_c_vent,p_instanciador_cv,p_instanciador_cx,p_instanciador_c4,p_instanciador_c3,p_instanciador_c2,p_instanciador_c1,p_instanciador_c_lampExt,p_instanciador_c4_lamp,p_instanciador_c3_lamp,p_instanciador_c2_lamp,p_instanciador_c1_lamp,instanciador_cv,instanciador_cx,instanciador_c4,instanciador_c3,instanciador_c2,instanciador_c1,instanciador_c_lampExt,instanciador_c4_lamp,instanciador_c3_lamp,instanciador_c2_lamp,instanciador_c1_lamp);
+  instanciador_cv = instanciador_controller_instanciador_cv(instanciador_sexta_input,instanciador_ebd_input,instanciador_domingo_input,instanciador_domingol_input,instanciador_neutro_input,instanciador_seguranca_input,instanciador_l1,instanciador_l2,instanciador_l3,instanciador_l4,instanciador_lx,instanciador_lv,instanciador_v_301,instanciador_v_300,instanciador_v_299,instanciador_pnr_6,instanciador_ck_10_1,instanciador_pnr_5,instanciador_ck_12_1,instanciador_pnr_4,instanciador_ck_14_1,instanciador_pnr_3,instanciador_ck_16_1,instanciador_pnr_2,instanciador_ck_18_1,instanciador_pnr_1,instanciador_ck_20_1,instanciador_pnr,p_instanciador_c_vent,p_instanciador_cv,p_instanciador_cx,p_instanciador_c4,p_instanciador_c3,p_instanciador_c2,p_instanciador_c1,p_instanciador_c_lampExt,p_instanciador_c4_lamp,p_instanciador_c3_lamp,p_instanciador_c2_lamp,p_instanciador_c1_lamp,instanciador_cx,instanciador_c4,instanciador_c3,instanciador_c2,instanciador_c1,instanciador_c_lampExt,instanciador_c4_lamp,instanciador_c3_lamp,instanciador_c2_lamp,instanciador_c1_lamp);
+  instanciador_cx = instanciador_controller_instanciador_cx(instanciador_sexta_input,instanciador_ebd_input,instanciador_domingo_input,instanciador_domingol_input,instanciador_neutro_input,instanciador_seguranca_input,instanciador_l1,instanciador_l2,instanciador_l3,instanciador_l4,instanciador_lx,instanciador_lv,instanciador_v_301,instanciador_v_300,instanciador_v_299,instanciador_pnr_6,instanciador_ck_10_1,instanciador_pnr_5,instanciador_ck_12_1,instanciador_pnr_4,instanciador_ck_14_1,instanciador_pnr_3,instanciador_ck_16_1,instanciador_pnr_2,instanciador_ck_18_1,instanciador_pnr_1,instanciador_ck_20_1,instanciador_pnr,p_instanciador_c_vent,p_instanciador_cv,p_instanciador_cx,p_instanciador_c4,p_instanciador_c3,p_instanciador_c2,p_instanciador_c1,p_instanciador_c_lampExt,p_instanciador_c4_lamp,p_instanciador_c3_lamp,p_instanciador_c2_lamp,p_instanciador_c1_lamp,instanciador_c4,instanciador_c3,instanciador_c2,instanciador_c1,instanciador_c_lampExt,instanciador_c4_lamp,instanciador_c3_lamp,instanciador_c2_lamp,instanciador_c1_lamp);
+  instanciador_c4 = instanciador_controller_instanciador_c4(instanciador_sexta_input,instanciador_ebd_input,instanciador_domingo_input,instanciador_domingol_input,instanciador_neutro_input,instanciador_seguranca_input,instanciador_l1,instanciador_l2,instanciador_l3,instanciador_l4,instanciador_lx,instanciador_lv,instanciador_v_301,instanciador_v_300,instanciador_v_299,instanciador_pnr_6,instanciador_ck_10_1,instanciador_pnr_5,instanciador_ck_12_1,instanciador_pnr_4,instanciador_ck_14_1,instanciador_pnr_3,instanciador_ck_16_1,instanciador_pnr_2,instanciador_ck_18_1,instanciador_pnr_1,instanciador_ck_20_1,instanciador_pnr,p_instanciador_c_vent,p_instanciador_cv,p_instanciador_cx,p_instanciador_c4,p_instanciador_c3,p_instanciador_c2,p_instanciador_c1,p_instanciador_c_lampExt,p_instanciador_c4_lamp,p_instanciador_c3_lamp,p_instanciador_c2_lamp,p_instanciador_c1_lamp,instanciador_c3,instanciador_c2,instanciador_c1,instanciador_c_lampExt,instanciador_c4_lamp,instanciador_c3_lamp,instanciador_c2_lamp,instanciador_c1_lamp);
+  instanciador_c3 = instanciador_controller_instanciador_c3(instanciador_sexta_input,instanciador_ebd_input,instanciador_domingo_input,instanciador_domingol_input,instanciador_neutro_input,instanciador_seguranca_input,instanciador_l1,instanciador_l2,instanciador_l3,instanciador_l4,instanciador_lx,instanciador_lv,instanciador_v_301,instanciador_v_300,instanciador_v_299,instanciador_pnr_6,instanciador_ck_10_1,instanciador_pnr_5,instanciador_ck_12_1,instanciador_pnr_4,instanciador_ck_14_1,instanciador_pnr_3,instanciador_ck_16_1,instanciador_pnr_2,instanciador_ck_18_1,instanciador_pnr_1,instanciador_ck_20_1,instanciador_pnr,p_instanciador_c_vent,p_instanciador_cv,p_instanciador_cx,p_instanciador_c4,p_instanciador_c3,p_instanciador_c2,p_instanciador_c1,p_instanciador_c_lampExt,p_instanciador_c4_lamp,p_instanciador_c3_lamp,p_instanciador_c2_lamp,p_instanciador_c1_lamp,instanciador_c2,instanciador_c1,instanciador_c_lampExt,instanciador_c4_lamp,instanciador_c3_lamp,instanciador_c2_lamp,instanciador_c1_lamp);
+  instanciador_c2 = instanciador_controller_instanciador_c2(instanciador_sexta_input,instanciador_ebd_input,instanciador_domingo_input,instanciador_domingol_input,instanciador_neutro_input,instanciador_seguranca_input,instanciador_l1,instanciador_l2,instanciador_l3,instanciador_l4,instanciador_lx,instanciador_lv,instanciador_v_301,instanciador_v_300,instanciador_v_299,instanciador_pnr_6,instanciador_ck_10_1,instanciador_pnr_5,instanciador_ck_12_1,instanciador_pnr_4,instanciador_ck_14_1,instanciador_pnr_3,instanciador_ck_16_1,instanciador_pnr_2,instanciador_ck_18_1,instanciador_pnr_1,instanciador_ck_20_1,instanciador_pnr,p_instanciador_c_vent,p_instanciador_cv,p_instanciador_cx,p_instanciador_c4,p_instanciador_c3,p_instanciador_c2,p_instanciador_c1,p_instanciador_c_lampExt,p_instanciador_c4_lamp,p_instanciador_c3_lamp,p_instanciador_c2_lamp,p_instanciador_c1_lamp,instanciador_c1,instanciador_c_lampExt,instanciador_c4_lamp,instanciador_c3_lamp,instanciador_c2_lamp,instanciador_c1_lamp);
+  instanciador_c1 = instanciador_controller_instanciador_c1(instanciador_sexta_input,instanciador_ebd_input,instanciador_domingo_input,instanciador_domingol_input,instanciador_neutro_input,instanciador_seguranca_input,instanciador_l1,instanciador_l2,instanciador_l3,instanciador_l4,instanciador_lx,instanciador_lv,instanciador_v_301,instanciador_v_300,instanciador_v_299,instanciador_pnr_6,instanciador_ck_10_1,instanciador_pnr_5,instanciador_ck_12_1,instanciador_pnr_4,instanciador_ck_14_1,instanciador_pnr_3,instanciador_ck_16_1,instanciador_pnr_2,instanciador_ck_18_1,instanciador_pnr_1,instanciador_ck_20_1,instanciador_pnr,p_instanciador_c_vent,p_instanciador_cv,p_instanciador_cx,p_instanciador_c4,p_instanciador_c3,p_instanciador_c2,p_instanciador_c1,p_instanciador_c_lampExt,p_instanciador_c4_lamp,p_instanciador_c3_lamp,p_instanciador_c2_lamp,p_instanciador_c1_lamp,instanciador_c_lampExt,instanciador_c4_lamp,instanciador_c3_lamp,instanciador_c2_lamp,instanciador_c1_lamp);
+  instanciador_c_lampExt = instanciador_controller_instanciador_c_lampExt(instanciador_sexta_input,instanciador_ebd_input,instanciador_domingo_input,instanciador_domingol_input,instanciador_neutro_input,instanciador_seguranca_input,instanciador_l1,instanciador_l2,instanciador_l3,instanciador_l4,instanciador_lx,instanciador_lv,instanciador_v_301,instanciador_v_300,instanciador_v_299,instanciador_pnr_6,instanciador_ck_10_1,instanciador_pnr_5,instanciador_ck_12_1,instanciador_pnr_4,instanciador_ck_14_1,instanciador_pnr_3,instanciador_ck_16_1,instanciador_pnr_2,instanciador_ck_18_1,instanciador_pnr_1,instanciador_ck_20_1,instanciador_pnr,p_instanciador_c_vent,p_instanciador_cv,p_instanciador_cx,p_instanciador_c4,p_instanciador_c3,p_instanciador_c2,p_instanciador_c1,p_instanciador_c_lampExt,p_instanciador_c4_lamp,p_instanciador_c3_lamp,p_instanciador_c2_lamp,p_instanciador_c1_lamp,instanciador_c4_lamp,instanciador_c3_lamp,instanciador_c2_lamp,instanciador_c1_lamp);
+  instanciador_c4_lamp = instanciador_controller_instanciador_c4_lamp(instanciador_sexta_input,instanciador_ebd_input,instanciador_domingo_input,instanciador_domingol_input,instanciador_neutro_input,instanciador_seguranca_input,instanciador_l1,instanciador_l2,instanciador_l3,instanciador_l4,instanciador_lx,instanciador_lv,instanciador_v_301,instanciador_v_300,instanciador_v_299,instanciador_pnr_6,instanciador_ck_10_1,instanciador_pnr_5,instanciador_ck_12_1,instanciador_pnr_4,instanciador_ck_14_1,instanciador_pnr_3,instanciador_ck_16_1,instanciador_pnr_2,instanciador_ck_18_1,instanciador_pnr_1,instanciador_ck_20_1,instanciador_pnr,p_instanciador_c_vent,p_instanciador_cv,p_instanciador_cx,p_instanciador_c4,p_instanciador_c3,p_instanciador_c2,p_instanciador_c1,p_instanciador_c_lampExt,p_instanciador_c4_lamp,p_instanciador_c3_lamp,p_instanciador_c2_lamp,p_instanciador_c1_lamp,instanciador_c3_lamp,instanciador_c2_lamp,instanciador_c1_lamp);
+  instanciador_c3_lamp = instanciador_controller_instanciador_c3_lamp(instanciador_sexta_input,instanciador_ebd_input,instanciador_domingo_input,instanciador_domingol_input,instanciador_neutro_input,instanciador_seguranca_input,instanciador_l1,instanciador_l2,instanciador_l3,instanciador_l4,instanciador_lx,instanciador_lv,instanciador_v_301,instanciador_v_300,instanciador_v_299,instanciador_pnr_6,instanciador_ck_10_1,instanciador_pnr_5,instanciador_ck_12_1,instanciador_pnr_4,instanciador_ck_14_1,instanciador_pnr_3,instanciador_ck_16_1,instanciador_pnr_2,instanciador_ck_18_1,instanciador_pnr_1,instanciador_ck_20_1,instanciador_pnr,p_instanciador_c_vent,p_instanciador_cv,p_instanciador_cx,p_instanciador_c4,p_instanciador_c3,p_instanciador_c2,p_instanciador_c1,p_instanciador_c_lampExt,p_instanciador_c4_lamp,p_instanciador_c3_lamp,p_instanciador_c2_lamp,p_instanciador_c1_lamp,instanciador_c2_lamp,instanciador_c1_lamp);
+  instanciador_c2_lamp = instanciador_controller_instanciador_c2_lamp(instanciador_sexta_input,instanciador_ebd_input,instanciador_domingo_input,instanciador_domingol_input,instanciador_neutro_input,instanciador_seguranca_input,instanciador_l1,instanciador_l2,instanciador_l3,instanciador_l4,instanciador_lx,instanciador_lv,instanciador_v_301,instanciador_v_300,instanciador_v_299,instanciador_pnr_6,instanciador_ck_10_1,instanciador_pnr_5,instanciador_ck_12_1,instanciador_pnr_4,instanciador_ck_14_1,instanciador_pnr_3,instanciador_ck_16_1,instanciador_pnr_2,instanciador_ck_18_1,instanciador_pnr_1,instanciador_ck_20_1,instanciador_pnr,p_instanciador_c_vent,p_instanciador_cv,p_instanciador_cx,p_instanciador_c4,p_instanciador_c3,p_instanciador_c2,p_instanciador_c1,p_instanciador_c_lampExt,p_instanciador_c4_lamp,p_instanciador_c3_lamp,p_instanciador_c2_lamp,p_instanciador_c1_lamp,instanciador_c1_lamp);
+  instanciador_c1_lamp = instanciador_controller_instanciador_c1_lamp(instanciador_sexta_input,instanciador_ebd_input,instanciador_domingo_input,instanciador_domingol_input,instanciador_neutro_input,instanciador_seguranca_input,instanciador_l1,instanciador_l2,instanciador_l3,instanciador_l4,instanciador_lx,instanciador_lv,instanciador_v_301,instanciador_v_300,instanciador_v_299,instanciador_pnr_6,instanciador_ck_10_1,instanciador_pnr_5,instanciador_ck_12_1,instanciador_pnr_4,instanciador_ck_14_1,instanciador_pnr_3,instanciador_ck_16_1,instanciador_pnr_2,instanciador_ck_18_1,instanciador_pnr_1,instanciador_ck_20_1,instanciador_pnr,p_instanciador_c_vent,p_instanciador_cv,p_instanciador_cx,p_instanciador_c4,p_instanciador_c3,p_instanciador_c2,p_instanciador_c1,p_instanciador_c_lampExt,p_instanciador_c4_lamp,p_instanciador_c3_lamp,p_instanciador_c2_lamp,p_instanciador_c1_lamp);
+tel
