@@ -1,5 +1,5 @@
 
-SIM_PROG=atividade5
+SIM_PROG=projeto
 # same as SIM_PROG, capitalized
 SIM_MOD=Instanciador
 SIM_NODE=instanciador

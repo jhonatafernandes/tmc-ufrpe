@@ -1,0 +1,153 @@
+(*
+    MODELO DO PROJETO DA DISCIPLINA DE TÓPICOS EM MODELAGEM COMPUTACIONAL
+    Autor: Jhonata Fernandes
+*)
+
+type modes = SEXTA | EBD | DOMINGO | DOMINGOL | NEUTRO | SEGURANCA
+
+node managementPolicy(sexta_input, ebd_input, domingo_input, domingol_input, neutro_input, seguranca_input: bool) returns (mode: modes)
+let
+    automaton
+         state Sexta_feira do
+             mode = SEXTA;
+                
+             unless  ebd_input then Ebd
+                | domingo_input then Domingo
+                | domingol_input then DomingoL
+                | neutro_input then Neutro
+                | seguranca_input then Seguranca
+
+
+
+         state Ebd do
+            mode = EBD;
+        
+         unless  sexta_input then Sexta_feira
+            | domingo_input then Domingo
+            | domingol_input then DomingoL
+            | neutro_input then Neutro
+            | seguranca_input then Seguranca
+
+         state Domingo do
+         	mode = DOMINGO;
+           
+         unless  ebd_input then Ebd
+            | sexta_input then Sexta_feira
+            | domingol_input then DomingoL
+            | neutro_input then Neutro
+            | seguranca_input then Seguranca
+
+        state DomingoL do
+            mode = DOMINGOL;
+           
+         unless  ebd_input then Ebd
+            | sexta_input then Sexta_feira
+            | domingo_input then Domingo
+            | neutro_input then Neutro
+            | seguranca_input then Seguranca
+
+        state Neutro do
+            mode = NEUTRO;
+           
+         unless  ebd_input then Ebd
+            | sexta_input then Sexta_feira
+            | domingol_input then DomingoL
+            | domingo_input then Domingo
+            | seguranca_input then Seguranca
+
+        state Seguranca do
+            mode = SEGURANCA;
+           
+         unless  ebd_input then Ebd
+            | sexta_input then Sexta_feira
+            | domingol_input then DomingoL
+            | neutro_input then Neutro
+            | domingo_input then Domingo 
+
+
+
+    end 
+tel
+
+
+
+node lamp1(c1_lamp, c1, l1 :bool) returns(estateLamp1:bool)
+let
+    automaton
+
+        state Off do
+            estateLamp1  = false
+        
+        unless  (c1_lamp or l1) & c1  then On
+
+        state On do
+            estateLamp1 = true
+
+        unless (not c1_lamp or not l1) & not c1 then Off
+    end
+tel
+
+
+node presence(inpPresence, password:bool) returns(estatePresence:bool)
+let
+    automaton
+
+        state Off do
+            estatePresence  = false
+        
+        unless  inpPresence then On
+
+        state On do
+            estatePresence = true
+
+        unless password then Off
+    end
+tel
+
+node instanciador( sexta_input, ebd_input, domingo_input, domingol_input, neutro_input, seguranca_input,l1,l2,l3,l4,lx,lv, inpMl, inpMp,inpSp,inpSl,inpProj,inpGela, inpAlarm, inpPresence, password: bool ) returns(policy: modes; estateLamp1, estateLamp2, estateLamp3, estateLamp4, estateLampExt, estateVent, estateMicroL,estateMicrop,estateSomp,estateSoml,estateProj,estateGela, estateAlarm, estatePresence: bool;)
+    contract
+            var
+                regra, regra1, regra2, regra3, regra4, regra5: bool;
+
+
+            let 
+                regra1 =  not(estateAlarm or estateSoml or estateMicroL or estateProj) & estateLamp1 & estateLamp2 & estateLamp3 & estateLamp4 & estateLampExt & estateVent & estateMicrop & estateSomp & estateGela;
+                regra2 =  not(estateAlarm or estateSoml or estateMicroL or estateProj  or estateLamp4 or estateLampExt) & estateLamp1 & estateLamp2 & estateLamp3 & estateVent & estateMicrop & estateSomp & estateGela;
+                regra3 = not(estateAlarm or estateSoml or estateMicroL or estateProj)& estateLamp1 & estateLamp2 & estateLamp3 & estateLamp4 & estateLampExt & estateVent & estateMicrop & estateSomp & estateGela;
+                regra4 = not(estateAlarm or estateSomp or estateMicrop or estateLamp1 or estateLamp2 or estateLamp4)  & estateLamp3 & estateLampExt & estateVent & estateMicroL & estateSoml & estateProj & estateGela;
+                regra5 = estateAlarm & not(estateLamp1 or estateLamp2 or estateLamp3 or estateLamp4 or estateLampExt or estateVent or estateMicrop or estateSomp or estateSoml or estateMicroL or estateGela or estateProj);
+                switch policy 
+
+                            | SEXTA do regra = regra1
+                            | EBD do  regra = regra2
+                            | DOMINGO do  regra = regra3
+                            | DOMINGOL do  regra = regra4
+                            | NEUTRO do  regra = true;
+                            | SEGURANCA do  regra = regra5
+                end
+    
+            tel
+            
+             enforce (regra)
+             with (c1_lamp, c2_lamp, c3_lamp, c4_lamp, c_lampExt, c1, c2, c3, c4, cx, cv, c_vent, c_somP,csp, c_somL,csl, c_microL,cml, c_microP,cmp, c_proj,cp, c_gela,cg, c_alarm, ca:bool) 
+            
+             
+            let
+                policy = inlined managementPolicy(sexta_input, ebd_input, domingo_input, domingol_input, neutro_input, seguranca_input);
+                estateLamp1 = inlined lamp1(c1_lamp, c1, l1);
+                estateLamp2 = inlined lamp1(c2_lamp, c2, l2);
+                estateLamp3 = inlined lamp1(c3_lamp, c3, l3);
+                estateLamp4 = inlined lamp1(c4_lamp, c4, l4);
+                estateLampExt = inlined lamp1(c_lampExt, cx, lx);
+                estateVent = inlined lamp1(c_vent, cv, lv);
+                estateMicroL = inlined lamp1(c_microL,cml,inpMl);
+                estateMicrop = inlined lamp1(c_microP,cmp,inpMp);
+                estateSomp = inlined lamp1(c_somP,csp,inpSp);
+                estateSoml = inlined lamp1(c_somL,csl,inpSl);
+                estateProj = inlined lamp1(c_proj,cp,inpProj);
+                estateGela = inlined lamp1(c_gela,cg,inpGela);
+                estateAlarm = inlined lamp1(c_alarm,ca,inpAlarm);
+                estatePresence = inlined presence(inpPresence, password);
+
+                
+            tel
