@@ -5,11 +5,11 @@
 
 type modes = SEXTA | EBD | DOMINGO | DOMINGOL | NEUTRO | SEGURANCA
 
-node managementPolicy(sexta_input, ebd_input, domingo_input, domingol_input, neutro_input, seguranca_input: bool) returns (mode: modes)
+node managementPolicy(sexta_input, ebd_input, domingo_input, domingol_input, neutro_input, seguranca_input: bool) returns (mode: int)
 let
     automaton
          state Sexta_feira do
-             mode = SEXTA;
+             mode = 1;
                 
              unless  ebd_input then Ebd
                 | domingo_input then Domingo
@@ -20,7 +20,7 @@ let
 
 
          state Ebd do
-            mode = EBD;
+            mode = 2;
         
          unless  sexta_input then Sexta_feira
             | domingo_input then Domingo
@@ -29,7 +29,7 @@ let
             | seguranca_input then Seguranca
 
          state Domingo do
-         	mode = DOMINGO;
+         	mode = 3;
            
          unless  ebd_input then Ebd
             | sexta_input then Sexta_feira
@@ -38,7 +38,7 @@ let
             | seguranca_input then Seguranca
 
         state DomingoL do
-            mode = DOMINGOL;
+            mode = 4;
            
          unless  ebd_input then Ebd
             | sexta_input then Sexta_feira
@@ -47,7 +47,7 @@ let
             | seguranca_input then Seguranca
 
         state Neutro do
-            mode = NEUTRO;
+            mode = 5;
            
          unless  ebd_input then Ebd
             | sexta_input then Sexta_feira
@@ -56,7 +56,7 @@ let
             | seguranca_input then Seguranca
 
         state Seguranca do
-            mode = SEGURANCA;
+            mode = 6;
            
          unless  ebd_input then Ebd
             | sexta_input then Sexta_feira
@@ -104,10 +104,10 @@ let
     end
 tel
 
-node instanciador( sexta_input, ebd_input, domingo_input, domingol_input, neutro_input, seguranca_input,l1,l2,l3,l4,lx,lv, inpMl, inpMp,inpSp,inpSl,inpProj,inpGela, inpAlarm, inpPresence, password: bool ) returns(policy: modes; estateLamp1, estateLamp2, estateLamp3, estateLamp4, estateLampExt, estateVent, estateMicroL,estateMicrop,estateSomp,estateSoml,estateProj,estateGela, estateAlarm, estatePresence: bool;)
+node instanciador( sexta_input, ebd_input, domingo_input, domingol_input, neutro_input, seguranca_input,l1,l2,l3,l4,lx,lv, inpMl, inpMp,inpSp,inpSl,inpProj,inpGela, inpAlarm, inpPresence, password: bool ) returns(policy: int; estateLamp1, estateLamp2, estateLamp3, estateLamp4, estateLampExt, estateVent, estateMicroL,estateMicrop,estateSomp,estateSoml,estateProj,estateGela, estateAlarm, estatePresence: bool;)
     contract
             var
-                regra, regra1, regra2, regra3, regra4, regra5: bool;
+                last regra: bool = true; regra1, regra2, regra3, regra4, regra5: bool;
 
 
             let 
@@ -116,7 +116,46 @@ node instanciador( sexta_input, ebd_input, domingo_input, domingol_input, neutro
                 regra3 = not(estateAlarm or estateSoml or estateMicroL or estateProj)& estateLamp1 & estateLamp2 & estateLamp3 & estateLamp4 & estateLampExt & estateVent & estateMicrop & estateSomp & estateGela;
                 regra4 = not(estateAlarm or estateSomp or estateMicrop or estateLamp1 or estateLamp2 or estateLamp4)  & estateLamp3 & estateLampExt & estateVent & estateMicroL & estateSoml & estateProj & estateGela;
                 regra5 = estateAlarm & not(estateLamp1 or estateLamp2 or estateLamp3 or estateLamp4 or estateLampExt or estateVent or estateMicrop or estateSomp or estateSoml or estateMicroL or estateGela or estateProj);
-                switch policy 
+                
+                if policy = 1
+                    then regra = regra1
+
+                else 
+                    if policy = 2
+                        then regra = regra2
+                    else
+                         if policy = 3
+                            then regra = regra3
+                         else
+                             if policy = 4
+                                then regra = regra4
+                             else
+                                 if policy = 5
+                                    then regra = true
+                                 else regra = regra5
+
+                                 end
+                             end
+                         end
+                     end
+                end
+
+    
+
+                (*
+                present
+
+                        | policy = 1 do regra = last regra = regra1
+                        | policy = 2 do regra = last regra = regra2
+                        | policy = 3 do regra = last regra = regra3
+                        | policy = 4 do regra = last regra = regra4
+                        | policy = 5 do regra = last regra = true
+                        | policy = 6 do regra = last regra = regra5
+        
+                end*)
+
+
+                (*switch policy 
 
                             | SEXTA do regra = regra1
                             | EBD do  regra = regra2
@@ -124,7 +163,7 @@ node instanciador( sexta_input, ebd_input, domingo_input, domingol_input, neutro
                             | DOMINGOL do  regra = regra4
                             | NEUTRO do  regra = true;
                             | SEGURANCA do  regra = regra5
-                end
+                end*)
     
             tel
             
