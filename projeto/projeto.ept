@@ -1,9 +1,9 @@
 (*
     MODELO DO PROJETO DA DISCIPLINA DE TÓPICOS EM MODELAGEM COMPUTACIONAL
     Autor: Jhonata Fernandes
-*)
 
-type modes = SEXTA | EBD | DOMINGO | DOMINGOL | NEUTRO | SEGURANCA
+
+#type modes = SEXTA | EBD | DOMINGO | DOMINGOL | NEUTRO | SEGURANCA*)
 
 node managementPolicy(sexta_input, ebd_input, domingo_input, domingol_input, neutro_input, seguranca_input: bool) returns (mode: int)
 let
@@ -107,7 +107,7 @@ tel
 node instanciador( sexta_input, ebd_input, domingo_input, domingol_input, neutro_input, seguranca_input,l1,l2,l3,l4,lx,lv, inpMl, inpMp,inpSp,inpSl,inpProj,inpGela, inpAlarm, inpPresence, password: bool ) returns(policy: int; estateLamp1, estateLamp2, estateLamp3, estateLamp4, estateLampExt, estateVent, estateMicroL,estateMicrop,estateSomp,estateSoml,estateProj,estateGela, estateAlarm, estatePresence: bool;)
     contract
             var
-                last regra: bool = true; regra1, regra2, regra3, regra4, regra5: bool;
+                regra, regra1, regra2, regra3, regra4, regra5: bool;
 
 
             let 
@@ -118,20 +118,20 @@ node instanciador( sexta_input, ebd_input, domingo_input, domingol_input, neutro
                 regra5 = estateAlarm & not(estateLamp1 or estateLamp2 or estateLamp3 or estateLamp4 or estateLampExt or estateVent or estateMicrop or estateSomp or estateSoml or estateMicroL or estateGela or estateProj);
                 
                 if policy = 1
-                    then regra = regra1
+                    then regra = regra1;
 
                 else 
                     if policy = 2
-                        then regra = regra2
+                        then regra = regra2;
                     else
                          if policy = 3
-                            then regra = regra3
+                            then regra = regra3;
                          else
                              if policy = 4
-                                then regra = regra4
+                                then regra = regra4;
                              else
                                  if policy = 5
-                                    then regra = true
+                                    then regra = true;
                                  else regra = regra5
 
                                  end
@@ -139,20 +139,6 @@ node instanciador( sexta_input, ebd_input, domingo_input, domingol_input, neutro
                          end
                      end
                 end
-
-    
-
-                (*
-                present
-
-                        | policy = 1 do regra = last regra = regra1
-                        | policy = 2 do regra = last regra = regra2
-                        | policy = 3 do regra = last regra = regra3
-                        | policy = 4 do regra = last regra = regra4
-                        | policy = 5 do regra = last regra = true
-                        | policy = 6 do regra = last regra = regra5
-        
-                end*)
 
 
                 (*switch policy 

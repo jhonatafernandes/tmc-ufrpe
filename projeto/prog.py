@@ -1,5 +1,5 @@
 import sys
-
+import re #adicionado por jhonata fernandes
 
 file = open(sys.argv[1],'r')
 
@@ -31,14 +31,25 @@ def lineToAutomaton(line):
   entradas = entradas.split(",")
   print entradas
   
-  saidas = line[1].strip()[1:-1]
+  '''saidas = line[1].strip()[1:-1]
   print (saidas)
   saidas = saidas.split(":")[0]
+ 
+  saidas = saidas.split(",")
+  #print saidas
+  print("----------")'''
+
+  saidasx = line[1].strip()[1:-1]
+  print (saidasx)
+  saidas = re.sub(": int;", ",",saidasx)
+  saidas = re.sub(": bool;", "",saidas)
   saidas = saidas.split(",")
   print saidas
   print("----------")
 
   automaton = {'name':name,'entradas': entradas,'saidas':saidas}
+
+
 
   automatonsList.append(automaton)
 
@@ -59,7 +70,7 @@ declaracoes ="int step_c;int step_max;"
 
 def concateDec(x):
   global declaracoes
-  declaracoes = declaracoes+"int %s;"%(x)
+  declaracoes = declaracoes+"int %s=0;"%(x)
 
 
 list(map(concateDec,task['entradas']))
@@ -109,7 +120,7 @@ part1 = '''
 #include "_main.h"
 
 #define PORT 8082
-#define n 57
+#define n 20
 
 %s
 int glob_cnt=0;
