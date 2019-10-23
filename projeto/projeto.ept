@@ -5,7 +5,7 @@
 
 #type modes = SEXTA | EBD | DOMINGO | DOMINGOL | NEUTRO | SEGURANCA*)
 
-node managementPolicy(sexta_input, ebd_input, domingo_input, domingol_input, neutro_input, seguranca_input: bool) returns (mode: int)
+node managementPolicy(sexta_input,ebd_input,domingo_input,domingol_input,neutro_input,seguranca_input: bool) returns (mode: int)
 let
     automaton
          state Sexta_feira do
@@ -71,7 +71,7 @@ tel
 
 
 
-node lamp1(c1_lamp, c1, l1 :bool) returns(estateLamp1:bool)
+node lamp1(c1_lamp,c1,l1 :bool) returns(estateLamp1:bool)
 let
     automaton
 
@@ -88,7 +88,7 @@ let
 tel
 
 
-node presence(inpPresence, password:bool) returns(estatePresence:bool)
+node presence(inpPresence,password:bool) returns(estatePresence:bool)
 let
     automaton
 
@@ -104,7 +104,7 @@ let
     end
 tel
 
-node instanciador( sexta_input, ebd_input, domingo_input, domingol_input, neutro_input, seguranca_input,l1,l2,l3,l4,lx,lv, inpMl, inpMp,inpSp,inpSl,inpProj,inpGela, inpAlarm, inpPresence, password: bool ) returns(policy: int; estateLamp1, estateLamp2, estateLamp3, estateLamp4, estateLampExt, estateVent, estateMicroL,estateMicrop,estateSomp,estateSoml,estateProj,estateGela, estateAlarm, estatePresence: bool;)
+node instanciador(sexta_input,ebd_input,domingo_input,domingol_input,neutro_input,seguranca_input,l1,l2,l3,l4,lx,lv,inpMl,inpMp,inpSp,inpSl,inpProj,inpGela,inpAlarm,inpPresence,password: bool ) returns(policy: int;estateLamp1,estateLamp2,estateLamp3,estateLamp4,estateLampExt,estateVent,estateMicroL,estateMicrop,estateSomp,estateSoml,estateProj,estateGela,estateAlarm,estatePresence: bool;)
     contract
             var
                 regra, regra1, regra2, regra3, regra4, regra5: bool;
@@ -154,17 +154,17 @@ node instanciador( sexta_input, ebd_input, domingo_input, domingol_input, neutro
             tel
             
              enforce (regra)
-             with (c1_lamp, c2_lamp, c3_lamp, c4_lamp, c_lampExt, c1, c2, c3, c4, cx, cv, c_vent, c_somP,csp, c_somL,csl, c_microL,cml, c_microP,cmp, c_proj,cp, c_gela,cg, c_alarm, ca:bool) 
+             with (c1_lamp,c2_lamp,c3_lamp,c4_lamp,c_lampExt,c1,c2,c3,c4,cx,cv,c_vent,c_somP,csp,c_somL,csl,c_microL,cml,c_microP,cmp,c_proj,cp,c_gela,cg,c_alarm,ca:bool) 
             
              
             let
-                policy = inlined managementPolicy(sexta_input, ebd_input, domingo_input, domingol_input, neutro_input, seguranca_input);
-                estateLamp1 = inlined lamp1(c1_lamp, c1, l1);
-                estateLamp2 = inlined lamp1(c2_lamp, c2, l2);
-                estateLamp3 = inlined lamp1(c3_lamp, c3, l3);
-                estateLamp4 = inlined lamp1(c4_lamp, c4, l4);
-                estateLampExt = inlined lamp1(c_lampExt, cx, lx);
-                estateVent = inlined lamp1(c_vent, cv, lv);
+                policy = inlined managementPolicy(sexta_input,ebd_input,domingo_input,domingol_input,neutro_input,seguranca_input);
+                estateLamp1 = inlined lamp1(c1_lamp,c1,l1);
+                estateLamp2 = inlined lamp1(c2_lamp,c2,l2);
+                estateLamp3 = inlined lamp1(c3_lamp,c3,l3);
+                estateLamp4 = inlined lamp1(c4_lamp,c4,l4);
+                estateLampExt = inlined lamp1(c_lampExt,cx,lx);
+                estateVent = inlined lamp1(c_vent,cv,lv);
                 estateMicroL = inlined lamp1(c_microL,cml,inpMl);
                 estateMicrop = inlined lamp1(c_microP,cmp,inpMp);
                 estateSomp = inlined lamp1(c_somP,csp,inpSp);
@@ -172,7 +172,7 @@ node instanciador( sexta_input, ebd_input, domingo_input, domingol_input, neutro
                 estateProj = inlined lamp1(c_proj,cp,inpProj);
                 estateGela = inlined lamp1(c_gela,cg,inpGela);
                 estateAlarm = inlined lamp1(c_alarm,ca,inpAlarm);
-                estatePresence = inlined presence(inpPresence, password);
+                estatePresence = inlined presence(inpPresence,password);
 
                 
             tel
