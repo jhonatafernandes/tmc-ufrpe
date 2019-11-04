@@ -87,8 +87,29 @@ let
     end
 tel
 
+node alarm(p,c1,c2,l :bool) returns(estateAlarm:int)
+let
+    automaton
 
-node presence(inpPresence,password:bool) returns(estatePresence:bool)
+        state Off do
+            estateAlarm  = 0
+        
+        unless  (c1 or l) & c2  then On
+
+        state On do
+            estateAlarm = 1
+
+        unless (not c1 or not l) & not c2 then Off | p then Alert
+
+        state Alert do
+            estateAlarm = 2
+        unless  c1  then Off | c2 then On
+
+    end
+tel
+
+
+node presence(inpPresence:bool) returns(estatePresence:bool)
 let
     automaton
 
@@ -100,23 +121,26 @@ let
         state On do
             estatePresence = true
 
-        unless password then Off
+        unless not inpPresence then Off
     end
 tel
 
-node instanciador(sexta_input,ebd_input,domingo_input,domingol_input,neutro_input,seguranca_input,l1,l2,l3,l4,lx,lv,inpMl,inpMp,inpSp,inpSl,inpProj,inpGela,inpAlarm,inpPresence,password: bool ) returns(policy: int;estateLamp1,estateLamp2,estateLamp3,estateLamp4,estateLampExt,estateVent,estateMicroL,estateMicrop,estateSomp,estateSoml,estateProj,estateGela,estateAlarm,estatePresence: bool;)
+node instanciador(sexta_input,ebd_input,domingo_input,domingol_input,neutro_input,seguranca_input,l1,l2,l3,l4,lx,lv,inpMl,inpMp,inpSp,inpSl,inpProj,inpGela,inpAlarm,inpPresence,password: bool ) returns(policy,estateAlarm: int;estateLamp1,estateLamp2,estateLamp3,estateLamp4,estateLampExt,estateVent,estateMicroL,estateMicrop,estateSomp,estateSoml,estateProj,estateGela,estatePresence: bool;)
     contract
             var
-                regra, regra1, regra2, regra3, regra4, regra5: bool;
+                regra, regra1, regra2, regra3, regra4, regra5, alerta: bool;
 
 
             let 
-                regra1 =  not(estateAlarm or estateSoml or estateMicroL or estateProj) & estateLamp1 & estateLamp2 & estateLamp3 & estateLamp4 & estateLampExt & estateVent & estateMicrop & estateSomp & estateGela;
-                regra2 =  not(estateAlarm or estateSoml or estateMicroL or estateProj  or estateLamp4 or estateLampExt) & estateLamp1 & estateLamp2 & estateLamp3 & estateVent & estateMicrop & estateSomp & estateGela;
-                regra3 = not(estateAlarm or estateSoml or estateMicroL or estateProj)& estateLamp1 & estateLamp2 & estateLamp3 & estateLamp4 & estateLampExt & estateVent & estateMicrop & estateSomp & estateGela;
-                regra4 = not(estateAlarm or estateSomp or estateMicrop or estateLamp1 or estateLamp2 or estateLamp4)  & estateLamp3 & estateLampExt & estateVent & estateMicroL & estateSoml & estateProj & estateGela;
-                regra5 = estateAlarm & not(estateLamp1 or estateLamp2 or estateLamp3 or estateLamp4 or estateLampExt or estateVent or estateMicrop or estateSomp or estateSoml or estateMicroL or estateGela or estateProj);
-                
+                regra = true;
+                regra1 =  not(estateAlarm > 0 or estateSoml or estateMicroL or estateProj) & estateLamp1 & estateLamp2 & estateLamp3 & estateLamp4 & estateLampExt & estateVent & estateMicrop & estateSomp & estateGela;
+                regra2 =  not(estateAlarm > 0 or estateSoml or estateMicroL or estateProj  or estateLamp4 or estateLampExt) & estateLamp1 & estateLamp2 & estateLamp3 & estateVent & estateMicrop & estateSomp & estateGela;
+                regra3 = not(estateAlarm > 0 or estateSoml or estateMicroL or estateProj)& estateLamp1 & estateLamp2 & estateLamp3 & estateLamp4 & estateLampExt & estateVent & estateMicrop & estateSomp & estateGela;
+                regra4 = not(estateAlarm > 0 or estateSomp or estateMicrop or estateLamp1 or estateLamp2 or estateLamp4)  & estateLamp3 & estateLampExt & estateVent & estateMicroL & estateSoml & estateProj & estateGela;
+                regra5 = estateAlarm = 1 & not(estateLamp1 or estateLamp2 or estateLamp3 or estateLamp4 or estateLampExt or estateVent or estateMicrop or estateSomp or estateSoml or estateMicroL or estateGela or estateProj);
+                alerta = not(estateVent or estateMicrop or estateSomp or estateGela or estateSoml or estateMicroL or estateProj) & estateLamp1 & estateLamp2 & estateLamp3 & estateLamp4 & estateLampExt;
+
+
                 if policy = 1
                     then regra = regra1;
 
@@ -132,7 +156,27 @@ node instanciador(sexta_input,ebd_input,domingo_input,domingol_input,neutro_inpu
                              else
                                  if policy = 5
                                     then regra = true;
-                                 else regra = regra5
+                                 else 
+                                    regra = regra5;
+
+                                    if estatePresence = true
+                                        then regra = alerta;
+                                        if password = true
+                                            then regra = regra1;
+                                        else
+
+                                        end
+                                     else
+
+
+                                    end
+                                       
+                                        
+
+                           
+
+                                       
+                                    
 
                                  end
                              end
@@ -154,7 +198,7 @@ node instanciador(sexta_input,ebd_input,domingo_input,domingol_input,neutro_inpu
             tel
             
              enforce (regra)
-             with (c1_lamp,c2_lamp,c3_lamp,c4_lamp,c_lampExt,c1,c2,c3,c4,cx,cv,c_vent,c_somP,csp,c_somL,csl,c_microL,cml,c_microP,cmp,c_proj,cp,c_gela,cg,c_alarm,ca:bool) 
+             with (c1_lamp,c2_lamp,c3_lamp,c4_lamp,c_lampExt,c1,c2,c3,c4,cx,cv,c_vent,c_somP,csp,c_somL,csl,c_microL,cml,c_microP,cmp,c_proj,cp,c_gela,cg,c_alarm1,c_alarm2:bool) 
             
              
             let
@@ -171,8 +215,8 @@ node instanciador(sexta_input,ebd_input,domingo_input,domingol_input,neutro_inpu
                 estateSoml = inlined lamp1(c_somL,csl,inpSl);
                 estateProj = inlined lamp1(c_proj,cp,inpProj);
                 estateGela = inlined lamp1(c_gela,cg,inpGela);
-                estateAlarm = inlined lamp1(c_alarm,ca,inpAlarm);
-                estatePresence = inlined presence(inpPresence,password);
+                estatePresence = inlined presence(inpPresence);
+                estateAlarm = inlined alarm(estatePresence,c_alarm1,c_alarm2,inpAlarm);
 
                 
             tel
