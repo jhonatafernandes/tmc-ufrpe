@@ -88,7 +88,7 @@ let
 tel
 
 
-node presence(inpPresence,password:bool) returns(estatePresence:bool)
+(*node presence(inpPresence,password:bool) returns(estatePresence:bool)
 let
     automaton
 
@@ -102,9 +102,9 @@ let
 
         unless password then Off
     end
-tel
+tel*)
 
-node instanciador(sexta_input,ebd_input,domingo_input,domingol_input,neutro_input,seguranca_input,l1,l2,l3,l4,lx,lv,inpMl,inpMp,inpSp,inpSl,inpProj,inpGela,inpAlarm,inpPresence,password: bool ) returns(policy: int;estateLamp1,estateLamp2,estateLamp3,estateLamp4,estateLampExt,estateVent,estateMicroL,estateMicrop,estateSomp,estateSoml,estateProj,estateGela,estateAlarm,estatePresence: bool;)
+node instanciador(sexta_input,ebd_input,domingo_input,domingol_input,neutro_input,seguranca_input,l1,l2,l3,l4,lx,lv,inpMl,inpMp,inpSp,inpSl,inpProj,inpGela,inpAlarm: bool ) returns(policy: int;estateLamp1,estateLamp2,estateLamp3,estateLamp4,estateLampExt,estateVent,estateMicroL,estateMicrop,estateSomp,estateSoml,estateProj,estateGela,estateAlarm: bool;)
     contract
             var
                 regra, regra1, regra2, regra3, regra4, regra5: bool;
@@ -172,7 +172,7 @@ node instanciador(sexta_input,ebd_input,domingo_input,domingol_input,neutro_inpu
                 estateProj = inlined lamp1(c_proj,cp,inpProj);
                 estateGela = inlined lamp1(c_gela,cg,inpGela);
                 estateAlarm = inlined lamp1(c_alarm,ca,inpAlarm);
-                estatePresence = inlined presence(inpPresence,password);
+                (*estatePresence = inlined presence(inpPresence,password);*)
 
                 
             tel
