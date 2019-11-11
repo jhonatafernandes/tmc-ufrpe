@@ -1,0 +1,1443 @@
+% --- Generated the 11/11/2019 at 8:46 --- %
+% --- heptagon compiler, version 1.03.00 (compiled thu. may. 3 2:35:29 CET 2018) --- %
+% --- Command line: /usr/local/bin/heptc -target c -target z3z -s instanciador projeto.ept --- %
+
+set_reorder(2);read("Property.lib");read("Synthesis.lib");read("Verif_Determ.lib");read("Simul.lib");read("Synthesis_Partial_order.lib");read("Orbite.lib");
+% -- dependencies --- %
+
+% ---------- process instanciador ---------- %
+
+declare(instanciador_sexta_input, instanciador_ebd_input,
+        instanciador_domingo_input, instanciador_domingol_input,
+        instanciador_neutro_input, instanciador_seguranca_input,
+        instanciador_l1, instanciador_l2, instanciador_l3, instanciador_l4,
+        instanciador_lx, instanciador_lv, instanciador_inpMl,
+        instanciador_inpMp, instanciador_inpSp, instanciador_inpSl,
+        instanciador_inpProj, instanciador_inpGela, instanciador_inpAlarm,
+        instanciador_ca, instanciador_c_alarm, instanciador_cg,
+        instanciador_c_gela, instanciador_cp, instanciador_c_proj,
+        instanciador_cmp, instanciador_c_microP, instanciador_cml,
+        instanciador_c_microL, instanciador_csl, instanciador_c_somL,
+        instanciador_csp, instanciador_c_somP, instanciador_c_vent,
+        instanciador_cv, instanciador_cx, instanciador_c4, instanciador_c3,
+        instanciador_c2, instanciador_c1, instanciador_c_lampExt,
+        instanciador_c4_lamp, instanciador_c3_lamp, instanciador_c2_lamp,
+        instanciador_c1_lamp, instanciador_v_341, instanciador_v_340,
+        instanciador_v_339, instanciador_pnr_13, instanciador_ck_9_1,
+        instanciador_pnr_12, instanciador_ck_11_1, instanciador_pnr_11,
+        instanciador_ck_13_1, instanciador_pnr_10, instanciador_ck_15_1,
+        instanciador_pnr_9, instanciador_ck_17_1, instanciador_pnr_8,
+        instanciador_ck_19_1, instanciador_pnr_7, instanciador_ck_21_1,
+        instanciador_pnr_6, instanciador_ck_23_1, instanciador_pnr_5,
+        instanciador_ck_25_1, instanciador_pnr_4, instanciador_ck_27_1,
+        instanciador_pnr_3, instanciador_ck_29_1, instanciador_pnr_2,
+        instanciador_ck_31_1, instanciador_pnr_1, instanciador_ck_33_1,
+        instanciador_pnr, instanciador_error_state);
+conditions : [instanciador_sexta_input, instanciador_ebd_input,
+              instanciador_domingo_input, instanciador_domingol_input,
+              instanciador_neutro_input, instanciador_seguranca_input,
+              instanciador_l1, instanciador_l2, instanciador_l3,
+              instanciador_l4, instanciador_lx, instanciador_lv,
+              instanciador_inpMl, instanciador_inpMp, instanciador_inpSp,
+              instanciador_inpSl, instanciador_inpProj, instanciador_inpGela,
+              instanciador_inpAlarm, instanciador_ca, instanciador_c_alarm,
+              instanciador_cg, instanciador_c_gela, instanciador_cp,
+              instanciador_c_proj, instanciador_cmp, instanciador_c_microP,
+              instanciador_cml, instanciador_c_microL, instanciador_csl,
+              instanciador_c_somL, instanciador_csp, instanciador_c_somP,
+              instanciador_c_vent, instanciador_cv, instanciador_cx,
+              instanciador_c4, instanciador_c3, instanciador_c2,
+              instanciador_c1, instanciador_c_lampExt, instanciador_c4_lamp,
+              instanciador_c3_lamp, instanciador_c2_lamp,
+              instanciador_c1_lamp];
+states : [instanciador_v_341, instanciador_v_340, instanciador_v_339,
+          instanciador_pnr_13, instanciador_ck_9_1, instanciador_pnr_12,
+          instanciador_ck_11_1, instanciador_pnr_11, instanciador_ck_13_1,
+          instanciador_pnr_10, instanciador_ck_15_1, instanciador_pnr_9,
+          instanciador_ck_17_1, instanciador_pnr_8, instanciador_ck_19_1,
+          instanciador_pnr_7, instanciador_ck_21_1, instanciador_pnr_6,
+          instanciador_ck_23_1, instanciador_pnr_5, instanciador_ck_25_1,
+          instanciador_pnr_4, instanciador_ck_27_1, instanciador_pnr_3,
+          instanciador_ck_29_1, instanciador_pnr_2, instanciador_ck_31_1,
+          instanciador_pnr_1, instanciador_ck_33_1, instanciador_pnr,
+          instanciador_error_state];
+controllables : [instanciador_ca, instanciador_c_alarm, instanciador_cg,
+                 instanciador_c_gela, instanciador_cp, instanciador_c_proj,
+                 instanciador_cmp, instanciador_c_microP, instanciador_cml,
+                 instanciador_c_microL, instanciador_csl,
+                 instanciador_c_somL, instanciador_csp, instanciador_c_somP,
+                 instanciador_c_vent, instanciador_cv, instanciador_cx,
+                 instanciador_c4, instanciador_c3, instanciador_c2,
+                 instanciador_c1, instanciador_c_lampExt,
+                 instanciador_c4_lamp, instanciador_c3_lamp,
+                 instanciador_c2_lamp, instanciador_c1_lamp];
+evolutions : [];
+initialisations : [];
+instanciador_ck_7_3 : instanciador_v_341;
+instanciador_ck_7_2 : instanciador_v_340;
+instanciador_ck_7_1 : instanciador_v_339;
+instanciador_seguranca_input_1 : instanciador_seguranca_input;
+instanciador_neutro_input_1 : instanciador_neutro_input;
+instanciador_domingol_input_1 : instanciador_domingol_input;
+instanciador_domingo_input_1 : instanciador_domingo_input;
+instanciador_ebd_input_1 : instanciador_ebd_input;
+instanciador_sexta_input_1 : instanciador_sexta_input;
+instanciador_l1_1 : instanciador_l1;
+instanciador_c1_1 : instanciador_c1;
+instanciador_c1_lamp_1 : instanciador_c1_lamp;
+instanciador_l1_2 : instanciador_l2;
+instanciador_c1_2 : instanciador_c2;
+instanciador_c1_lamp_2 : instanciador_c2_lamp;
+instanciador_l1_3 : instanciador_l3;
+instanciador_c1_3 : instanciador_c3;
+instanciador_c1_lamp_3 : instanciador_c3_lamp;
+instanciador_l1_4 : instanciador_l4;
+instanciador_c1_4 : instanciador_c4;
+instanciador_c1_lamp_4 : instanciador_c4_lamp;
+instanciador_l1_5 : instanciador_lx;
+instanciador_c1_5 : instanciador_cx;
+instanciador_c1_lamp_5 : instanciador_c_lampExt;
+instanciador_l1_6 : instanciador_lv;
+instanciador_c1_6 : instanciador_cv;
+instanciador_c1_lamp_6 : instanciador_c_vent;
+instanciador_l1_7 : instanciador_inpMl;
+instanciador_c1_7 : instanciador_cml;
+instanciador_c1_lamp_7 : instanciador_c_microL;
+instanciador_l1_8 : instanciador_inpMp;
+instanciador_c1_8 : instanciador_cmp;
+instanciador_c1_lamp_8 : instanciador_c_microP;
+instanciador_l1_9 : instanciador_inpSp;
+instanciador_c1_9 : instanciador_csp;
+instanciador_c1_lamp_9 : instanciador_c_somP;
+instanciador_l1_10 : instanciador_inpSl;
+instanciador_c1_10 : instanciador_csl;
+instanciador_c1_lamp_10 : instanciador_c_somL;
+instanciador_l1_11 : instanciador_inpProj;
+instanciador_c1_11 : instanciador_cp;
+instanciador_c1_lamp_11 : instanciador_c_proj;
+instanciador_l1_12 : instanciador_inpGela;
+instanciador_c1_12 : instanciador_cg;
+instanciador_c1_lamp_12 : instanciador_c_gela;
+instanciador_l1_13 : instanciador_inpAlarm;
+instanciador_c1_13 : instanciador_ca;
+instanciador_c1_lamp_13 : instanciador_c_alarm;
+instanciador_ck_7_2_0 : instanciador_ck_7_2;
+instanciador_ck_7_2_1 : instanciador_ck_7_2;
+instanciador_ck_7_3_0_0 : instanciador_ck_7_3;
+instanciador_ck_7_3_0_1 : instanciador_ck_7_3;
+instanciador_ck_7_3_1_0 : instanciador_ck_7_3;
+instanciador_ck_7_3_1_1 : instanciador_ck_7_3;
+instanciador_v_113_3 : ((1 when instanciador_domingo_input_1) default -1);
+instanciador_v_113_2 : ((1 when instanciador_domingo_input_1) default 1);
+instanciador_v_113_1 : ((1 when instanciador_domingo_input_1) default -1);
+instanciador_v_114 : ((1 when instanciador_domingo_input_1)
+  default instanciador_pnr_13);
+instanciador_v_115_3 : ((1 when instanciador_neutro_input_1)
+  default instanciador_v_113_3);
+instanciador_v_115_2 : ((1 when instanciador_neutro_input_1)
+  default instanciador_v_113_2);
+instanciador_v_115_1 : ((-1 when instanciador_neutro_input_1)
+  default instanciador_v_113_1);
+instanciador_v_116 : ((1 when instanciador_neutro_input_1)
+  default instanciador_v_114);
+instanciador_v_117_3 : ((-1 when instanciador_domingol_input_1)
+  default instanciador_v_115_3);
+instanciador_v_117_2 : ((1 when instanciador_domingol_input_1)
+  default instanciador_v_115_2);
+instanciador_v_117_1 : ((1 when instanciador_domingol_input_1)
+  default instanciador_v_115_1);
+instanciador_v_118 : ((1 when instanciador_domingol_input_1)
+  default instanciador_v_116);
+instanciador_v_119_3 : ((-1 when instanciador_sexta_input_1)
+  default instanciador_v_117_3);
+instanciador_v_119_2 : ((-1 when instanciador_sexta_input_1)
+  default instanciador_v_117_2);
+instanciador_v_119_1 : ((-1 when instanciador_sexta_input_1)
+  default instanciador_v_117_1);
+instanciador_v_120 : ((1 when instanciador_sexta_input_1)
+  default instanciador_v_118);
+instanciador_s_13_St_15_Seguranca_3 : ((-1 when instanciador_ebd_input_1)
+  default instanciador_v_119_3);
+instanciador_s_13_St_15_Seguranca_2 : ((-1 when instanciador_ebd_input_1)
+  default instanciador_v_119_2);
+instanciador_s_13_St_15_Seguranca_1 : ((1 when instanciador_ebd_input_1)
+  default instanciador_v_119_1);
+instanciador_r_13_St_15_Seguranca : ((1 when instanciador_ebd_input_1)
+  default instanciador_v_120);
+instanciador_v_121_3 : ((-1 when instanciador_seguranca_input_1) default 1);
+instanciador_v_121_2 : ((1 when instanciador_seguranca_input_1) default 1);
+instanciador_v_121_1 : ((-1 when instanciador_seguranca_input_1) default -1);
+instanciador_v_122 : ((1 when instanciador_seguranca_input_1)
+  default instanciador_pnr_13);
+instanciador_v_123_3 : ((1 when instanciador_domingo_input_1)
+  default instanciador_v_121_3);
+instanciador_v_123_2 : ((1 when instanciador_domingo_input_1)
+  default instanciador_v_121_2);
+instanciador_v_123_1 : ((1 when instanciador_domingo_input_1)
+  default instanciador_v_121_1);
+instanciador_v_124 : ((1 when instanciador_domingo_input_1)
+  default instanciador_v_122);
+instanciador_v_125_3 : ((-1 when instanciador_domingol_input_1)
+  default instanciador_v_123_3);
+instanciador_v_125_2 : ((1 when instanciador_domingol_input_1)
+  default instanciador_v_123_2);
+instanciador_v_125_1 : ((1 when instanciador_domingol_input_1)
+  default instanciador_v_123_1);
+instanciador_v_126 : ((1 when instanciador_domingol_input_1)
+  default instanciador_v_124);
+instanciador_v_127_3 : ((-1 when instanciador_sexta_input_1)
+  default instanciador_v_125_3);
+instanciador_v_127_2 : ((-1 when instanciador_sexta_input_1)
+  default instanciador_v_125_2);
+instanciador_v_127_1 : ((-1 when instanciador_sexta_input_1)
+  default instanciador_v_125_1);
+instanciador_v_128 : ((1 when instanciador_sexta_input_1)
+  default instanciador_v_126);
+instanciador_s_13_St_15_Neutro_3 : ((-1 when instanciador_ebd_input_1)
+  default instanciador_v_127_3);
+instanciador_v_350 : ((instanciador_s_13_St_15_Neutro_3
+  when instanciador_ck_7_3_0_1) default instanciador_s_13_St_15_Seguranca_3);
+instanciador_s_13_St_15_Neutro_2 : ((-1 when instanciador_ebd_input_1)
+  default instanciador_v_127_2);
+instanciador_v_349 : ((instanciador_s_13_St_15_Neutro_2
+  when instanciador_ck_7_3_0_1) default instanciador_s_13_St_15_Seguranca_2);
+instanciador_s_13_St_15_Neutro_1 : ((1 when instanciador_ebd_input_1)
+  default instanciador_v_127_1);
+instanciador_v_348 : ((instanciador_s_13_St_15_Neutro_1
+  when instanciador_ck_7_3_0_1) default instanciador_s_13_St_15_Seguranca_1);
+instanciador_r_13_St_15_Neutro : ((1 when instanciador_ebd_input_1)
+  default instanciador_v_128);
+instanciador_v_363 : ((instanciador_r_13_St_15_Neutro
+  when instanciador_ck_7_3_0_1) default instanciador_r_13_St_15_Seguranca);
+instanciador_s_13_St_15_Seguranca_2_0 : instanciador_s_13_St_15_Seguranca_2;
+instanciador_s_13_St_15_Seguranca_2_1 : instanciador_s_13_St_15_Seguranca_2;
+instanciador_s_13_St_15_Seguranca_3_0_0 : instanciador_s_13_St_15_Seguranca_3;
+instanciador_s_13_St_15_Seguranca_3_0_1 : instanciador_s_13_St_15_Seguranca_3;
+instanciador_s_13_St_15_Seguranca_3_1_0 : instanciador_s_13_St_15_Seguranca_3;
+instanciador_s_13_St_15_Seguranca_3_1_1 : instanciador_s_13_St_15_Seguranca_3;
+instanciador_s_13_St_15_Neutro_2_0 : instanciador_s_13_St_15_Neutro_2;
+instanciador_s_13_St_15_Neutro_2_1 : instanciador_s_13_St_15_Neutro_2;
+instanciador_s_13_St_15_Neutro_3_0_0 : instanciador_s_13_St_15_Neutro_3;
+instanciador_s_13_St_15_Neutro_3_0_1 : instanciador_s_13_St_15_Neutro_3;
+instanciador_s_13_St_15_Neutro_3_1_0 : instanciador_s_13_St_15_Neutro_3;
+instanciador_s_13_St_15_Neutro_3_1_1 : instanciador_s_13_St_15_Neutro_3;
+instanciador_v_119_2_0 : instanciador_v_119_2;
+instanciador_v_119_2_1 : instanciador_v_119_2;
+instanciador_v_119_3_0_0 : instanciador_v_119_3;
+instanciador_v_119_3_0_1 : instanciador_v_119_3;
+instanciador_v_119_3_1_0 : instanciador_v_119_3;
+instanciador_v_119_3_1_1 : instanciador_v_119_3;
+instanciador_v_117_2_0 : instanciador_v_117_2;
+instanciador_v_117_2_1 : instanciador_v_117_2;
+instanciador_v_117_3_0_0 : instanciador_v_117_3;
+instanciador_v_117_3_0_1 : instanciador_v_117_3;
+instanciador_v_117_3_1_0 : instanciador_v_117_3;
+instanciador_v_117_3_1_1 : instanciador_v_117_3;
+instanciador_v_115_2_0 : instanciador_v_115_2;
+instanciador_v_115_2_1 : instanciador_v_115_2;
+instanciador_v_115_3_0_0 : instanciador_v_115_3;
+instanciador_v_115_3_0_1 : instanciador_v_115_3;
+instanciador_v_115_3_1_0 : instanciador_v_115_3;
+instanciador_v_115_3_1_1 : instanciador_v_115_3;
+instanciador_v_113_2_0 : instanciador_v_113_2;
+instanciador_v_113_2_1 : instanciador_v_113_2;
+instanciador_v_113_3_0_0 : instanciador_v_113_3;
+instanciador_v_113_3_0_1 : instanciador_v_113_3;
+instanciador_v_113_3_1_0 : instanciador_v_113_3;
+instanciador_v_113_3_1_1 : instanciador_v_113_3;
+instanciador_v_127_2_0 : instanciador_v_127_2;
+instanciador_v_127_2_1 : instanciador_v_127_2;
+instanciador_v_127_3_0_0 : instanciador_v_127_3;
+instanciador_v_127_3_0_1 : instanciador_v_127_3;
+instanciador_v_127_3_1_0 : instanciador_v_127_3;
+instanciador_v_127_3_1_1 : instanciador_v_127_3;
+instanciador_v_125_2_0 : instanciador_v_125_2;
+instanciador_v_125_2_1 : instanciador_v_125_2;
+instanciador_v_125_3_0_0 : instanciador_v_125_3;
+instanciador_v_125_3_0_1 : instanciador_v_125_3;
+instanciador_v_125_3_1_0 : instanciador_v_125_3;
+instanciador_v_125_3_1_1 : instanciador_v_125_3;
+instanciador_v_123_2_0 : instanciador_v_123_2;
+instanciador_v_123_2_1 : instanciador_v_123_2;
+instanciador_v_123_3_0_0 : instanciador_v_123_3;
+instanciador_v_123_3_0_1 : instanciador_v_123_3;
+instanciador_v_123_3_1_0 : instanciador_v_123_3;
+instanciador_v_123_3_1_1 : instanciador_v_123_3;
+instanciador_v_121_2_0 : instanciador_v_121_2;
+instanciador_v_121_2_1 : instanciador_v_121_2;
+instanciador_v_121_3_0_0 : instanciador_v_121_3;
+instanciador_v_121_3_0_1 : instanciador_v_121_3;
+instanciador_v_121_3_1_0 : instanciador_v_121_3;
+instanciador_v_121_3_1_1 : instanciador_v_121_3;
+instanciador_v_129_3 : ((-1 when instanciador_seguranca_input_1) default -1);
+instanciador_v_129_2 : ((1 when instanciador_seguranca_input_1) default 1);
+instanciador_v_129_1 : ((-1 when instanciador_seguranca_input_1) default 1);
+instanciador_v_130 : ((1 when instanciador_seguranca_input_1)
+  default instanciador_pnr_13);
+instanciador_v_131_3 : ((1 when instanciador_neutro_input_1)
+  default instanciador_v_129_3);
+instanciador_v_131_2 : ((1 when instanciador_neutro_input_1)
+  default instanciador_v_129_2);
+instanciador_v_131_1 : ((-1 when instanciador_neutro_input_1)
+  default instanciador_v_129_1);
+instanciador_v_132 : ((1 when instanciador_neutro_input_1)
+  default instanciador_v_130);
+instanciador_v_133_3 : ((1 when instanciador_domingo_input_1)
+  default instanciador_v_131_3);
+instanciador_v_133_2 : ((1 when instanciador_domingo_input_1)
+  default instanciador_v_131_2);
+instanciador_v_133_1 : ((1 when instanciador_domingo_input_1)
+  default instanciador_v_131_1);
+instanciador_v_134 : ((1 when instanciador_domingo_input_1)
+  default instanciador_v_132);
+instanciador_v_135_3 : ((-1 when instanciador_sexta_input_1)
+  default instanciador_v_133_3);
+instanciador_v_135_2 : ((-1 when instanciador_sexta_input_1)
+  default instanciador_v_133_2);
+instanciador_v_135_1 : ((-1 when instanciador_sexta_input_1)
+  default instanciador_v_133_1);
+instanciador_v_136 : ((1 when instanciador_sexta_input_1)
+  default instanciador_v_134);
+instanciador_s_13_St_15_DomingoL_3 : ((-1 when instanciador_ebd_input_1)
+  default instanciador_v_135_3);
+instanciador_s_13_St_15_DomingoL_2 : ((-1 when instanciador_ebd_input_1)
+  default instanciador_v_135_2);
+instanciador_s_13_St_15_DomingoL_1 : ((1 when instanciador_ebd_input_1)
+  default instanciador_v_135_1);
+instanciador_r_13_St_15_DomingoL : ((1 when instanciador_ebd_input_1)
+  default instanciador_v_136);
+instanciador_v_137_3 : ((-1 when instanciador_seguranca_input_1) default 1);
+instanciador_v_137_2 : ((1 when instanciador_seguranca_input_1) default 1);
+instanciador_v_137_1 : ((-1 when instanciador_seguranca_input_1) default 1);
+instanciador_v_138 : ((1 when instanciador_seguranca_input_1)
+  default instanciador_pnr_13);
+instanciador_v_139_3 : ((1 when instanciador_neutro_input_1)
+  default instanciador_v_137_3);
+instanciador_v_139_2 : ((1 when instanciador_neutro_input_1)
+  default instanciador_v_137_2);
+instanciador_v_139_1 : ((-1 when instanciador_neutro_input_1)
+  default instanciador_v_137_1);
+instanciador_v_140 : ((1 when instanciador_neutro_input_1)
+  default instanciador_v_138);
+instanciador_v_141_3 : ((-1 when instanciador_domingol_input_1)
+  default instanciador_v_139_3);
+instanciador_v_141_2 : ((1 when instanciador_domingol_input_1)
+  default instanciador_v_139_2);
+instanciador_v_141_1 : ((1 when instanciador_domingol_input_1)
+  default instanciador_v_139_1);
+instanciador_v_142 : ((1 when instanciador_domingol_input_1)
+  default instanciador_v_140);
+instanciador_v_143_3 : ((-1 when instanciador_sexta_input_1)
+  default instanciador_v_141_3);
+instanciador_v_143_2 : ((-1 when instanciador_sexta_input_1)
+  default instanciador_v_141_2);
+instanciador_v_143_1 : ((-1 when instanciador_sexta_input_1)
+  default instanciador_v_141_1);
+instanciador_v_144 : ((1 when instanciador_sexta_input_1)
+  default instanciador_v_142);
+instanciador_s_13_St_15_Domingo_3 : ((-1 when instanciador_ebd_input_1)
+  default instanciador_v_143_3);
+instanciador_v_344 : ((instanciador_s_13_St_15_Domingo_3
+  when instanciador_ck_7_3_1_1) default instanciador_s_13_St_15_DomingoL_3);
+instanciador_s_13_St_15_Domingo_2 : ((-1 when instanciador_ebd_input_1)
+  default instanciador_v_143_2);
+instanciador_v_343 : ((instanciador_s_13_St_15_Domingo_2
+  when instanciador_ck_7_3_1_1) default instanciador_s_13_St_15_DomingoL_2);
+instanciador_s_13_St_15_Domingo_1 : ((1 when instanciador_ebd_input_1)
+  default instanciador_v_143_1);
+instanciador_v_342 : ((instanciador_s_13_St_15_Domingo_1
+  when instanciador_ck_7_3_1_1) default instanciador_s_13_St_15_DomingoL_1);
+instanciador_r_13_St_15_Domingo : ((1 when instanciador_ebd_input_1)
+  default instanciador_v_144);
+instanciador_v_360 : ((instanciador_r_13_St_15_Domingo
+  when instanciador_ck_7_3_1_1) default instanciador_r_13_St_15_DomingoL);
+instanciador_s_13_St_15_DomingoL_2_0 : instanciador_s_13_St_15_DomingoL_2;
+instanciador_s_13_St_15_DomingoL_2_1 : instanciador_s_13_St_15_DomingoL_2;
+instanciador_s_13_St_15_DomingoL_3_0_0 : instanciador_s_13_St_15_DomingoL_3;
+instanciador_s_13_St_15_DomingoL_3_0_1 : instanciador_s_13_St_15_DomingoL_3;
+instanciador_s_13_St_15_DomingoL_3_1_0 : instanciador_s_13_St_15_DomingoL_3;
+instanciador_s_13_St_15_DomingoL_3_1_1 : instanciador_s_13_St_15_DomingoL_3;
+instanciador_s_13_St_15_Domingo_2_0 : instanciador_s_13_St_15_Domingo_2;
+instanciador_s_13_St_15_Domingo_2_1 : instanciador_s_13_St_15_Domingo_2;
+instanciador_s_13_St_15_Domingo_3_0_0 : instanciador_s_13_St_15_Domingo_3;
+instanciador_s_13_St_15_Domingo_3_0_1 : instanciador_s_13_St_15_Domingo_3;
+instanciador_s_13_St_15_Domingo_3_1_0 : instanciador_s_13_St_15_Domingo_3;
+instanciador_s_13_St_15_Domingo_3_1_1 : instanciador_s_13_St_15_Domingo_3;
+instanciador_v_135_2_0 : instanciador_v_135_2;
+instanciador_v_135_2_1 : instanciador_v_135_2;
+instanciador_v_135_3_0_0 : instanciador_v_135_3;
+instanciador_v_135_3_0_1 : instanciador_v_135_3;
+instanciador_v_135_3_1_0 : instanciador_v_135_3;
+instanciador_v_135_3_1_1 : instanciador_v_135_3;
+instanciador_v_133_2_0 : instanciador_v_133_2;
+instanciador_v_133_2_1 : instanciador_v_133_2;
+instanciador_v_133_3_0_0 : instanciador_v_133_3;
+instanciador_v_133_3_0_1 : instanciador_v_133_3;
+instanciador_v_133_3_1_0 : instanciador_v_133_3;
+instanciador_v_133_3_1_1 : instanciador_v_133_3;
+instanciador_v_131_2_0 : instanciador_v_131_2;
+instanciador_v_131_2_1 : instanciador_v_131_2;
+instanciador_v_131_3_0_0 : instanciador_v_131_3;
+instanciador_v_131_3_0_1 : instanciador_v_131_3;
+instanciador_v_131_3_1_0 : instanciador_v_131_3;
+instanciador_v_131_3_1_1 : instanciador_v_131_3;
+instanciador_v_129_2_0 : instanciador_v_129_2;
+instanciador_v_129_2_1 : instanciador_v_129_2;
+instanciador_v_129_3_0_0 : instanciador_v_129_3;
+instanciador_v_129_3_0_1 : instanciador_v_129_3;
+instanciador_v_129_3_1_0 : instanciador_v_129_3;
+instanciador_v_129_3_1_1 : instanciador_v_129_3;
+instanciador_v_143_2_0 : instanciador_v_143_2;
+instanciador_v_143_2_1 : instanciador_v_143_2;
+instanciador_v_143_3_0_0 : instanciador_v_143_3;
+instanciador_v_143_3_0_1 : instanciador_v_143_3;
+instanciador_v_143_3_1_0 : instanciador_v_143_3;
+instanciador_v_143_3_1_1 : instanciador_v_143_3;
+instanciador_v_141_2_0 : instanciador_v_141_2;
+instanciador_v_141_2_1 : instanciador_v_141_2;
+instanciador_v_141_3_0_0 : instanciador_v_141_3;
+instanciador_v_141_3_0_1 : instanciador_v_141_3;
+instanciador_v_141_3_1_0 : instanciador_v_141_3;
+instanciador_v_141_3_1_1 : instanciador_v_141_3;
+instanciador_v_139_2_0 : instanciador_v_139_2;
+instanciador_v_139_2_1 : instanciador_v_139_2;
+instanciador_v_139_3_0_0 : instanciador_v_139_3;
+instanciador_v_139_3_0_1 : instanciador_v_139_3;
+instanciador_v_139_3_1_0 : instanciador_v_139_3;
+instanciador_v_139_3_1_1 : instanciador_v_139_3;
+instanciador_v_137_2_0 : instanciador_v_137_2;
+instanciador_v_137_2_1 : instanciador_v_137_2;
+instanciador_v_137_3_0_0 : instanciador_v_137_3;
+instanciador_v_137_3_0_1 : instanciador_v_137_3;
+instanciador_v_137_3_1_0 : instanciador_v_137_3;
+instanciador_v_137_3_1_1 : instanciador_v_137_3;
+instanciador_v_145_3 : ((-1 when instanciador_seguranca_input_1) default -1);
+instanciador_v_145_2 : ((1 when instanciador_seguranca_input_1) default -1);
+instanciador_v_145_1 : ((-1 when instanciador_seguranca_input_1) default 1);
+instanciador_v_146 : ((1 when instanciador_seguranca_input_1)
+  default instanciador_pnr_13);
+instanciador_v_147_3 : ((1 when instanciador_neutro_input_1)
+  default instanciador_v_145_3);
+instanciador_v_147_2 : ((1 when instanciador_neutro_input_1)
+  default instanciador_v_145_2);
+instanciador_v_147_1 : ((-1 when instanciador_neutro_input_1)
+  default instanciador_v_145_1);
+instanciador_v_148 : ((1 when instanciador_neutro_input_1)
+  default instanciador_v_146);
+instanciador_v_149_3 : ((-1 when instanciador_domingol_input_1)
+  default instanciador_v_147_3);
+instanciador_v_149_2 : ((1 when instanciador_domingol_input_1)
+  default instanciador_v_147_2);
+instanciador_v_149_1 : ((1 when instanciador_domingol_input_1)
+  default instanciador_v_147_1);
+instanciador_v_150 : ((1 when instanciador_domingol_input_1)
+  default instanciador_v_148);
+instanciador_v_151_3 : ((1 when instanciador_domingo_input_1)
+  default instanciador_v_149_3);
+instanciador_v_151_2 : ((1 when instanciador_domingo_input_1)
+  default instanciador_v_149_2);
+instanciador_v_151_1 : ((1 when instanciador_domingo_input_1)
+  default instanciador_v_149_1);
+instanciador_v_152 : ((1 when instanciador_domingo_input_1)
+  default instanciador_v_150);
+instanciador_s_13_St_15_Ebd_3 : ((-1 when instanciador_sexta_input_1)
+  default instanciador_v_151_3);
+instanciador_v_347 : ((1 when instanciador_ck_7_3_1_0)
+  default instanciador_s_13_St_15_Ebd_3);
+instanciador_s_13_St_15_Ebd_2 : ((-1 when instanciador_sexta_input_1)
+  default instanciador_v_151_2);
+instanciador_v_346 : ((1 when instanciador_ck_7_3_1_0)
+  default instanciador_s_13_St_15_Ebd_2);
+instanciador_s_13_St_15_Ebd_1 : ((-1 when instanciador_sexta_input_1)
+  default instanciador_v_151_1);
+instanciador_v_345 : ((1 when instanciador_ck_7_3_1_0)
+  default instanciador_s_13_St_15_Ebd_1);
+instanciador_r_13_St_15_Ebd : ((1 when instanciador_sexta_input_1)
+  default instanciador_v_152);
+instanciador_v_361 : ((1 when instanciador_ck_7_3_1_0)
+  default instanciador_r_13_St_15_Ebd);
+instanciador_s_13_St_15_Ebd_2_0 : instanciador_s_13_St_15_Ebd_2;
+instanciador_s_13_St_15_Ebd_2_1 : instanciador_s_13_St_15_Ebd_2;
+instanciador_s_13_St_15_Ebd_3_0_0 : instanciador_s_13_St_15_Ebd_3;
+instanciador_s_13_St_15_Ebd_3_0_1 : instanciador_s_13_St_15_Ebd_3;
+instanciador_s_13_St_15_Ebd_3_1_0 : instanciador_s_13_St_15_Ebd_3;
+instanciador_s_13_St_15_Ebd_3_1_1 : instanciador_s_13_St_15_Ebd_3;
+instanciador_v_362 : ((instanciador_v_360 when instanciador_ck_7_2_1)
+  default instanciador_v_361);
+instanciador_v_356 : ((instanciador_v_344 when instanciador_ck_7_2_1)
+  default instanciador_v_347);
+instanciador_v_355 : ((instanciador_v_343 when instanciador_ck_7_2_1)
+  default instanciador_v_346);
+instanciador_v_354 : ((instanciador_v_342 when instanciador_ck_7_2_1)
+  default instanciador_v_345);
+instanciador_v_151_2_0 : instanciador_v_151_2;
+instanciador_v_151_2_1 : instanciador_v_151_2;
+instanciador_v_151_3_0_0 : instanciador_v_151_3;
+instanciador_v_151_3_0_1 : instanciador_v_151_3;
+instanciador_v_151_3_1_0 : instanciador_v_151_3;
+instanciador_v_151_3_1_1 : instanciador_v_151_3;
+instanciador_v_149_2_0 : instanciador_v_149_2;
+instanciador_v_149_2_1 : instanciador_v_149_2;
+instanciador_v_149_3_0_0 : instanciador_v_149_3;
+instanciador_v_149_3_0_1 : instanciador_v_149_3;
+instanciador_v_149_3_1_0 : instanciador_v_149_3;
+instanciador_v_149_3_1_1 : instanciador_v_149_3;
+instanciador_v_147_2_0 : instanciador_v_147_2;
+instanciador_v_147_2_1 : instanciador_v_147_2;
+instanciador_v_147_3_0_0 : instanciador_v_147_3;
+instanciador_v_147_3_0_1 : instanciador_v_147_3;
+instanciador_v_147_3_1_0 : instanciador_v_147_3;
+instanciador_v_147_3_1_1 : instanciador_v_147_3;
+instanciador_v_145_2_0 : instanciador_v_145_2;
+instanciador_v_145_2_1 : instanciador_v_145_2;
+instanciador_v_145_3_0_0 : instanciador_v_145_3;
+instanciador_v_145_3_0_1 : instanciador_v_145_3;
+instanciador_v_145_3_1_0 : instanciador_v_145_3;
+instanciador_v_145_3_1_1 : instanciador_v_145_3;
+instanciador_v_153_3 : ((-1 when instanciador_seguranca_input_1) default -1);
+instanciador_v_153_2 : ((1 when instanciador_seguranca_input_1) default -1);
+instanciador_v_153_1 : ((-1 when instanciador_seguranca_input_1) default -1);
+instanciador_v_154 : ((1 when instanciador_seguranca_input_1)
+  default instanciador_pnr_13);
+instanciador_v_155_3 : ((1 when instanciador_neutro_input_1)
+  default instanciador_v_153_3);
+instanciador_v_155_2 : ((1 when instanciador_neutro_input_1)
+  default instanciador_v_153_2);
+instanciador_v_155_1 : ((-1 when instanciador_neutro_input_1)
+  default instanciador_v_153_1);
+instanciador_v_156 : ((1 when instanciador_neutro_input_1)
+  default instanciador_v_154);
+instanciador_v_157_3 : ((-1 when instanciador_domingol_input_1)
+  default instanciador_v_155_3);
+instanciador_v_157_2 : ((1 when instanciador_domingol_input_1)
+  default instanciador_v_155_2);
+instanciador_v_157_1 : ((1 when instanciador_domingol_input_1)
+  default instanciador_v_155_1);
+instanciador_v_158 : ((1 when instanciador_domingol_input_1)
+  default instanciador_v_156);
+instanciador_v_159_3 : ((1 when instanciador_domingo_input_1)
+  default instanciador_v_157_3);
+instanciador_v_159_2 : ((1 when instanciador_domingo_input_1)
+  default instanciador_v_157_2);
+instanciador_v_159_1 : ((1 when instanciador_domingo_input_1)
+  default instanciador_v_157_1);
+instanciador_v_160 : ((1 when instanciador_domingo_input_1)
+  default instanciador_v_158);
+instanciador_s_13_St_15_Sexta_feira_3 : ((-1 when instanciador_ebd_input_1)
+  default instanciador_v_159_3);
+instanciador_v_353 : ((1 when instanciador_ck_7_3_0_0)
+  default instanciador_s_13_St_15_Sexta_feira_3);
+instanciador_s_13_St_15_Sexta_feira_2 : ((-1 when instanciador_ebd_input_1)
+  default instanciador_v_159_2);
+instanciador_v_352 : ((1 when instanciador_ck_7_3_0_0)
+  default instanciador_s_13_St_15_Sexta_feira_2);
+instanciador_s_13_St_15_Sexta_feira_1 : ((1 when instanciador_ebd_input_1)
+  default instanciador_v_159_1);
+instanciador_v_351 : ((1 when instanciador_ck_7_3_0_0)
+  default instanciador_s_13_St_15_Sexta_feira_1);
+instanciador_r_13_St_15_Sexta_feira : ((1 when instanciador_ebd_input_1)
+  default instanciador_v_160);
+instanciador_v_364 : ((1 when instanciador_ck_7_3_0_0)
+  default instanciador_r_13_St_15_Sexta_feira);
+instanciador_s_13_St_15_Sexta_feira_2_0 : instanciador_s_13_St_15_Sexta_feira_2;
+instanciador_s_13_St_15_Sexta_feira_2_1 : instanciador_s_13_St_15_Sexta_feira_2;
+instanciador_s_13_St_15_Sexta_feira_3_0_0 : instanciador_s_13_St_15_Sexta_feira_3;
+instanciador_s_13_St_15_Sexta_feira_3_0_1 : instanciador_s_13_St_15_Sexta_feira_3;
+instanciador_s_13_St_15_Sexta_feira_3_1_0 : instanciador_s_13_St_15_Sexta_feira_3;
+instanciador_s_13_St_15_Sexta_feira_3_1_1 : instanciador_s_13_St_15_Sexta_feira_3;
+instanciador_v_365 : ((instanciador_v_363 when instanciador_ck_7_2_0)
+  default instanciador_v_364);
+instanciador_v_359 : ((instanciador_v_350 when instanciador_ck_7_2_0)
+  default instanciador_v_353);
+instanciador_v_358 : ((instanciador_v_349 when instanciador_ck_7_2_0)
+  default instanciador_v_352);
+instanciador_v_357 : ((instanciador_v_348 when instanciador_ck_7_2_0)
+  default instanciador_v_351);
+instanciador_r_13 : ((instanciador_v_362 when instanciador_ck_7_1)
+  default instanciador_v_365);
+instanciador_s_13_3 : ((instanciador_v_356 when instanciador_ck_7_1)
+  default instanciador_v_359);
+instanciador_s_13_2 : ((instanciador_v_355 when instanciador_ck_7_1)
+  default instanciador_v_358);
+instanciador_s_13_1 : ((instanciador_v_354 when instanciador_ck_7_1)
+  default instanciador_v_357);
+instanciador_s_13_2_0 : instanciador_s_13_2;
+instanciador_s_13_2_1 : instanciador_s_13_2;
+instanciador_s_13_3_0_0 : instanciador_s_13_3;
+instanciador_s_13_3_0_1 : instanciador_s_13_3;
+instanciador_s_13_3_1_0 : instanciador_s_13_3;
+instanciador_s_13_3_1_1 : instanciador_s_13_3;
+instanciador_v_159_2_0 : instanciador_v_159_2;
+instanciador_v_159_2_1 : instanciador_v_159_2;
+instanciador_v_159_3_0_0 : instanciador_v_159_3;
+instanciador_v_159_3_0_1 : instanciador_v_159_3;
+instanciador_v_159_3_1_0 : instanciador_v_159_3;
+instanciador_v_159_3_1_1 : instanciador_v_159_3;
+instanciador_v_157_2_0 : instanciador_v_157_2;
+instanciador_v_157_2_1 : instanciador_v_157_2;
+instanciador_v_157_3_0_0 : instanciador_v_157_3;
+instanciador_v_157_3_0_1 : instanciador_v_157_3;
+instanciador_v_157_3_1_0 : instanciador_v_157_3;
+instanciador_v_157_3_1_1 : instanciador_v_157_3;
+instanciador_v_155_2_0 : instanciador_v_155_2;
+instanciador_v_155_2_1 : instanciador_v_155_2;
+instanciador_v_155_3_0_0 : instanciador_v_155_3;
+instanciador_v_155_3_0_1 : instanciador_v_155_3;
+instanciador_v_155_3_1_0 : instanciador_v_155_3;
+instanciador_v_155_3_1_1 : instanciador_v_155_3;
+instanciador_v_153_2_0 : instanciador_v_153_2;
+instanciador_v_153_2_1 : instanciador_v_153_2;
+instanciador_v_153_3_0_0 : instanciador_v_153_3;
+instanciador_v_153_3_0_1 : instanciador_v_153_3;
+instanciador_v_153_3_1_0 : instanciador_v_153_3;
+instanciador_v_153_3_1_1 : instanciador_v_153_3;
+instanciador_ck_8_3 : instanciador_s_13_3;
+instanciador_ck_8_2 : instanciador_s_13_2;
+instanciador_ck_8_1 : instanciador_s_13_1;
+instanciador_ck_8_2_0 : instanciador_ck_8_2;
+instanciador_ck_8_2_1 : instanciador_ck_8_2;
+instanciador_ck_8_3_0_0 : instanciador_ck_8_3;
+instanciador_ck_8_3_0_1 : instanciador_ck_8_3;
+instanciador_ck_8_3_1_0 : instanciador_ck_8_3;
+instanciador_ck_8_3_1_1 : instanciador_ck_8_3;
+instanciador_ns_13_St_15_Seguranca_3 : -1;
+instanciador_ns_13_St_15_Seguranca_2 : 1;
+instanciador_ns_13_St_15_Seguranca_1 : -1;
+instanciador_nr_13_St_15_Seguranca : -1;
+instanciador_mode_St_15_Seguranca : a_const(6);
+instanciador_ns_13_St_15_Neutro_3 : 1;
+instanciador_v_323 : ((instanciador_ns_13_St_15_Neutro_3
+  when instanciador_ck_8_3_0_1)
+  default instanciador_ns_13_St_15_Seguranca_3);
+instanciador_ns_13_St_15_Neutro_2 : 1;
+instanciador_v_322 : ((instanciador_ns_13_St_15_Neutro_2
+  when instanciador_ck_8_3_0_1)
+  default instanciador_ns_13_St_15_Seguranca_2);
+instanciador_ns_13_St_15_Neutro_1 : -1;
+instanciador_v_321 : ((instanciador_ns_13_St_15_Neutro_1
+  when instanciador_ck_8_3_0_1)
+  default instanciador_ns_13_St_15_Seguranca_1);
+instanciador_nr_13_St_15_Neutro : -1;
+instanciador_v_336 : ((instanciador_nr_13_St_15_Neutro
+  when instanciador_ck_8_3_0_1) default instanciador_nr_13_St_15_Seguranca);
+instanciador_mode_St_15_Neutro : a_const(5);
+instanciador_v_312 : a_part(instanciador_ck_8_3_0_1, a_const(0),
+                            instanciador_mode_St_15_Neutro,
+                            instanciador_mode_St_15_Seguranca);
+instanciador_ns_13_St_15_Seguranca_2_0 : instanciador_ns_13_St_15_Seguranca_2;
+instanciador_ns_13_St_15_Seguranca_2_1 : instanciador_ns_13_St_15_Seguranca_2;
+instanciador_ns_13_St_15_Seguranca_3_0_0 : instanciador_ns_13_St_15_Seguranca_3;
+instanciador_ns_13_St_15_Seguranca_3_0_1 : instanciador_ns_13_St_15_Seguranca_3;
+instanciador_ns_13_St_15_Seguranca_3_1_0 : instanciador_ns_13_St_15_Seguranca_3;
+instanciador_ns_13_St_15_Seguranca_3_1_1 : instanciador_ns_13_St_15_Seguranca_3;
+instanciador_ns_13_St_15_Neutro_2_0 : instanciador_ns_13_St_15_Neutro_2;
+instanciador_ns_13_St_15_Neutro_2_1 : instanciador_ns_13_St_15_Neutro_2;
+instanciador_ns_13_St_15_Neutro_3_0_0 : instanciador_ns_13_St_15_Neutro_3;
+instanciador_ns_13_St_15_Neutro_3_0_1 : instanciador_ns_13_St_15_Neutro_3;
+instanciador_ns_13_St_15_Neutro_3_1_0 : instanciador_ns_13_St_15_Neutro_3;
+instanciador_ns_13_St_15_Neutro_3_1_1 : instanciador_ns_13_St_15_Neutro_3;
+instanciador_ns_13_St_15_DomingoL_3 : -1;
+instanciador_ns_13_St_15_DomingoL_2 : 1;
+instanciador_ns_13_St_15_DomingoL_1 : 1;
+instanciador_nr_13_St_15_DomingoL : -1;
+instanciador_mode_St_15_DomingoL : a_const(4);
+instanciador_ns_13_St_15_Domingo_3 : 1;
+instanciador_v_317 : ((instanciador_ns_13_St_15_Domingo_3
+  when instanciador_ck_8_3_1_1) default instanciador_ns_13_St_15_DomingoL_3);
+instanciador_ns_13_St_15_Domingo_2 : 1;
+instanciador_v_316 : ((instanciador_ns_13_St_15_Domingo_2
+  when instanciador_ck_8_3_1_1) default instanciador_ns_13_St_15_DomingoL_2);
+instanciador_ns_13_St_15_Domingo_1 : 1;
+instanciador_v_315 : ((instanciador_ns_13_St_15_Domingo_1
+  when instanciador_ck_8_3_1_1) default instanciador_ns_13_St_15_DomingoL_1);
+instanciador_nr_13_St_15_Domingo : -1;
+instanciador_v_333 : ((instanciador_nr_13_St_15_Domingo
+  when instanciador_ck_8_3_1_1) default instanciador_nr_13_St_15_DomingoL);
+instanciador_mode_St_15_Domingo : a_const(3);
+instanciador_v_309 : a_part(instanciador_ck_8_3_1_1, a_const(0),
+                            instanciador_mode_St_15_Domingo,
+                            instanciador_mode_St_15_DomingoL);
+instanciador_ns_13_St_15_DomingoL_2_0 : instanciador_ns_13_St_15_DomingoL_2;
+instanciador_ns_13_St_15_DomingoL_2_1 : instanciador_ns_13_St_15_DomingoL_2;
+instanciador_ns_13_St_15_DomingoL_3_0_0 : instanciador_ns_13_St_15_DomingoL_3;
+instanciador_ns_13_St_15_DomingoL_3_0_1 : instanciador_ns_13_St_15_DomingoL_3;
+instanciador_ns_13_St_15_DomingoL_3_1_0 : instanciador_ns_13_St_15_DomingoL_3;
+instanciador_ns_13_St_15_DomingoL_3_1_1 : instanciador_ns_13_St_15_DomingoL_3;
+instanciador_ns_13_St_15_Domingo_2_0 : instanciador_ns_13_St_15_Domingo_2;
+instanciador_ns_13_St_15_Domingo_2_1 : instanciador_ns_13_St_15_Domingo_2;
+instanciador_ns_13_St_15_Domingo_3_0_0 : instanciador_ns_13_St_15_Domingo_3;
+instanciador_ns_13_St_15_Domingo_3_0_1 : instanciador_ns_13_St_15_Domingo_3;
+instanciador_ns_13_St_15_Domingo_3_1_0 : instanciador_ns_13_St_15_Domingo_3;
+instanciador_ns_13_St_15_Domingo_3_1_1 : instanciador_ns_13_St_15_Domingo_3;
+instanciador_ns_13_St_15_Ebd_3 : -1;
+instanciador_v_320 : ((1 when instanciador_ck_8_3_1_0)
+  default instanciador_ns_13_St_15_Ebd_3);
+instanciador_ns_13_St_15_Ebd_2 : -1;
+instanciador_v_319 : ((1 when instanciador_ck_8_3_1_0)
+  default instanciador_ns_13_St_15_Ebd_2);
+instanciador_ns_13_St_15_Ebd_1 : 1;
+instanciador_v_318 : ((1 when instanciador_ck_8_3_1_0)
+  default instanciador_ns_13_St_15_Ebd_1);
+instanciador_nr_13_St_15_Ebd : -1;
+instanciador_v_334 : ((1 when instanciador_ck_8_3_1_0)
+  default instanciador_nr_13_St_15_Ebd);
+instanciador_mode_St_15_Ebd : a_const(2);
+instanciador_v_310 : a_part(instanciador_ck_8_3_1_0, a_const(0), a_const(
+                            0), instanciador_mode_St_15_Ebd);
+instanciador_ns_13_St_15_Ebd_2_0 : instanciador_ns_13_St_15_Ebd_2;
+instanciador_ns_13_St_15_Ebd_2_1 : instanciador_ns_13_St_15_Ebd_2;
+instanciador_ns_13_St_15_Ebd_3_0_0 : instanciador_ns_13_St_15_Ebd_3;
+instanciador_ns_13_St_15_Ebd_3_0_1 : instanciador_ns_13_St_15_Ebd_3;
+instanciador_ns_13_St_15_Ebd_3_1_0 : instanciador_ns_13_St_15_Ebd_3;
+instanciador_ns_13_St_15_Ebd_3_1_1 : instanciador_ns_13_St_15_Ebd_3;
+instanciador_v_335 : ((instanciador_v_333 when instanciador_ck_8_2_1)
+  default instanciador_v_334);
+instanciador_v_329 : ((instanciador_v_317 when instanciador_ck_8_2_1)
+  default instanciador_v_320);
+instanciador_v_328 : ((instanciador_v_316 when instanciador_ck_8_2_1)
+  default instanciador_v_319);
+instanciador_v_327 : ((instanciador_v_315 when instanciador_ck_8_2_1)
+  default instanciador_v_318);
+instanciador_v_311 : a_part(instanciador_ck_8_2_1, a_const(0),
+                            instanciador_v_309, instanciador_v_310);
+instanciador_ns_13_St_15_Sexta_feira_3 : -1;
+instanciador_v_326 : ((1 when instanciador_ck_8_3_0_0)
+  default instanciador_ns_13_St_15_Sexta_feira_3);
+instanciador_ns_13_St_15_Sexta_feira_2 : -1;
+instanciador_v_325 : ((1 when instanciador_ck_8_3_0_0)
+  default instanciador_ns_13_St_15_Sexta_feira_2);
+instanciador_ns_13_St_15_Sexta_feira_1 : -1;
+instanciador_v_324 : ((1 when instanciador_ck_8_3_0_0)
+  default instanciador_ns_13_St_15_Sexta_feira_1);
+instanciador_nr_13_St_15_Sexta_feira : -1;
+instanciador_v_337 : ((1 when instanciador_ck_8_3_0_0)
+  default instanciador_nr_13_St_15_Sexta_feira);
+instanciador_mode_St_15_Sexta_feira : a_const(1);
+instanciador_v_313 : a_part(instanciador_ck_8_3_0_0, a_const(0), a_const(
+                            0), instanciador_mode_St_15_Sexta_feira);
+instanciador_ns_13_St_15_Sexta_feira_2_0 : instanciador_ns_13_St_15_Sexta_feira_2;
+instanciador_ns_13_St_15_Sexta_feira_2_1 : instanciador_ns_13_St_15_Sexta_feira_2;
+instanciador_ns_13_St_15_Sexta_feira_3_0_0 : instanciador_ns_13_St_15_Sexta_feira_3;
+instanciador_ns_13_St_15_Sexta_feira_3_0_1 : instanciador_ns_13_St_15_Sexta_feira_3;
+instanciador_ns_13_St_15_Sexta_feira_3_1_0 : instanciador_ns_13_St_15_Sexta_feira_3;
+instanciador_ns_13_St_15_Sexta_feira_3_1_1 : instanciador_ns_13_St_15_Sexta_feira_3;
+instanciador_v_338 : ((instanciador_v_336 when instanciador_ck_8_2_0)
+  default instanciador_v_337);
+instanciador_v_332 : ((instanciador_v_323 when instanciador_ck_8_2_0)
+  default instanciador_v_326);
+instanciador_v_331 : ((instanciador_v_322 when instanciador_ck_8_2_0)
+  default instanciador_v_325);
+instanciador_v_330 : ((instanciador_v_321 when instanciador_ck_8_2_0)
+  default instanciador_v_324);
+instanciador_v_314 : a_part(instanciador_ck_8_2_0, a_const(0),
+                            instanciador_v_312, instanciador_v_313);
+instanciador_nr_13 : ((instanciador_v_335 when instanciador_ck_8_1)
+  default instanciador_v_338);
+instanciador_ns_13_3 : ((instanciador_v_329 when instanciador_ck_8_1)
+  default instanciador_v_332);
+instanciador_ns_13_2 : ((instanciador_v_328 when instanciador_ck_8_1)
+  default instanciador_v_331);
+instanciador_ns_13_1 : ((instanciador_v_327 when instanciador_ck_8_1)
+  default instanciador_v_330);
+instanciador_mode : a_part(instanciador_ck_8_1, a_const(0),
+                           instanciador_v_311, instanciador_v_314);
+instanciador_ns_13_2_0 : instanciador_ns_13_2;
+instanciador_ns_13_2_1 : instanciador_ns_13_2;
+instanciador_ns_13_3_0_0 : instanciador_ns_13_3;
+instanciador_ns_13_3_0_1 : instanciador_ns_13_3;
+instanciador_ns_13_3_1_0 : instanciador_ns_13_3;
+instanciador_ns_13_3_1_1 : instanciador_ns_13_3;
+instanciador_policy : instanciador_mode;
+instanciador_v_161 : (not instanciador_c1_lamp_1);
+instanciador_v_162 : (not instanciador_l1_1);
+instanciador_v_163 : (instanciador_v_161 or instanciador_v_162);
+instanciador_v_164 : (not instanciador_c1_1);
+instanciador_v_165 : (instanciador_v_163 and instanciador_v_164);
+instanciador_s_12_St_14_On_1 : ((1 when instanciador_v_165) default -1);
+instanciador_r_12_St_14_On : ((1 when instanciador_v_165)
+  default instanciador_pnr_12);
+instanciador_v_166 : (instanciador_c1_lamp_1 or instanciador_l1_1);
+instanciador_v_167 : (instanciador_v_166 and instanciador_c1_1);
+instanciador_s_12_St_14_Off_1 : ((-1 when instanciador_v_167) default 1);
+instanciador_s_12_1 : ((instanciador_s_12_St_14_Off_1
+  when instanciador_ck_9_1) default instanciador_s_12_St_14_On_1);
+instanciador_r_12_St_14_Off : ((1 when instanciador_v_167)
+  default instanciador_pnr_12);
+instanciador_r_12 : ((instanciador_r_12_St_14_Off when instanciador_ck_9_1)
+  default instanciador_r_12_St_14_On);
+instanciador_ck_10_1 : instanciador_s_12_1;
+instanciador_ns_12_St_14_On_1 : -1;
+instanciador_nr_12_St_14_On : -1;
+instanciador_estateLamp1_1_St_14_On : 1;
+instanciador_ns_12_St_14_Off_1 : 1;
+instanciador_ns_12_1 : ((instanciador_ns_12_St_14_Off_1
+  when instanciador_ck_10_1) default instanciador_ns_12_St_14_On_1);
+instanciador_nr_12_St_14_Off : -1;
+instanciador_nr_12 : ((instanciador_nr_12_St_14_Off
+  when instanciador_ck_10_1) default instanciador_nr_12_St_14_On);
+instanciador_estateLamp1_1_St_14_Off : -1;
+instanciador_estateLamp1_1 : ((instanciador_estateLamp1_1_St_14_Off
+  when instanciador_ck_10_1) default instanciador_estateLamp1_1_St_14_On);
+instanciador_estateLamp1 : instanciador_estateLamp1_1;
+instanciador_v_168 : (not instanciador_c1_lamp_2);
+instanciador_v_169 : (not instanciador_l1_2);
+instanciador_v_170 : (instanciador_v_168 or instanciador_v_169);
+instanciador_v_171 : (not instanciador_c1_2);
+instanciador_v_172 : (instanciador_v_170 and instanciador_v_171);
+instanciador_s_11_St_13_On_1 : ((1 when instanciador_v_172) default -1);
+instanciador_r_11_St_13_On : ((1 when instanciador_v_172)
+  default instanciador_pnr_11);
+instanciador_v_173 : (instanciador_c1_lamp_2 or instanciador_l1_2);
+instanciador_v_174 : (instanciador_v_173 and instanciador_c1_2);
+instanciador_s_11_St_13_Off_1 : ((-1 when instanciador_v_174) default 1);
+instanciador_s_11_1 : ((instanciador_s_11_St_13_Off_1
+  when instanciador_ck_11_1) default instanciador_s_11_St_13_On_1);
+instanciador_r_11_St_13_Off : ((1 when instanciador_v_174)
+  default instanciador_pnr_11);
+instanciador_r_11 : ((instanciador_r_11_St_13_Off when instanciador_ck_11_1)
+  default instanciador_r_11_St_13_On);
+instanciador_ck_12_1 : instanciador_s_11_1;
+instanciador_ns_11_St_13_On_1 : -1;
+instanciador_nr_11_St_13_On : -1;
+instanciador_estateLamp1_2_St_13_On : 1;
+instanciador_ns_11_St_13_Off_1 : 1;
+instanciador_ns_11_1 : ((instanciador_ns_11_St_13_Off_1
+  when instanciador_ck_12_1) default instanciador_ns_11_St_13_On_1);
+instanciador_nr_11_St_13_Off : -1;
+instanciador_nr_11 : ((instanciador_nr_11_St_13_Off
+  when instanciador_ck_12_1) default instanciador_nr_11_St_13_On);
+instanciador_estateLamp1_2_St_13_Off : -1;
+instanciador_estateLamp1_2 : ((instanciador_estateLamp1_2_St_13_Off
+  when instanciador_ck_12_1) default instanciador_estateLamp1_2_St_13_On);
+instanciador_estateLamp2 : instanciador_estateLamp1_2;
+instanciador_v_175 : (not instanciador_c1_lamp_3);
+instanciador_v_176 : (not instanciador_l1_3);
+instanciador_v_177 : (instanciador_v_175 or instanciador_v_176);
+instanciador_v_178 : (not instanciador_c1_3);
+instanciador_v_179 : (instanciador_v_177 and instanciador_v_178);
+instanciador_s_10_St_12_On_1 : ((1 when instanciador_v_179) default -1);
+instanciador_r_10_St_12_On : ((1 when instanciador_v_179)
+  default instanciador_pnr_10);
+instanciador_v_180 : (instanciador_c1_lamp_3 or instanciador_l1_3);
+instanciador_v_181 : (instanciador_v_180 and instanciador_c1_3);
+instanciador_s_10_St_12_Off_1 : ((-1 when instanciador_v_181) default 1);
+instanciador_s_10_1 : ((instanciador_s_10_St_12_Off_1
+  when instanciador_ck_13_1) default instanciador_s_10_St_12_On_1);
+instanciador_r_10_St_12_Off : ((1 when instanciador_v_181)
+  default instanciador_pnr_10);
+instanciador_r_10 : ((instanciador_r_10_St_12_Off when instanciador_ck_13_1)
+  default instanciador_r_10_St_12_On);
+instanciador_ck_14_1 : instanciador_s_10_1;
+instanciador_ns_10_St_12_On_1 : -1;
+instanciador_nr_10_St_12_On : -1;
+instanciador_estateLamp1_3_St_12_On : 1;
+instanciador_ns_10_St_12_Off_1 : 1;
+instanciador_ns_10_1 : ((instanciador_ns_10_St_12_Off_1
+  when instanciador_ck_14_1) default instanciador_ns_10_St_12_On_1);
+instanciador_nr_10_St_12_Off : -1;
+instanciador_nr_10 : ((instanciador_nr_10_St_12_Off
+  when instanciador_ck_14_1) default instanciador_nr_10_St_12_On);
+instanciador_estateLamp1_3_St_12_Off : -1;
+instanciador_estateLamp1_3 : ((instanciador_estateLamp1_3_St_12_Off
+  when instanciador_ck_14_1) default instanciador_estateLamp1_3_St_12_On);
+instanciador_estateLamp3 : instanciador_estateLamp1_3;
+instanciador_v_182 : (not instanciador_c1_lamp_4);
+instanciador_v_183 : (not instanciador_l1_4);
+instanciador_v_184 : (instanciador_v_182 or instanciador_v_183);
+instanciador_v_185 : (not instanciador_c1_4);
+instanciador_v_186 : (instanciador_v_184 and instanciador_v_185);
+instanciador_s_9_St_11_On_1 : ((1 when instanciador_v_186) default -1);
+instanciador_r_9_St_11_On : ((1 when instanciador_v_186)
+  default instanciador_pnr_9);
+instanciador_v_187 : (instanciador_c1_lamp_4 or instanciador_l1_4);
+instanciador_v_188 : (instanciador_v_187 and instanciador_c1_4);
+instanciador_s_9_St_11_Off_1 : ((-1 when instanciador_v_188) default 1);
+instanciador_s_9_1 : ((instanciador_s_9_St_11_Off_1
+  when instanciador_ck_15_1) default instanciador_s_9_St_11_On_1);
+instanciador_r_9_St_11_Off : ((1 when instanciador_v_188)
+  default instanciador_pnr_9);
+instanciador_r_9 : ((instanciador_r_9_St_11_Off when instanciador_ck_15_1)
+  default instanciador_r_9_St_11_On);
+instanciador_ck_16_1 : instanciador_s_9_1;
+instanciador_ns_9_St_11_On_1 : -1;
+instanciador_nr_9_St_11_On : -1;
+instanciador_estateLamp1_4_St_11_On : 1;
+instanciador_ns_9_St_11_Off_1 : 1;
+instanciador_ns_9_1 : ((instanciador_ns_9_St_11_Off_1
+  when instanciador_ck_16_1) default instanciador_ns_9_St_11_On_1);
+instanciador_nr_9_St_11_Off : -1;
+instanciador_nr_9 : ((instanciador_nr_9_St_11_Off when instanciador_ck_16_1)
+  default instanciador_nr_9_St_11_On);
+instanciador_estateLamp1_4_St_11_Off : -1;
+instanciador_estateLamp1_4 : ((instanciador_estateLamp1_4_St_11_Off
+  when instanciador_ck_16_1) default instanciador_estateLamp1_4_St_11_On);
+instanciador_estateLamp4 : instanciador_estateLamp1_4;
+instanciador_v_189 : (not instanciador_c1_lamp_5);
+instanciador_v_190 : (not instanciador_l1_5);
+instanciador_v_191 : (instanciador_v_189 or instanciador_v_190);
+instanciador_v_192 : (not instanciador_c1_5);
+instanciador_v_193 : (instanciador_v_191 and instanciador_v_192);
+instanciador_s_8_St_10_On_1 : ((1 when instanciador_v_193) default -1);
+instanciador_r_8_St_10_On : ((1 when instanciador_v_193)
+  default instanciador_pnr_8);
+instanciador_v_194 : (instanciador_c1_lamp_5 or instanciador_l1_5);
+instanciador_v_195 : (instanciador_v_194 and instanciador_c1_5);
+instanciador_s_8_St_10_Off_1 : ((-1 when instanciador_v_195) default 1);
+instanciador_s_8_1 : ((instanciador_s_8_St_10_Off_1
+  when instanciador_ck_17_1) default instanciador_s_8_St_10_On_1);
+instanciador_r_8_St_10_Off : ((1 when instanciador_v_195)
+  default instanciador_pnr_8);
+instanciador_r_8 : ((instanciador_r_8_St_10_Off when instanciador_ck_17_1)
+  default instanciador_r_8_St_10_On);
+instanciador_ck_18_1 : instanciador_s_8_1;
+instanciador_ns_8_St_10_On_1 : -1;
+instanciador_nr_8_St_10_On : -1;
+instanciador_estateLamp1_5_St_10_On : 1;
+instanciador_ns_8_St_10_Off_1 : 1;
+instanciador_ns_8_1 : ((instanciador_ns_8_St_10_Off_1
+  when instanciador_ck_18_1) default instanciador_ns_8_St_10_On_1);
+instanciador_nr_8_St_10_Off : -1;
+instanciador_nr_8 : ((instanciador_nr_8_St_10_Off when instanciador_ck_18_1)
+  default instanciador_nr_8_St_10_On);
+instanciador_estateLamp1_5_St_10_Off : -1;
+instanciador_estateLamp1_5 : ((instanciador_estateLamp1_5_St_10_Off
+  when instanciador_ck_18_1) default instanciador_estateLamp1_5_St_10_On);
+instanciador_estateLampExt : instanciador_estateLamp1_5;
+instanciador_v_196 : (not instanciador_c1_lamp_6);
+instanciador_v_197 : (not instanciador_l1_6);
+instanciador_v_198 : (instanciador_v_196 or instanciador_v_197);
+instanciador_v_199 : (not instanciador_c1_6);
+instanciador_v_200 : (instanciador_v_198 and instanciador_v_199);
+instanciador_s_7_St_9_On_1 : ((1 when instanciador_v_200) default -1);
+instanciador_r_7_St_9_On : ((1 when instanciador_v_200)
+  default instanciador_pnr_7);
+instanciador_v_201 : (instanciador_c1_lamp_6 or instanciador_l1_6);
+instanciador_v_202 : (instanciador_v_201 and instanciador_c1_6);
+instanciador_s_7_St_9_Off_1 : ((-1 when instanciador_v_202) default 1);
+instanciador_s_7_1 : ((instanciador_s_7_St_9_Off_1 when instanciador_ck_19_1)
+  default instanciador_s_7_St_9_On_1);
+instanciador_r_7_St_9_Off : ((1 when instanciador_v_202)
+  default instanciador_pnr_7);
+instanciador_r_7 : ((instanciador_r_7_St_9_Off when instanciador_ck_19_1)
+  default instanciador_r_7_St_9_On);
+instanciador_ck_20_1 : instanciador_s_7_1;
+instanciador_ns_7_St_9_On_1 : -1;
+instanciador_nr_7_St_9_On : -1;
+instanciador_estateLamp1_6_St_9_On : 1;
+instanciador_ns_7_St_9_Off_1 : 1;
+instanciador_ns_7_1 : ((instanciador_ns_7_St_9_Off_1
+  when instanciador_ck_20_1) default instanciador_ns_7_St_9_On_1);
+instanciador_nr_7_St_9_Off : -1;
+instanciador_nr_7 : ((instanciador_nr_7_St_9_Off when instanciador_ck_20_1)
+  default instanciador_nr_7_St_9_On);
+instanciador_estateLamp1_6_St_9_Off : -1;
+instanciador_estateLamp1_6 : ((instanciador_estateLamp1_6_St_9_Off
+  when instanciador_ck_20_1) default instanciador_estateLamp1_6_St_9_On);
+instanciador_estateVent : instanciador_estateLamp1_6;
+instanciador_v_203 : (not instanciador_c1_lamp_7);
+instanciador_v_204 : (not instanciador_l1_7);
+instanciador_v_205 : (instanciador_v_203 or instanciador_v_204);
+instanciador_v_206 : (not instanciador_c1_7);
+instanciador_v_207 : (instanciador_v_205 and instanciador_v_206);
+instanciador_s_6_St_8_On_1 : ((1 when instanciador_v_207) default -1);
+instanciador_r_6_St_8_On : ((1 when instanciador_v_207)
+  default instanciador_pnr_6);
+instanciador_v_208 : (instanciador_c1_lamp_7 or instanciador_l1_7);
+instanciador_v_209 : (instanciador_v_208 and instanciador_c1_7);
+instanciador_s_6_St_8_Off_1 : ((-1 when instanciador_v_209) default 1);
+instanciador_s_6_1 : ((instanciador_s_6_St_8_Off_1 when instanciador_ck_21_1)
+  default instanciador_s_6_St_8_On_1);
+instanciador_r_6_St_8_Off : ((1 when instanciador_v_209)
+  default instanciador_pnr_6);
+instanciador_r_6 : ((instanciador_r_6_St_8_Off when instanciador_ck_21_1)
+  default instanciador_r_6_St_8_On);
+instanciador_ck_22_1 : instanciador_s_6_1;
+instanciador_ns_6_St_8_On_1 : -1;
+instanciador_nr_6_St_8_On : -1;
+instanciador_estateLamp1_7_St_8_On : 1;
+instanciador_ns_6_St_8_Off_1 : 1;
+instanciador_ns_6_1 : ((instanciador_ns_6_St_8_Off_1
+  when instanciador_ck_22_1) default instanciador_ns_6_St_8_On_1);
+instanciador_nr_6_St_8_Off : -1;
+instanciador_nr_6 : ((instanciador_nr_6_St_8_Off when instanciador_ck_22_1)
+  default instanciador_nr_6_St_8_On);
+instanciador_estateLamp1_7_St_8_Off : -1;
+instanciador_estateLamp1_7 : ((instanciador_estateLamp1_7_St_8_Off
+  when instanciador_ck_22_1) default instanciador_estateLamp1_7_St_8_On);
+instanciador_estateMicroL : instanciador_estateLamp1_7;
+instanciador_v_210 : (not instanciador_c1_lamp_8);
+instanciador_v_211 : (not instanciador_l1_8);
+instanciador_v_212 : (instanciador_v_210 or instanciador_v_211);
+instanciador_v_213 : (not instanciador_c1_8);
+instanciador_v_214 : (instanciador_v_212 and instanciador_v_213);
+instanciador_s_5_St_7_On_1 : ((1 when instanciador_v_214) default -1);
+instanciador_r_5_St_7_On : ((1 when instanciador_v_214)
+  default instanciador_pnr_5);
+instanciador_v_215 : (instanciador_c1_lamp_8 or instanciador_l1_8);
+instanciador_v_216 : (instanciador_v_215 and instanciador_c1_8);
+instanciador_s_5_St_7_Off_1 : ((-1 when instanciador_v_216) default 1);
+instanciador_s_5_1 : ((instanciador_s_5_St_7_Off_1 when instanciador_ck_23_1)
+  default instanciador_s_5_St_7_On_1);
+instanciador_r_5_St_7_Off : ((1 when instanciador_v_216)
+  default instanciador_pnr_5);
+instanciador_r_5 : ((instanciador_r_5_St_7_Off when instanciador_ck_23_1)
+  default instanciador_r_5_St_7_On);
+instanciador_ck_24_1 : instanciador_s_5_1;
+instanciador_ns_5_St_7_On_1 : -1;
+instanciador_nr_5_St_7_On : -1;
+instanciador_estateLamp1_8_St_7_On : 1;
+instanciador_ns_5_St_7_Off_1 : 1;
+instanciador_ns_5_1 : ((instanciador_ns_5_St_7_Off_1
+  when instanciador_ck_24_1) default instanciador_ns_5_St_7_On_1);
+instanciador_nr_5_St_7_Off : -1;
+instanciador_nr_5 : ((instanciador_nr_5_St_7_Off when instanciador_ck_24_1)
+  default instanciador_nr_5_St_7_On);
+instanciador_estateLamp1_8_St_7_Off : -1;
+instanciador_estateLamp1_8 : ((instanciador_estateLamp1_8_St_7_Off
+  when instanciador_ck_24_1) default instanciador_estateLamp1_8_St_7_On);
+instanciador_estateMicrop : instanciador_estateLamp1_8;
+instanciador_v_217 : (not instanciador_c1_lamp_9);
+instanciador_v_218 : (not instanciador_l1_9);
+instanciador_v_219 : (instanciador_v_217 or instanciador_v_218);
+instanciador_v_220 : (not instanciador_c1_9);
+instanciador_v_221 : (instanciador_v_219 and instanciador_v_220);
+instanciador_s_4_St_6_On_1 : ((1 when instanciador_v_221) default -1);
+instanciador_r_4_St_6_On : ((1 when instanciador_v_221)
+  default instanciador_pnr_4);
+instanciador_v_222 : (instanciador_c1_lamp_9 or instanciador_l1_9);
+instanciador_v_223 : (instanciador_v_222 and instanciador_c1_9);
+instanciador_s_4_St_6_Off_1 : ((-1 when instanciador_v_223) default 1);
+instanciador_s_4_1 : ((instanciador_s_4_St_6_Off_1 when instanciador_ck_25_1)
+  default instanciador_s_4_St_6_On_1);
+instanciador_r_4_St_6_Off : ((1 when instanciador_v_223)
+  default instanciador_pnr_4);
+instanciador_r_4 : ((instanciador_r_4_St_6_Off when instanciador_ck_25_1)
+  default instanciador_r_4_St_6_On);
+instanciador_ck_26_1 : instanciador_s_4_1;
+instanciador_ns_4_St_6_On_1 : -1;
+instanciador_nr_4_St_6_On : -1;
+instanciador_estateLamp1_9_St_6_On : 1;
+instanciador_ns_4_St_6_Off_1 : 1;
+instanciador_ns_4_1 : ((instanciador_ns_4_St_6_Off_1
+  when instanciador_ck_26_1) default instanciador_ns_4_St_6_On_1);
+instanciador_nr_4_St_6_Off : -1;
+instanciador_nr_4 : ((instanciador_nr_4_St_6_Off when instanciador_ck_26_1)
+  default instanciador_nr_4_St_6_On);
+instanciador_estateLamp1_9_St_6_Off : -1;
+instanciador_estateLamp1_9 : ((instanciador_estateLamp1_9_St_6_Off
+  when instanciador_ck_26_1) default instanciador_estateLamp1_9_St_6_On);
+instanciador_estateSomp : instanciador_estateLamp1_9;
+instanciador_v_224 : (not instanciador_c1_lamp_10);
+instanciador_v_225 : (not instanciador_l1_10);
+instanciador_v_226 : (instanciador_v_224 or instanciador_v_225);
+instanciador_v_227 : (not instanciador_c1_10);
+instanciador_v_228 : (instanciador_v_226 and instanciador_v_227);
+instanciador_s_3_St_5_On_1 : ((1 when instanciador_v_228) default -1);
+instanciador_r_3_St_5_On : ((1 when instanciador_v_228)
+  default instanciador_pnr_3);
+instanciador_v_229 : (instanciador_c1_lamp_10 or instanciador_l1_10);
+instanciador_v_230 : (instanciador_v_229 and instanciador_c1_10);
+instanciador_s_3_St_5_Off_1 : ((-1 when instanciador_v_230) default 1);
+instanciador_s_3_1 : ((instanciador_s_3_St_5_Off_1 when instanciador_ck_27_1)
+  default instanciador_s_3_St_5_On_1);
+instanciador_r_3_St_5_Off : ((1 when instanciador_v_230)
+  default instanciador_pnr_3);
+instanciador_r_3 : ((instanciador_r_3_St_5_Off when instanciador_ck_27_1)
+  default instanciador_r_3_St_5_On);
+instanciador_ck_28_1 : instanciador_s_3_1;
+instanciador_ns_3_St_5_On_1 : -1;
+instanciador_nr_3_St_5_On : -1;
+instanciador_estateLamp1_10_St_5_On : 1;
+instanciador_ns_3_St_5_Off_1 : 1;
+instanciador_ns_3_1 : ((instanciador_ns_3_St_5_Off_1
+  when instanciador_ck_28_1) default instanciador_ns_3_St_5_On_1);
+instanciador_nr_3_St_5_Off : -1;
+instanciador_nr_3 : ((instanciador_nr_3_St_5_Off when instanciador_ck_28_1)
+  default instanciador_nr_3_St_5_On);
+instanciador_estateLamp1_10_St_5_Off : -1;
+instanciador_estateLamp1_10 : ((instanciador_estateLamp1_10_St_5_Off
+  when instanciador_ck_28_1) default instanciador_estateLamp1_10_St_5_On);
+instanciador_estateSoml : instanciador_estateLamp1_10;
+instanciador_v_231 : (not instanciador_c1_lamp_11);
+instanciador_v_232 : (not instanciador_l1_11);
+instanciador_v_233 : (instanciador_v_231 or instanciador_v_232);
+instanciador_v_234 : (not instanciador_c1_11);
+instanciador_v_235 : (instanciador_v_233 and instanciador_v_234);
+instanciador_s_2_St_4_On_1 : ((1 when instanciador_v_235) default -1);
+instanciador_r_2_St_4_On : ((1 when instanciador_v_235)
+  default instanciador_pnr_2);
+instanciador_v_236 : (instanciador_c1_lamp_11 or instanciador_l1_11);
+instanciador_v_237 : (instanciador_v_236 and instanciador_c1_11);
+instanciador_s_2_St_4_Off_1 : ((-1 when instanciador_v_237) default 1);
+instanciador_s_2_1 : ((instanciador_s_2_St_4_Off_1 when instanciador_ck_29_1)
+  default instanciador_s_2_St_4_On_1);
+instanciador_r_2_St_4_Off : ((1 when instanciador_v_237)
+  default instanciador_pnr_2);
+instanciador_r_2 : ((instanciador_r_2_St_4_Off when instanciador_ck_29_1)
+  default instanciador_r_2_St_4_On);
+instanciador_ck_30_1 : instanciador_s_2_1;
+instanciador_ns_2_St_4_On_1 : -1;
+instanciador_nr_2_St_4_On : -1;
+instanciador_estateLamp1_11_St_4_On : 1;
+instanciador_ns_2_St_4_Off_1 : 1;
+instanciador_ns_2_1 : ((instanciador_ns_2_St_4_Off_1
+  when instanciador_ck_30_1) default instanciador_ns_2_St_4_On_1);
+instanciador_nr_2_St_4_Off : -1;
+instanciador_nr_2 : ((instanciador_nr_2_St_4_Off when instanciador_ck_30_1)
+  default instanciador_nr_2_St_4_On);
+instanciador_estateLamp1_11_St_4_Off : -1;
+instanciador_estateLamp1_11 : ((instanciador_estateLamp1_11_St_4_Off
+  when instanciador_ck_30_1) default instanciador_estateLamp1_11_St_4_On);
+instanciador_estateProj : instanciador_estateLamp1_11;
+instanciador_v_238 : (not instanciador_c1_lamp_12);
+instanciador_v_239 : (not instanciador_l1_12);
+instanciador_v_240 : (instanciador_v_238 or instanciador_v_239);
+instanciador_v_241 : (not instanciador_c1_12);
+instanciador_v_242 : (instanciador_v_240 and instanciador_v_241);
+instanciador_s_1_St_3_On_1 : ((1 when instanciador_v_242) default -1);
+instanciador_r_1_St_3_On : ((1 when instanciador_v_242)
+  default instanciador_pnr_1);
+instanciador_v_243 : (instanciador_c1_lamp_12 or instanciador_l1_12);
+instanciador_v_244 : (instanciador_v_243 and instanciador_c1_12);
+instanciador_s_1_St_3_Off_1 : ((-1 when instanciador_v_244) default 1);
+instanciador_s_1_1 : ((instanciador_s_1_St_3_Off_1 when instanciador_ck_31_1)
+  default instanciador_s_1_St_3_On_1);
+instanciador_r_1_St_3_Off : ((1 when instanciador_v_244)
+  default instanciador_pnr_1);
+instanciador_r_1 : ((instanciador_r_1_St_3_Off when instanciador_ck_31_1)
+  default instanciador_r_1_St_3_On);
+instanciador_ck_32_1 : instanciador_s_1_1;
+instanciador_ns_1_St_3_On_1 : -1;
+instanciador_nr_1_St_3_On : -1;
+instanciador_estateLamp1_12_St_3_On : 1;
+instanciador_ns_1_St_3_Off_1 : 1;
+instanciador_ns_1_1 : ((instanciador_ns_1_St_3_Off_1
+  when instanciador_ck_32_1) default instanciador_ns_1_St_3_On_1);
+instanciador_nr_1_St_3_Off : -1;
+instanciador_nr_1 : ((instanciador_nr_1_St_3_Off when instanciador_ck_32_1)
+  default instanciador_nr_1_St_3_On);
+instanciador_estateLamp1_12_St_3_Off : -1;
+instanciador_estateLamp1_12 : ((instanciador_estateLamp1_12_St_3_Off
+  when instanciador_ck_32_1) default instanciador_estateLamp1_12_St_3_On);
+instanciador_estateGela : instanciador_estateLamp1_12;
+instanciador_v_245 : (not instanciador_c1_lamp_13);
+instanciador_v_246 : (not instanciador_l1_13);
+instanciador_v_247 : (instanciador_v_245 or instanciador_v_246);
+instanciador_v_248 : (not instanciador_c1_13);
+instanciador_v_249 : (instanciador_v_247 and instanciador_v_248);
+instanciador_s_St_2_On_1 : ((1 when instanciador_v_249) default -1);
+instanciador_r_St_2_On : ((1 when instanciador_v_249)
+  default instanciador_pnr);
+instanciador_v_250 : (instanciador_c1_lamp_13 or instanciador_l1_13);
+instanciador_v_251 : (instanciador_v_250 and instanciador_c1_13);
+instanciador_s_St_2_Off_1 : ((-1 when instanciador_v_251) default 1);
+instanciador_s_1_2 : ((instanciador_s_St_2_Off_1 when instanciador_ck_33_1)
+  default instanciador_s_St_2_On_1);
+instanciador_r_St_2_Off : ((1 when instanciador_v_251)
+  default instanciador_pnr);
+instanciador_r : ((instanciador_r_St_2_Off when instanciador_ck_33_1)
+  default instanciador_r_St_2_On);
+instanciador_ck_34_1 : instanciador_s_1_2;
+instanciador_ns_St_2_On_1 : -1;
+instanciador_nr_St_2_On : -1;
+instanciador_estateLamp1_13_St_2_On : 1;
+instanciador_ns_St_2_Off_1 : 1;
+instanciador_ns_1_2 : ((instanciador_ns_St_2_Off_1 when instanciador_ck_34_1)
+  default instanciador_ns_St_2_On_1);
+instanciador_nr_St_2_Off : -1;
+instanciador_nr : ((instanciador_nr_St_2_Off when instanciador_ck_34_1)
+  default instanciador_nr_St_2_On);
+instanciador_estateLamp1_13_St_2_Off : -1;
+instanciador_estateLamp1_13 : ((instanciador_estateLamp1_13_St_2_Off
+  when instanciador_ck_34_1) default instanciador_estateLamp1_13_St_2_On);
+instanciador_estateAlarm : instanciador_estateLamp1_13;
+initialisations : concat(initialisations, [(instanciador_v_341 = -1)]);
+evolutions : concat(evolutions,
+                    [(instanciador_ns_13_3 default instanciador_v_341)]);
+initialisations : concat(initialisations, [(instanciador_v_340 = -1)]);
+evolutions : concat(evolutions,
+                    [(instanciador_ns_13_2 default instanciador_v_340)]);
+initialisations : concat(initialisations, [(instanciador_v_339 = -1)]);
+evolutions : concat(evolutions,
+                    [(instanciador_ns_13_1 default instanciador_v_339)]);
+initialisations : concat(initialisations, [(instanciador_pnr_13 = -1)]);
+evolutions : concat(evolutions,
+                    [(instanciador_nr_13 default instanciador_pnr_13)]);
+initialisations : concat(initialisations, [(instanciador_ck_9_1 = 1)]);
+evolutions : concat(evolutions,
+                    [(instanciador_ns_12_1 default instanciador_ck_9_1)]);
+initialisations : concat(initialisations, [(instanciador_pnr_12 = -1)]);
+evolutions : concat(evolutions,
+                    [(instanciador_nr_12 default instanciador_pnr_12)]);
+initialisations : concat(initialisations, [(instanciador_ck_11_1 = 1)]);
+evolutions : concat(evolutions,
+                    [(instanciador_ns_11_1 default instanciador_ck_11_1)]);
+initialisations : concat(initialisations, [(instanciador_pnr_11 = -1)]);
+evolutions : concat(evolutions,
+                    [(instanciador_nr_11 default instanciador_pnr_11)]);
+initialisations : concat(initialisations, [(instanciador_ck_13_1 = 1)]);
+evolutions : concat(evolutions,
+                    [(instanciador_ns_10_1 default instanciador_ck_13_1)]);
+initialisations : concat(initialisations, [(instanciador_pnr_10 = -1)]);
+evolutions : concat(evolutions,
+                    [(instanciador_nr_10 default instanciador_pnr_10)]);
+initialisations : concat(initialisations, [(instanciador_ck_15_1 = 1)]);
+evolutions : concat(evolutions,
+                    [(instanciador_ns_9_1 default instanciador_ck_15_1)]);
+initialisations : concat(initialisations, [(instanciador_pnr_9 = -1)]);
+evolutions : concat(evolutions,
+                    [(instanciador_nr_9 default instanciador_pnr_9)]);
+initialisations : concat(initialisations, [(instanciador_ck_17_1 = 1)]);
+evolutions : concat(evolutions,
+                    [(instanciador_ns_8_1 default instanciador_ck_17_1)]);
+initialisations : concat(initialisations, [(instanciador_pnr_8 = -1)]);
+evolutions : concat(evolutions,
+                    [(instanciador_nr_8 default instanciador_pnr_8)]);
+initialisations : concat(initialisations, [(instanciador_ck_19_1 = 1)]);
+evolutions : concat(evolutions,
+                    [(instanciador_ns_7_1 default instanciador_ck_19_1)]);
+initialisations : concat(initialisations, [(instanciador_pnr_7 = -1)]);
+evolutions : concat(evolutions,
+                    [(instanciador_nr_7 default instanciador_pnr_7)]);
+initialisations : concat(initialisations, [(instanciador_ck_21_1 = 1)]);
+evolutions : concat(evolutions,
+                    [(instanciador_ns_6_1 default instanciador_ck_21_1)]);
+initialisations : concat(initialisations, [(instanciador_pnr_6 = -1)]);
+evolutions : concat(evolutions,
+                    [(instanciador_nr_6 default instanciador_pnr_6)]);
+initialisations : concat(initialisations, [(instanciador_ck_23_1 = 1)]);
+evolutions : concat(evolutions,
+                    [(instanciador_ns_5_1 default instanciador_ck_23_1)]);
+initialisations : concat(initialisations, [(instanciador_pnr_5 = -1)]);
+evolutions : concat(evolutions,
+                    [(instanciador_nr_5 default instanciador_pnr_5)]);
+initialisations : concat(initialisations, [(instanciador_ck_25_1 = 1)]);
+evolutions : concat(evolutions,
+                    [(instanciador_ns_4_1 default instanciador_ck_25_1)]);
+initialisations : concat(initialisations, [(instanciador_pnr_4 = -1)]);
+evolutions : concat(evolutions,
+                    [(instanciador_nr_4 default instanciador_pnr_4)]);
+initialisations : concat(initialisations, [(instanciador_ck_27_1 = 1)]);
+evolutions : concat(evolutions,
+                    [(instanciador_ns_3_1 default instanciador_ck_27_1)]);
+initialisations : concat(initialisations, [(instanciador_pnr_3 = -1)]);
+evolutions : concat(evolutions,
+                    [(instanciador_nr_3 default instanciador_pnr_3)]);
+initialisations : concat(initialisations, [(instanciador_ck_29_1 = 1)]);
+evolutions : concat(evolutions,
+                    [(instanciador_ns_2_1 default instanciador_ck_29_1)]);
+initialisations : concat(initialisations, [(instanciador_pnr_2 = -1)]);
+evolutions : concat(evolutions,
+                    [(instanciador_nr_2 default instanciador_pnr_2)]);
+initialisations : concat(initialisations, [(instanciador_ck_31_1 = 1)]);
+evolutions : concat(evolutions,
+                    [(instanciador_ns_1_1 default instanciador_ck_31_1)]);
+initialisations : concat(initialisations, [(instanciador_pnr_1 = -1)]);
+evolutions : concat(evolutions,
+                    [(instanciador_nr_1 default instanciador_pnr_1)]);
+initialisations : concat(initialisations, [(instanciador_ck_33_1 = 1)]);
+evolutions : concat(evolutions,
+                    [(instanciador_ns_1_2 default instanciador_ck_33_1)]);
+initialisations : concat(initialisations, [(instanciador_pnr = -1)]);
+evolutions : concat(evolutions, [(instanciador_nr default instanciador_pnr)]);
+instanciador_v_101 : (instanciador_estateAlarm or instanciador_estateSoml);
+instanciador_v_102 : (instanciador_v_101 or instanciador_estateMicroL);
+instanciador_v_103 : (instanciador_v_102 or instanciador_estateProj);
+instanciador_v_104 : (not instanciador_v_103);
+instanciador_v_105 : (instanciador_v_104 and instanciador_estateLamp1);
+instanciador_v_106 : (instanciador_v_105 and instanciador_estateLamp2);
+instanciador_v_107 : (instanciador_v_106 and instanciador_estateLamp3);
+instanciador_v_108 : (instanciador_v_107 and instanciador_estateLamp4);
+instanciador_v_109 : (instanciador_v_108 and instanciador_estateLampExt);
+instanciador_v_110 : (instanciador_v_109 and instanciador_estateVent);
+instanciador_v_111 : (instanciador_v_110 and instanciador_estateMicrop);
+instanciador_v_112 : (instanciador_v_111 and instanciador_estateSomp);
+instanciador_regra1 : (instanciador_v_112 and instanciador_estateGela);
+instanciador_v_89 : (instanciador_estateAlarm or instanciador_estateSoml);
+instanciador_v_90 : (instanciador_v_89 or instanciador_estateMicroL);
+instanciador_v_91 : (instanciador_v_90 or instanciador_estateProj);
+instanciador_v_92 : (instanciador_v_91 or instanciador_estateLamp4);
+instanciador_v_93 : (instanciador_v_92 or instanciador_estateLampExt);
+instanciador_v_94 : (not instanciador_v_93);
+instanciador_v_95 : (instanciador_v_94 and instanciador_estateLamp1);
+instanciador_v_96 : (instanciador_v_95 and instanciador_estateLamp2);
+instanciador_v_97 : (instanciador_v_96 and instanciador_estateLamp3);
+instanciador_v_98 : (instanciador_v_97 and instanciador_estateVent);
+instanciador_v_99 : (instanciador_v_98 and instanciador_estateMicrop);
+instanciador_v_100 : (instanciador_v_99 and instanciador_estateSomp);
+instanciador_regra2 : (instanciador_v_100 and instanciador_estateGela);
+instanciador_v_77 : (instanciador_estateAlarm or instanciador_estateSoml);
+instanciador_v_78 : (instanciador_v_77 or instanciador_estateMicroL);
+instanciador_v_79 : (instanciador_v_78 or instanciador_estateProj);
+instanciador_v_80 : (not instanciador_v_79);
+instanciador_v_81 : (instanciador_v_80 and instanciador_estateLamp1);
+instanciador_v_82 : (instanciador_v_81 and instanciador_estateLamp2);
+instanciador_v_83 : (instanciador_v_82 and instanciador_estateLamp3);
+instanciador_v_84 : (instanciador_v_83 and instanciador_estateLamp4);
+instanciador_v_85 : (instanciador_v_84 and instanciador_estateLampExt);
+instanciador_v_86 : (instanciador_v_85 and instanciador_estateVent);
+instanciador_v_87 : (instanciador_v_86 and instanciador_estateMicrop);
+instanciador_v_88 : (instanciador_v_87 and instanciador_estateSomp);
+instanciador_regra3 : (instanciador_v_88 and instanciador_estateGela);
+instanciador_v_65 : (instanciador_estateAlarm or instanciador_estateSomp);
+instanciador_v_66 : (instanciador_v_65 or instanciador_estateMicrop);
+instanciador_v_67 : (instanciador_v_66 or instanciador_estateLamp1);
+instanciador_v_68 : (instanciador_v_67 or instanciador_estateLamp2);
+instanciador_v_69 : (instanciador_v_68 or instanciador_estateLamp4);
+instanciador_v_70 : (not instanciador_v_69);
+instanciador_v_71 : (instanciador_v_70 and instanciador_estateLamp3);
+instanciador_v_72 : (instanciador_v_71 and instanciador_estateLampExt);
+instanciador_v_73 : (instanciador_v_72 and instanciador_estateVent);
+instanciador_v_74 : (instanciador_v_73 and instanciador_estateMicroL);
+instanciador_v_75 : (instanciador_v_74 and instanciador_estateSoml);
+instanciador_v_76 : (instanciador_v_75 and instanciador_estateProj);
+instanciador_regra4 : (instanciador_v_76 and instanciador_estateGela);
+instanciador_v : (instanciador_estateLamp1 or instanciador_estateLamp2);
+instanciador_v_54 : (instanciador_v or instanciador_estateLamp3);
+instanciador_v_55 : (instanciador_v_54 or instanciador_estateLamp4);
+instanciador_v_56 : (instanciador_v_55 or instanciador_estateLampExt);
+instanciador_v_57 : (instanciador_v_56 or instanciador_estateVent);
+instanciador_v_58 : (instanciador_v_57 or instanciador_estateMicrop);
+instanciador_v_59 : (instanciador_v_58 or instanciador_estateSomp);
+instanciador_v_60 : (instanciador_v_59 or instanciador_estateSoml);
+instanciador_v_61 : (instanciador_v_60 or instanciador_estateMicroL);
+instanciador_v_62 : (instanciador_v_61 or instanciador_estateGela);
+instanciador_v_63 : (instanciador_v_62 or instanciador_estateProj);
+instanciador_v_64 : (not instanciador_v_63);
+instanciador_regra5 : (instanciador_estateAlarm and instanciador_v_64);
+instanciador_ck : (a_iminv(instanciador_policy, 1) + 1);
+instanciador_regra_true : instanciador_regra1;
+instanciador_ck_3 : (a_iminv(instanciador_policy, 2) + 1);
+instanciador_regra_false_true : instanciador_regra2;
+instanciador_ck_4 : (a_iminv(instanciador_policy, 3) + 1);
+instanciador_regra_false_false_true : instanciador_regra3;
+instanciador_ck_5 : (a_iminv(instanciador_policy, 4) + 1);
+instanciador_regra_false_false_false_true : instanciador_regra4;
+instanciador_ck_6 : (a_iminv(instanciador_policy, 5) + 1);
+instanciador_regra_false_false_false_false_true : 1;
+instanciador_regra_false_false_false_false_false : instanciador_regra5;
+instanciador_regra_false_false_false_false : ((instanciador_regra_false_false_false_false_true
+  when instanciador_ck_6)
+  default instanciador_regra_false_false_false_false_false);
+instanciador_regra_false_false_false : ((instanciador_regra_false_false_false_true
+  when instanciador_ck_5)
+  default instanciador_regra_false_false_false_false);
+instanciador_regra_false_false : ((instanciador_regra_false_false_true
+  when instanciador_ck_4) default instanciador_regra_false_false_false);
+instanciador_regra_false : ((instanciador_regra_false_true
+  when instanciador_ck_3) default instanciador_regra_false_false);
+instanciador_regra : ((instanciador_regra_true when instanciador_ck)
+  default instanciador_regra_false);
+instanciador_assume : 1;
+instanciador_guarantee : instanciador_regra;
+initialisations : concat(initialisations, [(instanciador_error_state = 1)]);
+evolutions : concat(evolutions, [instanciador_guarantee]);
+constraints : [((instanciador_sexta_input^2) = 1),
+               ((instanciador_ebd_input^2) = 1),
+               ((instanciador_domingo_input^2) = 1),
+               ((instanciador_domingol_input^2) = 1),
+               ((instanciador_neutro_input^2) = 1),
+               ((instanciador_seguranca_input^2) = 1), ((instanciador_l1^2)
+               = 1), ((instanciador_l2^2) = 1), ((instanciador_l3^2) = 1),
+               ((instanciador_l4^2) = 1), ((instanciador_lx^2) = 1),
+               ((instanciador_lv^2) = 1), ((instanciador_inpMl^2) = 1),
+               ((instanciador_inpMp^2) = 1), ((instanciador_inpSp^2) = 1),
+               ((instanciador_inpSl^2) = 1), ((instanciador_inpProj^2) = 1),
+               ((instanciador_inpGela^2) = 1), ((instanciador_inpAlarm^2)
+               = 1), ((instanciador_ca^2) = 1), ((instanciador_c_alarm^2)
+               = 1), ((instanciador_cg^2) = 1), ((instanciador_c_gela^2)
+               = 1), ((instanciador_cp^2) = 1), ((instanciador_c_proj^2)
+               = 1), ((instanciador_cmp^2) = 1), ((instanciador_c_microP^2)
+               = 1), ((instanciador_cml^2) = 1), ((instanciador_c_microL^2)
+               = 1), ((instanciador_csl^2) = 1), ((instanciador_c_somL^2)
+               = 1), ((instanciador_csp^2) = 1), ((instanciador_c_somP^2)
+               = 1), ((instanciador_c_vent^2) = 1), ((instanciador_cv^2)
+               = 1), ((instanciador_cx^2) = 1), ((instanciador_c4^2) = 1),
+               ((instanciador_c3^2) = 1), ((instanciador_c2^2) = 1),
+               ((instanciador_c1^2) = 1), ((instanciador_c_lampExt^2) = 1),
+               ((instanciador_c4_lamp^2) = 1), ((instanciador_c3_lamp^2)
+               = 1), ((instanciador_c2_lamp^2) = 1),
+               ((instanciador_c1_lamp^2) = 1), (instanciador_assume = 1)];
+
+% --- outputs : [instanciador_policy, instanciador_estateLamp1,
+                 instanciador_estateLamp2, instanciador_estateLamp3,
+                 instanciador_estateLamp4, instanciador_estateLampExt,
+                 instanciador_estateVent, instanciador_estateMicroL,
+                 instanciador_estateMicrop, instanciador_estateSomp,
+                 instanciador_estateSoml, instanciador_estateProj,
+                 instanciador_estateGela, instanciador_estateAlarm] --- %
+instanciador : processus(conditions, states, evolutions, initialisations,
+                         [gen(constraints)], controllables);
+instanciador_init : initial(instanciador);
+instanciador : S_Security(instanciador,B_True(instanciador,instanciador_error_state));
+dcs_result : equal(instanciador_init,initial(instanciador));
+if dcs_result then
+    print("instanciador: synthesis succeeded.")
+else
+    print("instanciador: synthesis failed.");
+
+if dcs_result then
+    print("Triangulation and controller generation...")
+else
+    quit(1);
+declare(p_instanciador_ca, p_instanciador_c_alarm, p_instanciador_cg,
+        p_instanciador_c_gela, p_instanciador_cp, p_instanciador_c_proj,
+        p_instanciador_cmp, p_instanciador_c_microP, p_instanciador_cml,
+        p_instanciador_c_microL, p_instanciador_csl, p_instanciador_c_somL,
+        p_instanciador_csp, p_instanciador_c_somP, p_instanciador_c_vent,
+        p_instanciador_cv, p_instanciador_cx, p_instanciador_c4,
+        p_instanciador_c3, p_instanciador_c2, p_instanciador_c1,
+        p_instanciador_c_lampExt, p_instanciador_c4_lamp,
+        p_instanciador_c3_lamp, p_instanciador_c2_lamp,
+        p_instanciador_c1_lamp);
+phantom_vars : [p_instanciador_ca, p_instanciador_c_alarm, p_instanciador_cg,
+                p_instanciador_c_gela, p_instanciador_cp,
+                p_instanciador_c_proj, p_instanciador_cmp,
+                p_instanciador_c_microP, p_instanciador_cml,
+                p_instanciador_c_microL, p_instanciador_csl,
+                p_instanciador_c_somL, p_instanciador_csp,
+                p_instanciador_c_somP, p_instanciador_c_vent,
+                p_instanciador_cv, p_instanciador_cx, p_instanciador_c4,
+                p_instanciador_c3, p_instanciador_c2, p_instanciador_c1,
+                p_instanciador_c_lampExt, p_instanciador_c4_lamp,
+                p_instanciador_c3_lamp, p_instanciador_c2_lamp,
+                p_instanciador_c1_lamp];
+instanciador_triang : Triang(constraint(instanciador),controllables,phantom_vars);
+controller_inputs : [instanciador_sexta_input, instanciador_ebd_input,
+                     instanciador_domingo_input, instanciador_domingol_input,
+                     instanciador_neutro_input, instanciador_seguranca_input,
+                     instanciador_l1, instanciador_l2, instanciador_l3,
+                     instanciador_l4, instanciador_lx, instanciador_lv,
+                     instanciador_inpMl, instanciador_inpMp,
+                     instanciador_inpSp, instanciador_inpSl,
+                     instanciador_inpProj, instanciador_inpGela,
+                     instanciador_inpAlarm, instanciador_v_341,
+                     instanciador_v_340, instanciador_v_339,
+                     instanciador_pnr_13, instanciador_ck_9_1,
+                     instanciador_pnr_12, instanciador_ck_11_1,
+                     instanciador_pnr_11, instanciador_ck_13_1,
+                     instanciador_pnr_10, instanciador_ck_15_1,
+                     instanciador_pnr_9, instanciador_ck_17_1,
+                     instanciador_pnr_8, instanciador_ck_19_1,
+                     instanciador_pnr_7, instanciador_ck_21_1,
+                     instanciador_pnr_6, instanciador_ck_23_1,
+                     instanciador_pnr_5, instanciador_ck_25_1,
+                     instanciador_pnr_4, instanciador_ck_27_1,
+                     instanciador_pnr_3, instanciador_ck_29_1,
+                     instanciador_pnr_2, instanciador_ck_31_1,
+                     instanciador_pnr_1, instanciador_ck_33_1,
+                     instanciador_pnr, p_instanciador_ca,
+                     p_instanciador_c_alarm, p_instanciador_cg,
+                     p_instanciador_c_gela, p_instanciador_cp,
+                     p_instanciador_c_proj, p_instanciador_cmp,
+                     p_instanciador_c_microP, p_instanciador_cml,
+                     p_instanciador_c_microL, p_instanciador_csl,
+                     p_instanciador_c_somL, p_instanciador_csp,
+                     p_instanciador_c_somP, p_instanciador_c_vent,
+                     p_instanciador_cv, p_instanciador_cx, p_instanciador_c4,
+                     p_instanciador_c3, p_instanciador_c2, p_instanciador_c1,
+                     p_instanciador_c_lampExt, p_instanciador_c4_lamp,
+                     p_instanciador_c3_lamp, p_instanciador_c2_lamp,
+                     p_instanciador_c1_lamp];
+heptagon_controller("instanciador_controller.ept","instanciador",controller_inputs,controllables,instanciador_triang);
+
